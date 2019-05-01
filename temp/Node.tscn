@@ -1,0 +1,298 @@
+[gd_scene load_steps=15 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://tiles/items/9 mm.png" type="Texture" id=2]
+[ext_resource path="res://tiles/items/7.62 mm.png" type="Texture" id=3]
+[ext_resource path="res://tiles/items/Glock 17.png" type="Texture" id=4]
+[ext_resource path="res://tiles/items/AK-47.png" type="Texture" id=5]
+[ext_resource path="res://tiles/items/Knife.png" type="Texture" id=6]
+
+[sub_resource type="GDScript" id=1]
+
+script/source = "extends Node2D
+var file_name = \"AK-47.png\"
+var image = load(\"res://tiles/items/\" + file_name).get_data()
+var arr = []
+var points = PoolVector2Array()
+var stack = []
+var timer
+
+func _ready():
+	
+#	image.resize(image.get_width() / 20, image.get_height() / 20)
+	var rect = Rect2(Vector2(), image.get_size())
+	image.lock()
+
+	arr.resize(image.get_width())
+	for i in arr.size():
+		arr[i] = []
+		arr[i].resize(image.get_height())
+
+	timer = OS.get_ticks_msec()
+	var inner_rect = rect.grow(-1) if min(image.get_width(), image.get_height()) > 2 else rect
+	var counter = 0	
+	var pos = Vector2()
+	var delta = Vector2(1, 0)
+	for i in (rect.size.x + rect.size.y - 2) * 2:
+		if image.get_pixel(pos.x, pos.y).a > 0:
+			arr[pos.x][pos.y] = 1
+			points.append(pos)
+		else:
+			stack.push_back(pos)
+
+			while stack:
+				var point = stack.pop_back()
+				arr[point.x][point.y] = 0
+				for j in [Vector2(1, 0), Vector2(0, 1), Vector2(-1, 0), Vector2(0, -1)]:
+					counter += 1
+					var next = point + j
+					if inner_rect.has_point(next) and arr[next.x][next.y] == null:
+						if image.get_pixel(next.x, next.y).a == 0:
+							stack.push_back(next)
+						else:
+							arr[next.x][next.y] = 1
+							points.append(next)
+		
+		if !rect.has_point(pos + delta):
+			delta = delta.rotated(PI / 2).round()
+		pos += delta
+	prints(counter, (OS.get_ticks_msec() - timer) / 1000.0)
+#
+	image.fill(Color(1, 1, 1, 1))
+	image.lock()
+	for x in image.get_width():
+		for y in image.get_height():
+			if arr[x][y] == 2: image.set_pixel(x, y, Color(0, 1, 0, 1))
+			if arr[x][y] == 1: image.set_pixel(x, y, Color(0, 0, 0, 1))
+			if arr[x][y] == 0: image.set_pixel(x, y, Color(1, 0, 0, 1))
+	if image.save_png(\"res://temp/\" + file_name): print(\"Error saving file\")
+#
+#	var file = File.new()
+#	file.open(\"res://temp/\" + file_name + \".points\", file.WRITE)
+#	file.store_string(var2str(points))
+#	file.close()
+#
+#	update()
+#
+#func _draw():
+#	draw_polyline(points, ColorN(\"Yellow\"))"
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends ViewportContainer
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[sub_resource type="GDScript" id=3]
+
+script/source = "extends Viewport
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[sub_resource type="GDScript" id=4]
+
+script/source = "extends Sprite
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[sub_resource type="GDScript" id=5]
+
+script/source = "extends Sprite
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[sub_resource type="Curve2D" id=6]
+
+bake_interval = 5.0
+_data = {
+"points": PoolVector2Array( 0, 0, 12.6796, 62.9102, 129.123, -47.868, -48.2799, 35.6003, 55.1074, -39.0141, 242.751, -38.1145, 0, 0, 0, 0, 248.604, 17.9682, 0, 0, 0, 0, 96.4488, 15.0422, -27.3098, 39.9894, 34.625, -53.1567, 76.9417, -33.2377, 0, 0, 0, 0, 129.123, -47.868 )
+}
+
+[sub_resource type="GDScript" id=7]
+
+script/source = "extends Sprite
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[sub_resource type="GDScript" id=8]
+
+script/source = "extends Sprite
+
+func _ready():
+	pass
+func _input(event):
+	if event is InputEventMouseButton:
+		printt(name)"
+
+[node name="Node" type="Node2D" index="0"]
+
+position = Vector2( 70.6235, 63.5085 )
+script = SubResource( 1 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 131.0
+margin_bottom = 103.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+stretch = true
+stretch_shrink = 1
+script = SubResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer" index="0"]
+
+arvr = false
+size = Vector2( 131, 103 )
+own_world = false
+world = null
+transparent_bg = false
+msaa = 0
+hdr = true
+disable_3d = false
+usage = 2
+debug_draw = 0
+render_target_v_flip = false
+render_target_clear_mode = 0
+render_target_update_mode = 3
+audio_listener_enable_2d = false
+audio_listener_enable_3d = false
+physics_object_picking = false
+gui_disable_input = false
+gui_snap_controls_to_pixels = true
+shadow_atlas_size = 0
+shadow_atlas_quad_0 = 2
+shadow_atlas_quad_1 = 2
+shadow_atlas_quad_2 = 3
+shadow_atlas_quad_3 = 4
+script = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="ViewportContainer/Viewport" index="0"]
+
+modulate = Color( 0.996094, 0.0272369, 0.0272369, 1 )
+texture = ExtResource( 1 )
+script = SubResource( 4 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Sprite4" type="Sprite" parent="ViewportContainer/Viewport/Sprite" index="0"]
+
+script = SubResource( 5 )
+
+[node name="Path2D" type="Path2D" parent="." index="1"]
+
+self_modulate = Color( 0.5, 0.6, 1, 0.7 )
+curve = SubResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 78.0
+margin_top = -1.0
+margin_right = 210.0
+margin_bottom = 158.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+color = Color( 0.73688, 0.0113525, 0.96875, 1 )
+
+[node name="Sprite2" type="Sprite" parent="." index="3"]
+
+position = Vector2( 125.535, 83.8834 )
+script = SubResource( 7 )
+
+[node name="Sprite3" type="Sprite" parent="Sprite2" index="0"]
+
+position = Vector2( -3.96234, -61.3458 )
+scale = Vector2( 0.409519, 0.447603 )
+texture = ExtResource( 2 )
+script = SubResource( 8 )
+
+[node name="Sprite7" type="Sprite" parent="Sprite2" index="1"]
+
+position = Vector2( -9.62788, -66.2656 )
+scale = Vector2( 0.409519, 0.447603 )
+texture = ExtResource( 3 )
+script = SubResource( 8 )
+
+[node name="Sprite4" type="Sprite" parent="Sprite2" index="2"]
+
+position = Vector2( 48.9016, -60.2061 )
+scale = Vector2( 0.409519, 0.447603 )
+texture = ExtResource( 4 )
+script = SubResource( 8 )
+
+[node name="Sprite5" type="Sprite" parent="Sprite2" index="3"]
+
+position = Vector2( 42.3351, 13.9956 )
+scale = Vector2( 0.409519, 0.447603 )
+texture = ExtResource( 5 )
+script = SubResource( 8 )
+
+[node name="Sprite6" type="Sprite" parent="Sprite2" index="4"]
+
+position = Vector2( 0.472687, 52.864 )
+scale = Vector2( 0.409519, 0.447603 )
+texture = ExtResource( 6 )
+script = SubResource( 8 )
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+
+position = Vector2( 5.0351, -7.55261 )
+anchor_mode = 1
+rotating = false
+current = true
+zoom = Vector2( 0.3, 0.3 )
+limit_left = -10000000
+limit_top = -10000000
+limit_right = 10000000
+limit_bottom = 10000000
+limit_smoothed = false
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
+smoothing_enabled = false
+smoothing_speed = 5.0
+offset_v = 0.0
+offset_h = 0.0
+drag_margin_left = 0.2
+drag_margin_top = 0.2
+drag_margin_right = 0.2
+drag_margin_bottom = 0.2
+editor_draw_screen = true
+editor_draw_limits = false
+editor_draw_drag_margin = false
+
+

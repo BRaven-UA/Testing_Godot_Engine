@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Database_manager.gd" type="Script" id=1]
+
+[node name="Tree" type="Tree" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_colors/title_button_color = Color( 0.308594, 0.854156, 1, 1 )
+custom_colors/guide_color = Color( 0.470588, 0.470588, 0.254902, 1 )
+custom_colors/drop_position_color = Color( 0, 0, 0, 0 )
+custom_constants/vseparation = 3
+columns = 5
+allow_reselect = false
+allow_rmb_select = true
+hide_folding = true
+hide_root = true
+drop_mode_flags = 1
+select_mode = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "custom_colors" ]
+
+[node name="Node" type="Node" parent="." index="6"]
+
+[connection signal="item_activated" from="." to="." method="_on_Tree_item_activated"]
+
+

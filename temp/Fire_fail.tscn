@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sound/fire_fail.ogg" type="AudioStream" id=1]
+
+[node name="Fire_fail" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+pitch_scale = 1.5
+max_distance = 200.0
+bus = "Effects"
+area_mask = 1048575
+

@@ -1,0 +1,1 @@
+{"Database":[{"ID":1,"Subtype":"Rifle","Type":"Weapon","WTF":"AK 47"},{"ID":2,"Subtype":"Melee","Type":"Weapon","WTF":"Knife"},{"ID":3,"Type":"Tool","WTF":"Flashlight"},{"Damage":10,"ID":4,"Type":"Ammo","WTF":"9 mm","Weight":0.008}],"Keys":["ID","WTF","Type","Subtype","Weight","Damage"]}

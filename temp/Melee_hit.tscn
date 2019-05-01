@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sound/knife hit.ogg" type="AudioStream" id=1]
+
+[node name="Melee_hit" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+max_distance = 200.0
+bus = "Effects"
+area_mask = 1048575
+

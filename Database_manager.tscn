@@ -1,0 +1,285 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Database_manager.gd" type="Script" id=1]
+[ext_resource path="res://GUI/new_dynamicfont.tres" type="DynamicFont" id=2]
+
+[node name="Node" type="Node" index="0"]
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="Tree" type="Tree" parent="VBoxContainer" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1400.0
+margin_bottom = 650.0
+rect_min_size = Vector2( 400, 100 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_colors/title_button_color = Color( 0.308594, 0.854156, 1, 1 )
+custom_colors/guide_color = Color( 0.470588, 0.470588, 0.254902, 1 )
+custom_colors/drop_position_color = Color( 0, 0, 0, 0 )
+custom_constants/vseparation = 3
+columns = 5
+allow_reselect = false
+allow_rmb_select = true
+hide_folding = true
+hide_root = true
+drop_mode_flags = 1
+select_mode = 0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_constants" ]
+
+[node name="Title_edit" type="LineEdit" parent="VBoxContainer/Tree" index="6"]
+
+visible = false
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 58.0
+margin_bottom = 24.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+expand_to_text_length = true
+focus_mode = 2
+context_menu_enabled = false
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+
+[node name="Buttons" type="HBoxContainer" parent="VBoxContainer" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 650.0
+margin_right = 1400.0
+margin_bottom = 700.0
+grow_vertical = 0
+rect_min_size = Vector2( 400, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 0
+alignment = 1
+_sections_unfolded = [ "Anchor", "Margin", "custom_constants" ]
+
+[node name="Button_Add_Item" type="Button" parent="VBoxContainer/Buttons" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 233.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add new item"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "custom_fonts" ]
+
+[node name="Button_Remove" type="Button" parent="VBoxContainer/Buttons" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 233.0
+margin_right = 466.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove selected item"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_fonts" ]
+
+[node name="Button_Add_Col" type="Button" parent="VBoxContainer/Buttons" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 466.0
+margin_right = 699.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Add column"
+flat = false
+align = 1
+
+[node name="Button_Remove_Col" type="Button" parent="VBoxContainer/Buttons" index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 699.0
+margin_right = 932.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Remove column"
+flat = false
+align = 1
+
+[node name="Button_Reload" type="Button" parent="VBoxContainer/Buttons" index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 932.0
+margin_right = 1165.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Reload database"
+flat = false
+align = 1
+
+[node name="Button_Save" type="Button" parent="VBoxContainer/Buttons" index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1165.0
+margin_right = 1400.0
+margin_bottom = 50.0
+rect_min_size = Vector2( 50, 50 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = ExtResource( 2 )
+custom_constants/hseparation = 0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save database"
+flat = false
+align = 1
+_sections_unfolded = [ "Anchor", "Margin", "Rect", "Size Flags", "custom_fonts" ]
+
+[connection signal="column_title_pressed" from="VBoxContainer/Tree" to="VBoxContainer/Tree" method="_on_Tree_column_title_pressed"]
+
+[connection signal="item_activated" from="VBoxContainer/Tree" to="VBoxContainer/Tree" method="_on_Tree_item_activated"]
+
+[connection signal="item_edited" from="VBoxContainer/Tree" to="VBoxContainer/Tree" method="_on_Tree_item_edited"]
+
+[connection signal="item_selected" from="VBoxContainer/Tree" to="VBoxContainer/Tree" method="_on_Tree_item_selected"]
+
+[connection signal="text_entered" from="VBoxContainer/Tree/Title_edit" to="VBoxContainer/Tree" method="_on_Title_edit_text_entered"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Add_Item" to="VBoxContainer/Tree" method="_on_Button_Add_Item_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Remove" to="VBoxContainer/Tree" method="_on_Button_Remove_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Add_Col" to="VBoxContainer/Tree" method="_on_Button_Add_Col_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Remove_Col" to="VBoxContainer/Tree" method="_on_Button_Remove_Col_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Reload" to="VBoxContainer/Tree" method="_on_Button_Reload_pressed"]
+
+[connection signal="pressed" from="VBoxContainer/Buttons/Button_Save" to="VBoxContainer/Tree" method="_on_Button_Save_pressed"]
+
+

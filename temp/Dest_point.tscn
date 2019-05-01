@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://tiles/destination point.png" type="Texture" id=1]
+
+[node name="Dest_point" type="Sprite"]
+
+visible = false
+scale = Vector2( 0.15, 0.15 )
+texture = ExtResource( 1 )
+offset = Vector2( 0, -210 )
+_sections_unfolded = [ "Offset", "Transform" ]
+
+

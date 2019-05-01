@@ -1,0 +1,215 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://GUI/Debug.gd" type="Script" id=1]
+[ext_resource path="res://Rus_font.theme" type="Theme" id=2]
+[ext_resource path="res://GUI/new_dynamicfont.tres" type="DynamicFont" id=3]
+
+[node name="Debug" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 1 )
+
+[node name="Grid" type="ColorRect" parent="."]
+anchor_bottom = 1.0
+margin_right = 160.0
+mouse_default_cursor_shape = 16
+theme = ExtResource( 2 )
+color = Color( 0, 0, 0, 0.254157 )
+
+[node name="Label" type="Label" parent="Grid"]
+margin_top = 4.0
+margin_right = 152.0
+margin_bottom = 26.0
+
+[node name="Label2" type="Label" parent="Grid"]
+margin_top = 30.0
+margin_right = 152.0
+margin_bottom = 52.0
+
+[node name="Label3" type="Label" parent="Grid"]
+margin_top = 56.0
+margin_right = 152.0
+margin_bottom = 78.0
+
+[node name="Label4" type="Label" parent="Grid"]
+margin_top = 82.0
+margin_right = 152.0
+margin_bottom = 104.0
+
+[node name="Label5" type="Label" parent="Grid"]
+margin_top = 108.0
+margin_right = 152.0
+margin_bottom = 130.0
+
+[node name="Label6" type="Label" parent="Grid"]
+margin_top = 134.0
+margin_right = 152.0
+margin_bottom = 156.0
+
+[node name="CheckButton" type="CheckButton" parent="Grid"]
+margin_top = 160.0
+margin_right = 152.0
+margin_bottom = 200.0
+text = "PAUSE  "
+align = 2
+
+[node name="Debug_mode" type="CheckBox" parent="Grid"]
+margin_top = 204.0
+margin_right = 152.0
+margin_bottom = 234.0
+text = "Debug mode"
+
+[node name="Freeze_NPC" type="CheckBox" parent="Grid"]
+margin_top = 234.0
+margin_right = 160.0
+margin_bottom = 264.0
+text = "Freeze NPC"
+
+[node name="Time_scale" type="HSlider" parent="Grid"]
+margin_left = 2.0
+margin_top = 264.0
+margin_right = 154.0
+margin_bottom = 280.0
+max_value = 2.0
+step = 0.1
+value = 1.0
+
+[node name="Label" type="Label" parent="Grid/Time_scale"]
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_top = -23.5
+margin_bottom = 23.5
+text = "
+Time scale"
+align = 1
+
+[node name="angle_from" type="HSlider" parent="Grid"]
+margin_left = 2.0
+margin_top = 315.0
+margin_right = 156.0
+margin_bottom = 331.0
+min_value = -180.0
+max_value = 0.0
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="Grid/angle_from"]
+margin_left = 57.0
+margin_top = 16.0
+margin_right = 97.0
+margin_bottom = 38.0
+align = 1
+valign = 1
+
+[node name="angle_to" type="HSlider" parent="Grid"]
+margin_left = 3.0
+margin_top = 358.0
+margin_right = 157.0
+margin_bottom = 374.0
+max_value = 180.0
+ticks_on_borders = true
+
+[node name="Label" type="Label" parent="Grid/angle_to"]
+margin_left = 57.0
+margin_top = 16.0
+margin_right = 97.0
+margin_bottom = 38.0
+align = 1
+valign = 1
+
+[node name="Save_game" type="Button" parent="Grid"]
+margin_top = 400.0
+margin_right = 77.0
+margin_bottom = 428.0
+text = "Save game"
+
+[node name="Load_game" type="Button" parent="Grid"]
+margin_left = 80.0
+margin_top = 400.0
+margin_right = 158.0
+margin_bottom = 428.0
+text = "Load game"
+
+[node name="Load_dialog" type="Container" parent="."]
+editor/display_folded = true
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -500.0
+margin_top = -245.0
+margin_right = 500.0
+margin_bottom = 245.0
+
+[node name="ColorRect" type="ColorRect" parent="Load_dialog"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0896301, 0.218395, 0.257813, 1 )
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Load_dialog/ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 5.0
+margin_top = 5.0
+margin_right = -5.0
+margin_bottom = -5.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Load_dialog/ColorRect/HBoxContainer"]
+margin_right = 346.0
+margin_bottom = 480.0
+size_flags_horizontal = 3
+
+[node name="Loading_List" type="ItemList" parent="Load_dialog/ColorRect/HBoxContainer/VBoxContainer"]
+margin_right = 346.0
+margin_bottom = 426.0
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Load_dialog/ColorRect/HBoxContainer/VBoxContainer"]
+margin_top = 430.0
+margin_right = 346.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 100, 50 )
+alignment = 1
+
+[node name="Button_Load" type="Button" parent="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_right = 112.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Load"
+
+[node name="Button_Delete" type="Button" parent="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 116.0
+margin_right = 228.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+disabled = true
+text = "Delete"
+
+[node name="Button_Cancel" type="Button" parent="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer"]
+margin_left = 232.0
+margin_right = 346.0
+margin_bottom = 50.0
+size_flags_horizontal = 3
+custom_fonts/font = ExtResource( 3 )
+text = "Cancel"
+
+[node name="Loading_Preview" type="TextureRect" parent="Load_dialog/ColorRect/HBoxContainer"]
+margin_left = 350.0
+margin_right = 990.0
+margin_bottom = 480.0
+rect_min_size = Vector2( 640, 480 )
+stretch_mode = 4
+
+[connection signal="toggled" from="Grid/CheckButton" to="." method="_on_CheckButton_toggled"]
+[connection signal="toggled" from="Grid/Debug_mode" to="." method="_on_Debug_mode_toggled"]
+[connection signal="toggled" from="Grid/Freeze_NPC" to="." method="_on_Freeze_NPC_toggled"]
+[connection signal="value_changed" from="Grid/Time_scale" to="." method="_on_Time_scale_value_changed"]
+[connection signal="pressed" from="Grid/Save_game" to="." method="_on_Save_game_pressed"]
+[connection signal="pressed" from="Grid/Load_game" to="." method="_on_Load_game_pressed"]
+[connection signal="item_selected" from="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/Loading_List" to="." method="_on_Loading_List_item_selected"]
+[connection signal="pressed" from="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/Button_Load" to="." method="_on_Button_Load_pressed"]
+[connection signal="pressed" from="Load_dialog/ColorRect/HBoxContainer/VBoxContainer/HBoxContainer/Button_Cancel" to="." method="_on_Button_Cancel_pressed"]

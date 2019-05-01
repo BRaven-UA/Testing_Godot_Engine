@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ab2254ce5d7bfdd80ee3fc07a67afe85.png" type="Texture" id=1]
+
+[sub_resource type="CapsuleShape2D" id=1]
+
+custom_solver_bias = 0.0
+radius = 29.7808
+height = 2.02737
+
+[node name="Player_TopDown" type="KinematicBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+collision/safe_margin = 0.08
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="PTD_Sprite" type="Sprite" parent="." index="0"]
+
+rotation = 3.14159
+texture = ExtResource( 1 )
+_sections_unfolded = [ "Animation", "Offset", "Region", "Transform" ]
+
+[node name="PTD_Collision" type="CollisionShape2D" parent="." index="1"]
+
+position = Vector2( 53, 67 )
+scale = Vector2( 6.75379, 4.19062 )
+shape = SubResource( 1 )
+_sections_unfolded = [ "Transform" ]
+
+

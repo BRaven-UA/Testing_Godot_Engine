@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Melee Weapon Swings (item 2).ogg-4b3e8aec0958c5c1067bbbe88ecdc844.oggstr"
+
+[deps]
+
+source_file="res://sound/Melee Weapon Swings (item 2).ogg"
+dest_files=[ "res://.import/Melee Weapon Swings (item 2).ogg-4b3e8aec0958c5c1067bbbe88ecdc844.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

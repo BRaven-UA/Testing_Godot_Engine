@@ -1,0 +1,134 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://Out of sight.tres" type="Material" id=1]
+[ext_resource path="res://NPC.gd" type="Script" id=2]
+[ext_resource path="res://tiles/Anim_feet.res" type="SpriteFrames" id=3]
+[ext_resource path="res://outline2.shader" type="Shader" id=4]
+[ext_resource path="res://tiles/Anim_top.res" type="SpriteFrames" id=5]
+[ext_resource path="res://Ray_NPC.gd" type="Script" id=6]
+[ext_resource path="res://temp/Life_bar.tscn" type="PackedScene" id=7]
+[ext_resource path="res://tiles/Top_Down_Survivor/Dead_soldier.png" type="Texture" id=8]
+
+[sub_resource type="CircleShape2D" id=5]
+radius = 17.0
+
+[sub_resource type="ShaderMaterial" id=3]
+resource_local_to_scene = true
+shader = ExtResource( 4 )
+shader_param/intensity = 100
+shader_param/precision = 0.02
+shader_param/outline_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="ConvexPolygonShape2D" id=4]
+points = PoolVector2Array( 0, -1, 1, 1, -1, 1 )
+
+[node name="NPC" type="KinematicBody2D" groups=[
+"Save",
+"NPC",
+]]
+light_mask = 2
+material = ExtResource( 1 )
+input_pickable = true
+collision_layer = 4
+collision_mask = 15
+collision/safe_margin = 1.0
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 2
+use_parent_material = true
+shape = SubResource( 5 )
+
+[node name="Anim_feet" type="AnimatedSprite" parent="."]
+light_mask = 2
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 3 )
+animation = "Idle"
+
+[node name="Anim_top" type="AnimatedSprite" parent="."]
+light_mask = 2
+material = SubResource( 3 )
+use_parent_material = true
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 5 )
+animation = "HandgunIdle"
+offset = Vector2( 15, -10 )
+
+[node name="Detect_radius" type="Area2D" parent="."]
+light_mask = 2
+use_parent_material = true
+input_pickable = false
+monitorable = false
+collision_layer = 16
+collision_mask = 7
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect_radius"]
+light_mask = 2
+shape = SubResource( 4 )
+
+[node name="Ray1" type="RayCast2D" parent="."]
+light_mask = 2
+use_parent_material = true
+enabled = true
+cast_to = Vector2( 0, 0 )
+collision_mask = 7
+script = ExtResource( 6 )
+
+[node name="Bump" type="RayCast2D" parent="."]
+light_mask = 2
+use_parent_material = true
+enabled = true
+cast_to = Vector2( 0, 30 )
+collision_mask = 6
+
+[node name="Inventory" type="Node2D" parent="."]
+visible = false
+light_mask = 2
+use_parent_material = true
+
+[node name="Wait" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Life_bar" parent="." instance=ExtResource( 7 )]
+light_mask = 2
+use_parent_material = true
+
+[node name="PopupDialog" type="PopupDialog" parent="."]
+editor/display_folded = true
+rect_min_size = Vector2( 100, 100 )
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupDialog"]
+anchor_bottom = 1.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 10.0
+margin_bottom = 16.0
+
+[node name="X" type="Label" parent="PopupDialog/VBoxContainer"]
+margin_bottom = 14.0
+
+[node name="Y" type="Label" parent="PopupDialog/VBoxContainer"]
+margin_top = 18.0
+margin_bottom = 32.0
+
+[node name="Rotation" type="Label" parent="PopupDialog/VBoxContainer"]
+margin_top = 36.0
+margin_bottom = 50.0
+
+[node name="Remains" type="Sprite" parent="."]
+visible = false
+light_mask = 2
+material = ExtResource( 1 )
+rotation = 1.5708
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 8 )
+
+[connection signal="input_event" from="." to="." method="_on_NPC_input_event"]
+[connection signal="body_entered" from="Detect_radius" to="Ray1" method="_detected"]
+[connection signal="body_exited" from="Detect_radius" to="Ray1" method="_exited"]
+[connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]
+[connection signal="value_changed" from="Life_bar" to="." method="_on_Life_bar_value_changed"]

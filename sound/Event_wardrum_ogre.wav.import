@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Event_wardrum_ogre.wav-6cf6afcc21864e0d1a492d4fc4505dd7.sample"
+
+[deps]
+
+source_file="res://sound/Event_wardrum_ogre.wav"
+dest_files=[ "res://.import/Event_wardrum_ogre.wav-6cf6afcc21864e0d1a492d4fc4505dd7.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

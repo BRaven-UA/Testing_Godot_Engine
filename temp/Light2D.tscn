@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Large gradient circle.png" type="Texture" id=1]
+
+[node name="Light2D" type="Light2D"]
+texture = ExtResource( 1 )
+color = Color( 0.996078, 1, 0.854902, 1 )
+energy = 0.9
+range_height = 100.0
+shadow_filter = 3
+shadow_filter_smooth = 5.0
+shadow_item_cull_mask = 3
+

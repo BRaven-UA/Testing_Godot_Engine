@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Game.gd" type="Script" id=1]
+[ext_resource path="res://Start_screen.tscn" type="PackedScene" id=2]
+[ext_resource path="res://World_Location.tscn" type="PackedScene" id=3]
+
+[node name="Game" type="Node" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="Start_screen" parent="." index="0" instance=ExtResource( 2 )]
+
+script = null
+
+[node name="Main_Menu" parent="Start_screen" index="0"]
+
+editor/display_folded = true
+
+[node name="Title" parent="Start_screen/Main_Menu" index="2"]
+
+percent_visible = 1.0
+
+[node name="World_Location" parent="." index="1" instance=ExtResource( 3 )]
+
+visible = false
+
+[connection signal="New_game" from="Start_screen/Main_Menu/Start_menu/Button_New" to="." method="_on_Button_New_New_game"]
+
+
+[editable path="Start_screen"]

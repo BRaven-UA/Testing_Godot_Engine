@@ -1,0 +1,54 @@
+{
+	"Database": [{
+			"consumable": "7.62 mm",
+			"capacity": 30,
+			"delay": 0.2,
+			"id": 1,
+			"loaded": 0,
+			"item_name": "AK-47",
+			"distance": 750,
+			"subtype": "Rifle",
+			"type": "Weapon",
+			"weight": 4.3
+		}, {
+			"damage": 8,
+			"delay": 1,
+			"id": 2,
+			"item_name": "Knife",
+			"distance": 44,
+			"subtype": "Melee",
+			"type": "Weapon",
+			"weight": 0.3
+		}, {
+			"id": 3,
+			"item_name": "Flashlight",
+			"distance": 200,
+			"type": "Tool",
+			"weight": 0.1
+		}, {
+			"damage": 10,
+			"id": 4,
+			"item_name": "9 mm",
+			"type": "consumable",
+			"weight": 0.008
+		}, {
+			"consumable": "9 mm",
+			"capacity": 17,
+			"delay": 0.5,
+			"id": 5,
+			"loaded": 0,
+			"item_name": "Glock 17",
+			"distance": 1000,
+			"subtype": "Handgun",
+			"type": "Weapon",
+			"weight": 0.625
+		}, {
+			"damage": 30,
+			"id": 6,
+			"item_name": "7.62 mm",
+			"type": "consumable",
+			"weight": 0.018
+		}
+	],
+	"Keys": ["id", "item_name", "type", "subtype", "weight", "damage", "consumable", "distance", "capacity", "delay", "loaded"]
+}

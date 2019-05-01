@@ -1,0 +1,103 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Player.gd" type="Script" id=1]
+[ext_resource path="res://tiles/Anim_feet.res" type="SpriteFrames" id=2]
+[ext_resource path="res://tiles/Anim_top.res" type="SpriteFrames" id=3]
+[ext_resource path="res://camera.gd" type="Script" id=4]
+[ext_resource path="res://Ray.gd" type="Script" id=5]
+[ext_resource path="res://temp/Life_bar.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Large gradient circle.png" type="Texture" id=7]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 17.0
+
+[sub_resource type="Animation" id=2]
+resource_name = "Center"
+length = 0.5
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5 ),
+"transitions": PoolRealArray( 1 ),
+"update": 3,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+input_pickable = true
+collision_layer = 2
+collision_mask = 13
+collision/safe_margin = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [  ],
+"_edit_vertical_guides_": [  ]
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 1 )
+
+[node name="Anim_feet" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 2 )
+animation = "Idle"
+
+[node name="Anim_top" type="AnimatedSprite" parent="."]
+rotation = 1.5708
+scale = Vector2( 0.25, 0.25 )
+frames = ExtResource( 3 )
+animation = "MeleeIdle"
+offset = Vector2( 15, -10 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+zoom = Vector2( 1.5, 1.5 )
+drag_margin_h_enabled = false
+drag_margin_v_enabled = false
+smoothing_speed = 20.0
+drag_margin_left = 0.0
+drag_margin_top = 0.0
+drag_margin_right = 0.0
+drag_margin_bottom = 0.0
+script = ExtResource( 4 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+autoplay = "Center"
+anims/Center = SubResource( 2 )
+
+[node name="Inventory" type="Node2D" parent="."]
+visible = false
+
+[node name="Ray" type="RayCast2D" parent="."]
+enabled = true
+collision_mask = 5
+script = ExtResource( 5 )
+
+[node name="Life_bar" parent="." instance=ExtResource( 6 )]
+visible = false
+
+[node name="SightRange" type="Light2D" parent="."]
+texture = ExtResource( 7 )
+mode = 2
+range_item_cull_mask = 2
+shadow_filter = 3
+shadow_filter_smooth = 5.0
+shadow_item_cull_mask = 3
+
+[node name="Light2D" type="Light2D" parent="."]
+texture = ExtResource( 7 )
+color = Color( 0.996078, 1, 0.854902, 1 )
+energy = 0.6
+range_height = 100.0
+shadow_filter = 3
+shadow_filter_smooth = 5.0
+shadow_item_cull_mask = 3
+
+[connection signal="input_event" from="." to="." method="_on_Player_input_event"]
