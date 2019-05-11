@@ -1,11 +1,18 @@
 extends Control
 
 #const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
-#onready var main_node = get_tree().current_scene
+onready var main_node = get_tree().current_scene
+onready var user_layer = main_node.find_node("UserLayer")
 #onready var inventory = main_node.find_node("Player").get_node("Inventory")
 #onready var content = find_node("Content")
 #var drag = false
 
+func _ready() -> void:
+	var size = user_layer.default_size
+	user_layer.create_button(self, Preloader.get_resource("backpack icon"), "", get_viewport_rect().size - Vector2(size, size))
+
+func toggle() -> void:
+	visible = !visible
 
 #func refresh_content():	# обновление содержимого рюкзака
 #	var backpack_items = content.get_children()

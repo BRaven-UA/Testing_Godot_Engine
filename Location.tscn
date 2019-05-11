@@ -1,18 +1,18 @@
-[gd_scene load_steps=97 format=2]
+[gd_scene load_steps=98 format=2]
 
 [ext_resource path="res://Location.gd" type="Script" id=1]
 [ext_resource path="res://GUI/GUI.gd" type="Script" id=2]
 [ext_resource path="res://GUI/UserLayer.gd" type="Script" id=3]
-[ext_resource path="res://GUI/UserButton.tscn" type="PackedScene" id=4]
-[ext_resource path="res://GUI/my backpack icon.png" type="Texture" id=5]
-[ext_resource path="res://GUI/timer icon4.png" type="Texture" id=6]
-[ext_resource path="res://GUI/Slider background.png" type="Texture" id=7]
-[ext_resource path="res://GUI/TimeScale.gd" type="Script" id=8]
-[ext_resource path="res://GUI/AR theme.theme" type="Theme" id=9]
-[ext_resource path="res://GUI/Backpack.tscn" type="PackedScene" id=10]
-[ext_resource path="res://GUI/ESCMenu.gd" type="Script" id=11]
-[ext_resource path="res://GUI/grayscale.tres" type="Material" id=12]
-[ext_resource path="res://GUI/Interface font.tres" type="DynamicFont" id=13]
+[ext_resource path="res://GUI/Slider background.png" type="Texture" id=4]
+[ext_resource path="res://GUI/TimeScale.gd" type="Script" id=5]
+[ext_resource path="res://GUI/AR theme.theme" type="Theme" id=6]
+[ext_resource path="res://GUI/Backpack.tscn" type="PackedScene" id=7]
+[ext_resource path="res://GUI/ESCMenu.gd" type="Script" id=8]
+[ext_resource path="res://GUI/grayscale.tres" type="Material" id=9]
+[ext_resource path="res://GUI/Interface font.tres" type="DynamicFont" id=10]
+[ext_resource path="res://GUI/ContextMenu.tscn" type="PackedScene" id=11]
+[ext_resource path="res://kazmann-sans-regular.ttf" type="DynamicFontData" id=12]
+[ext_resource path="res://GUI/CursorHint.gd" type="Script" id=13]
 [ext_resource path="res://GUI/Debug.tscn" type="PackedScene" id=14]
 [ext_resource path="res://tiles/destination point.png" type="Texture" id=15]
 [ext_resource path="res://tiles/grass_1.png" type="Texture" id=16]
@@ -22,72 +22,78 @@
 [ext_resource path="res://tileset/Splatter_textures2.tres" type="TileSet" id=20]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=21]
 [ext_resource path="res://tiles/Top_Down_Survivor/feet/idle/survivor-idle_0.png" type="Texture" id=22]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_0.png" type="Texture" id=23]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_3.png" type="Texture" id=24]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_6.png" type="Texture" id=25]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_9.png" type="Texture" id=26]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_12.png" type="Texture" id=27]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_15.png" type="Texture" id=28]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_18.png" type="Texture" id=29]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_19.png" type="Texture" id=30]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_5.png" type="Texture" id=31]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_6.png" type="Texture" id=32]
-[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_16.png" type="Texture" id=33]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_5.png" type="Texture" id=23]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_6.png" type="Texture" id=24]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_16.png" type="Texture" id=25]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_0.png" type="Texture" id=26]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_3.png" type="Texture" id=27]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_6.png" type="Texture" id=28]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_9.png" type="Texture" id=29]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_12.png" type="Texture" id=30]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_15.png" type="Texture" id=31]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_18.png" type="Texture" id=32]
+[ext_resource path="res://tiles/Top_Down_Survivor/feet/walk/survivor-walk_19.png" type="Texture" id=33]
 [ext_resource path="res://tiles/Top_Down_Survivor/Dead_soldier.png" type="Texture" id=34]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_0.png" type="Texture" id=35]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_1.png" type="Texture" id=36]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_2.png" type="Texture" id=37]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_3.png" type="Texture" id=38]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_4.png" type="Texture" id=39]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_5.png" type="Texture" id=40]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_6.png" type="Texture" id=41]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_7.png" type="Texture" id=42]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_8.png" type="Texture" id=43]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_9.png" type="Texture" id=44]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_10.png" type="Texture" id=45]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_11.png" type="Texture" id=46]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_12.png" type="Texture" id=47]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_13.png" type="Texture" id=48]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_14.png" type="Texture" id=49]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/idle/survivor-idle_knife_0.png" type="Texture" id=50]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png" type="Texture" id=51]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_0.png" type="Texture" id=52]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_1.png" type="Texture" id=53]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_2.png" type="Texture" id=54]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png" type="Texture" id=55]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png" type="Texture" id=56]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png" type="Texture" id=57]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png" type="Texture" id=58]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png" type="Texture" id=59]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png" type="Texture" id=60]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png" type="Texture" id=61]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_0.png" type="Texture" id=62]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_2.png" type="Texture" id=63]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_4.png" type="Texture" id=64]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_8.png" type="Texture" id=65]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_10.png" type="Texture" id=66]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_14.png" type="Texture" id=67]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_16.png" type="Texture" id=68]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/0.png" type="Texture" id=69]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/1.png" type="Texture" id=70]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/2.png" type="Texture" id=71]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/3.png" type="Texture" id=72]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/4.png" type="Texture" id=73]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/5.png" type="Texture" id=74]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/6.png" type="Texture" id=75]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/7.png" type="Texture" id=76]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/8.png" type="Texture" id=77]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/9.png" type="Texture" id=78]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/10.png" type="Texture" id=79]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/11.png" type="Texture" id=80]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/12.png" type="Texture" id=81]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/13.png" type="Texture" id=82]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/14.png" type="Texture" id=83]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/idle/survivor-idle_knife_0.png" type="Texture" id=35]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png" type="Texture" id=36]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png" type="Texture" id=37]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png" type="Texture" id=38]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png" type="Texture" id=39]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png" type="Texture" id=40]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png" type="Texture" id=41]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png" type="Texture" id=42]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png" type="Texture" id=43]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_0.png" type="Texture" id=44]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_2.png" type="Texture" id=45]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_4.png" type="Texture" id=46]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_8.png" type="Texture" id=47]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_10.png" type="Texture" id=48]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_14.png" type="Texture" id=49]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_16.png" type="Texture" id=50]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/0.png" type="Texture" id=51]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/1.png" type="Texture" id=52]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/2.png" type="Texture" id=53]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/3.png" type="Texture" id=54]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/4.png" type="Texture" id=55]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/5.png" type="Texture" id=56]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/6.png" type="Texture" id=57]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/7.png" type="Texture" id=58]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/8.png" type="Texture" id=59]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/9.png" type="Texture" id=60]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/10.png" type="Texture" id=61]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/11.png" type="Texture" id=62]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/12.png" type="Texture" id=63]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/13.png" type="Texture" id=64]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/14.png" type="Texture" id=65]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_0.png" type="Texture" id=66]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_1.png" type="Texture" id=67]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_2.png" type="Texture" id=68]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_0.png" type="Texture" id=69]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_1.png" type="Texture" id=70]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_2.png" type="Texture" id=71]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_3.png" type="Texture" id=72]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_4.png" type="Texture" id=73]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_5.png" type="Texture" id=74]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_6.png" type="Texture" id=75]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_7.png" type="Texture" id=76]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_8.png" type="Texture" id=77]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_9.png" type="Texture" id=78]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_10.png" type="Texture" id=79]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_11.png" type="Texture" id=80]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_12.png" type="Texture" id=81]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_13.png" type="Texture" id=82]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_14.png" type="Texture" id=83]
 [ext_resource path="res://NPC.tscn" type="PackedScene" id=84]
 [ext_resource path="res://outline2.shader" type="Shader" id=85]
 [ext_resource path="res://temp/Fordebug.gd" type="Script" id=86]
 
-[sub_resource type="SpriteFrames" id=1]
+[sub_resource type="DynamicFont" id=1]
+resource_local_to_scene = true
+size = 20
+use_filter = true
+font_data = ExtResource( 12 )
+
+[sub_resource type="SpriteFrames" id=2]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 22 ) ],
@@ -100,84 +106,84 @@ animations = [ {
 "name": "Idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": false,
 "name": "Attack",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
-} ]
-
-[sub_resource type="SpriteFrames" id=2]
-resource_local_to_scene = true
-animations = [ {
-"frames": [ ExtResource( 34 ) ],
-"loop": false,
-"name": "Dead",
-"speed": 0.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ) ],
-"loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
 "loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 51 ) ],
-"loop": false,
-"name": "HandgunTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeReload",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ) ],
-"loop": false,
-"name": "MeleeAttack",
+"name": "Walk",
 "speed": 15.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
 resource_local_to_scene = true
 animations = [ {
+"frames": [ ExtResource( 34 ) ],
+"loop": false,
+"name": "Dead",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": false,
+"name": "HandgunTurn",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
+"loop": false,
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeTurn",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ) ],
+"loop": false,
+"name": "HandgunReload",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+resource_local_to_scene = true
+animations = [ {
 "frames": [ ExtResource( 22 ) ],
 "loop": false,
 "name": "Reload",
@@ -188,30 +194,30 @@ animations = [ {
 "name": "Idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": false,
 "name": "Attack",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=4]
+[sub_resource type="ShaderMaterial" id=5]
 resource_local_to_scene = true
 shader = ExtResource( 85 )
 shader_param/intensity = 100
 shader_param/precision = 0.02
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="SpriteFrames" id=5]
+[sub_resource type="SpriteFrames" id=6]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 34 ) ],
@@ -219,61 +225,61 @@ animations = [ {
 "name": "Dead",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ) ],
-"loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 35 ) ],
 "loop": false,
 "name": "MeleeIdle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
-"loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 51 ) ],
+"frames": [ ExtResource( 36 ) ],
 "loop": false,
 "name": "HandgunTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
 "loop": false,
-"name": "MeleeReload",
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeTurn",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ) ],
 "loop": false,
-"name": "MeleeAttack",
-"speed": 15.0
+"name": "HandgunReload",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
 } ]
 
-[sub_resource type="CanvasItemMaterial" id=6]
+[sub_resource type="CanvasItemMaterial" id=7]
 light_mode = 2
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=8]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 22 ) ],
@@ -286,30 +292,30 @@ animations = [ {
 "name": "Idle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 25 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ) ],
-"loop": true,
-"name": "Walk",
-"speed": 15.0
-}, {
 "frames": [ ExtResource( 22 ) ],
 "loop": false,
 "name": "Attack",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 31 ), ExtResource( 32 ), ExtResource( 31 ), ExtResource( 33 ) ],
+"frames": [ ExtResource( 23 ), ExtResource( 24 ), ExtResource( 23 ), ExtResource( 25 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 26 ), ExtResource( 27 ), ExtResource( 28 ), ExtResource( 29 ), ExtResource( 30 ), ExtResource( 31 ), ExtResource( 32 ), ExtResource( 33 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
 } ]
 
-[sub_resource type="ShaderMaterial" id=8]
+[sub_resource type="ShaderMaterial" id=9]
 resource_local_to_scene = true
 shader = ExtResource( 85 )
 shader_param/intensity = 100
 shader_param/precision = 0.02
 shader_param/outline_color = Color( 1, 0, 0, 1 )
 
-[sub_resource type="SpriteFrames" id=9]
+[sub_resource type="SpriteFrames" id=10]
 resource_local_to_scene = true
 animations = [ {
 "frames": [ ExtResource( 34 ) ],
@@ -317,58 +323,58 @@ animations = [ {
 "name": "Dead",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 35 ), ExtResource( 36 ), ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 13.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ) ],
-"loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 35 ) ],
 "loop": false,
 "name": "MeleeIdle",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ) ],
-"loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 51 ) ],
+"frames": [ ExtResource( 36 ) ],
 "loop": false,
 "name": "HandgunTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 37 ), ExtResource( 38 ), ExtResource( 39 ), ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ), ExtResource( 43 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
 "loop": false,
-"name": "MeleeReload",
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeTurn",
 "speed": 0.0
 }, {
 "frames": [ ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ) ],
 "loop": false,
-"name": "MeleeAttack",
-"speed": 15.0
+"name": "HandgunReload",
+"speed": 13.0
+}, {
+"frames": [ ExtResource( 35 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 36 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
 } ]
 
-[sub_resource type="Animation" id=10]
+[sub_resource type="Animation" id=11]
 length = 2.0
 loop = true
 tracks/0/type = "value"
@@ -393,49 +399,57 @@ __meta__ = {
 }
 
 [node name="GUI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 script = ExtResource( 2 )
 
 [node name="HUD" type="Control" parent="GUI"]
 mouse_filter = 2
 
 [node name="Interface" type="Control" parent="GUI"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="UserLayer" type="Control" parent="GUI/Interface"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 script = ExtResource( 3 )
 
-[node name="UserButton" parent="GUI/Interface/UserLayer" instance=ExtResource( 4 )]
-margin_left = 68.0
-margin_top = 633.0
-margin_right = 132.0
-margin_bottom = 697.0
-
-[node name="Corners" parent="GUI/Interface/UserLayer/UserButton" index="1"]
-visible = true
-
-[node name="Picture" parent="GUI/Interface/UserLayer/UserButton" index="2"]
-margin_right = 0.0
-margin_bottom = 0.0
-texture = ExtResource( 5 )
-
-[node name="UserButton2" parent="GUI/Interface/UserLayer" instance=ExtResource( 4 )]
+[node name="DAB" type="Control" parent="GUI/Interface/UserLayer"]
 editor/display_folded = true
-margin_left = 5.0
-margin_top = 635.0
-margin_right = 69.0
-margin_bottom = 699.0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -202.0
+margin_top = -140.0
+margin_right = 201.0
+margin_bottom = -70.0
 
-[node name="Picture" parent="GUI/Interface/UserLayer/UserButton2" index="2"]
-margin_right = 0.0
-margin_bottom = 0.0
-texture = ExtResource( 6 )
+[node name="MarginContainer" type="MarginContainer" parent="GUI/Interface/UserLayer/DAB"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 4
+custom_constants/margin_top = 4
+custom_constants/margin_left = 4
+custom_constants/margin_bottom = 4
+
+[node name="Background" type="ColorRect" parent="GUI/Interface/UserLayer/DAB/MarginContainer"]
+visible = false
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 399.0
+margin_bottom = 66.0
+color = Color( 0, 0, 0, 0.498039 )
+
+[node name="DefaultActionBar" type="HBoxContainer" parent="GUI/Interface/UserLayer/DAB/MarginContainer"]
+margin_left = 4.0
+margin_top = 4.0
+margin_right = 399.0
+margin_bottom = 66.0
+mouse_filter = 2
+custom_constants/separation = 2
 
 [node name="IncomingItems" type="Control" parent="GUI/Interface/UserLayer"]
 visible = false
@@ -448,17 +462,18 @@ visible = false
 
 [node name="TimeScale" type="NinePatchRect" parent="GUI/Interface/UserLayer"]
 editor/display_folded = true
+visible = false
 margin_left = 18.0
 margin_top = 415.0
 margin_right = 56.0
 margin_bottom = 641.0
-texture = ExtResource( 7 )
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 128, 512 )
 patch_margin_left = 18
 patch_margin_top = 18
 patch_margin_right = 18
 patch_margin_bottom = 18
-script = ExtResource( 8 )
+script = ExtResource( 5 )
 
 [node name="MarginContainer" type="MarginContainer" parent="GUI/Interface/UserLayer/TimeScale"]
 anchor_right = 1.0
@@ -475,7 +490,7 @@ margin_right = 24.0
 margin_bottom = 211.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-theme = ExtResource( 9 )
+theme = ExtResource( 6 )
 max_value = 15.0
 value = 10.0
 rounded = true
@@ -486,14 +501,18 @@ margin_left = -16.0
 margin_top = -27.0
 margin_right = 28.0
 margin_bottom = -5.0
-theme = ExtResource( 9 )
+theme = ExtResource( 6 )
 custom_constants/shadow_offset_x = 1
 custom_constants/shadow_offset_y = 1
 align = 1
 valign = 1
 
-[node name="Backpack" parent="GUI/Interface" instance=ExtResource( 10 )]
+[node name="Backpack" parent="GUI/Interface" instance=ExtResource( 7 )]
 visible = false
+margin_left = 1000.0
+margin_top = 374.0
+margin_right = 1000.0
+margin_bottom = 374.0
 
 [node name="Map" type="Control" parent="GUI/Interface"]
 visible = false
@@ -505,11 +524,10 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 focus_mode = 2
-script = ExtResource( 11 )
+script = ExtResource( 8 )
 
 [node name="ColorRect" type="ColorRect" parent="GUI/Interface/ESCMenu"]
-visible = false
-material = ExtResource( 12 )
+material = ExtResource( 9 )
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -523,16 +541,38 @@ margin_left = -62.5
 margin_top = -19.5
 margin_right = 62.5
 margin_bottom = 19.5
+custom_constants/separation = 10
 alignment = 1
 
 [node name="LockInterface" type="Button" parent="GUI/Interface/ESCMenu/VBoxContainer"]
-margin_right = 189.0
+margin_right = 125.0
 margin_bottom = 39.0
 mouse_filter = 1
-custom_fonts/font = ExtResource( 13 )
+custom_fonts/font = ExtResource( 10 )
 toggle_mode = true
 pressed = true
 text = "Unlock interface"
+
+[node name="ExitButton" type="Button" parent="GUI/Interface/ESCMenu/VBoxContainer"]
+margin_top = 49.0
+margin_right = 125.0
+margin_bottom = 88.0
+mouse_filter = 1
+custom_fonts/font = ExtResource( 10 )
+text = "Exit game"
+
+[node name="ContextMenu" parent="GUI/Interface" instance=ExtResource( 11 )]
+
+[node name="CursorHint" type="Label" parent="GUI/Interface"]
+visible = false
+margin_top = -11.0
+margin_bottom = 11.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+align = 1
+valign = 1
+max_lines_visible = 1
+script = ExtResource( 13 )
 
 [node name="Debug" parent="." instance=ExtResource( 14 )]
 editor/display_folded = true
@@ -654,10 +694,10 @@ tile_data = PoolIntArray( -589844, 1610613189, 0, -589843, 1610613188, 0, -58983
 position = Vector2( 100, 10 )
 
 [node name="Anim_feet" parent="Player" index="1"]
-frames = SubResource( 1 )
+frames = SubResource( 2 )
 
 [node name="Anim_top" parent="Player" index="2"]
-frames = SubResource( 2 )
+frames = SubResource( 3 )
 
 [node name="Camera2D" parent="Player" index="3"]
 zoom = Vector2( 1, 1 )
@@ -670,23 +710,23 @@ editor/display_folded = true
 position = Vector2( 390, 122 )
 
 [node name="Anim_feet" parent="NPC2" index="1"]
-frames = SubResource( 3 )
+frames = SubResource( 4 )
 
 [node name="Anim_top" parent="NPC2" index="2"]
-material = SubResource( 4 )
-frames = SubResource( 5 )
+material = SubResource( 5 )
+frames = SubResource( 6 )
 
 [node name="NPC" parent="." instance=ExtResource( 84 )]
 editor/display_folded = true
-material = SubResource( 6 )
+material = SubResource( 7 )
 position = Vector2( 65, 8 )
 
 [node name="Anim_feet" parent="NPC" index="1"]
-frames = SubResource( 7 )
+frames = SubResource( 8 )
 
 [node name="Anim_top" parent="NPC" index="2"]
-material = SubResource( 8 )
-frames = SubResource( 9 )
+material = SubResource( 9 )
+frames = SubResource( 10 )
 
 [node name="Top_area" type="TileMap" parent="." groups=[
 "tilemaps",
@@ -697,19 +737,15 @@ tile_data = PoolIntArray( -262167, 2329, 0, -131087, 2246, 0, -131085, 2247, 0, 
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 autoplay = "Dest_point"
-anims/Dest_point = SubResource( 10 )
+anims/Dest_point = SubResource( 11 )
 
 [node name="Fordebug" type="Node2D" parent="."]
 script = ExtResource( 86 )
-
 [connection signal="visibility_changed" from="GUI/Interface/UserLayer/TimeScale" to="GUI/Interface/UserLayer/TimeScale" method="refresh"]
 [connection signal="value_changed" from="GUI/Interface/UserLayer/TimeScale/MarginContainer/VSlider" to="GUI/Interface/UserLayer/TimeScale" method="_on_VSlider_value_changed"]
 [connection signal="visibility_changed" from="GUI/Interface/ESCMenu" to="GUI/Interface/ESCMenu" method="_on_ESCMenu_visibility_changed"]
 [connection signal="toggled" from="GUI/Interface/ESCMenu/VBoxContainer/LockInterface" to="GUI/Interface/ESCMenu" method="_on_LockInterface_toggled"]
-
-[editable path="GUI/Interface/UserLayer/UserButton"]
-
-[editable path="GUI/Interface/UserLayer/UserButton2"]
+[connection signal="pressed" from="GUI/Interface/ESCMenu/VBoxContainer/ExitButton" to="GUI/Interface/ESCMenu" method="_on_ExitButton_pressed"]
 
 [editable path="Debug"]
 

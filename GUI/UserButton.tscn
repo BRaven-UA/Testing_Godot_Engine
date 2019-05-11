@@ -1,15 +1,24 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://GUI/UserButton.gd" type="Script" id=1]
-[ext_resource path="res://GUI/simple corner border.png" type="Texture" id=2]
-[ext_resource path="res://GUI/tooltip border.png" type="Texture" id=3]
-[ext_resource path="res://GUI/Close corner.png" type="Texture" id=4]
-[ext_resource path="res://GUI/Resize corner.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Optimal size font.tres" type="DynamicFont" id=2]
+[ext_resource path="res://GUI/simple corner border.png" type="Texture" id=3]
+[ext_resource path="res://GUI/tooltip border.png" type="Texture" id=4]
+[ext_resource path="res://GUI/Close corner.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Resize corner.png" type="Texture" id=6]
 
-[node name="UserButton" type="Button"]
-margin_right = 32.0
-margin_bottom = 32.0
-rect_min_size = Vector2( 32, 32 )
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 1, 0, 0, 1 )
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="UserButton" type="Button" groups=[
+"Buttons",
+]]
+margin_right = 64.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 64, 64 )
 flat = true
 script = ExtResource( 1 )
 
@@ -18,48 +27,96 @@ visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
-color = Color( 0, 1, 0, 0.27451 )
-
-[node name="Corners" type="NinePatchRect" parent="."]
-visible = false
-self_modulate = Color( 0, 1, 0.705882, 1 )
-anchor_right = 1.0
-anchor_bottom = 1.0
-texture = ExtResource( 2 )
-patch_margin_left = 9
-patch_margin_top = 9
-patch_margin_right = 9
-patch_margin_bottom = 9
+color = Color( 0, 1, 0.705882, 0.435294 )
 
 [node name="Picture" type="TextureRect" parent="."]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -64.0
-margin_bottom = -64.0
+margin_left = 3.0
+margin_top = 3.0
+margin_right = -3.0
+margin_bottom = -3.0
 mouse_filter = 2
 expand = true
 stretch_mode = 6
+
+[node name="QuantityBar" type="ProgressBar" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -4.0
+rect_min_size = Vector2( 0, 4 )
+mouse_filter = 2
+size_flags_vertical = 1
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+max_value = 0.0
+step = 1.0
+percent_visible = false
+
+[node name="QuantityText" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -12.0
+margin_top = -24.0
+margin_right = -3.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 2 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "
+"
+valign = 1
+max_lines_visible = 1
+
+[node name="Consumable" type="TextureRect" parent="QuantityText"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = -10.0
+margin_top = -22.0
+margin_bottom = -2.0
+rect_min_size = Vector2( 10, 0 )
+expand = true
+stretch_mode = 6
+
+[node name="Corners" type="NinePatchRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -2.0
+margin_top = -2.0
+margin_right = 2.0
+margin_bottom = 2.0
+texture = ExtResource( 3 )
+patch_margin_left = 9
+patch_margin_top = 9
+patch_margin_right = 9
+patch_margin_bottom = 9
 
 [node name="Border" type="NinePatchRect" parent="."]
 visible = false
 self_modulate = Color( 1, 1, 0, 1 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-texture = ExtResource( 3 )
+margin_left = -1.0
+margin_top = -1.0
+margin_right = 1.0
+margin_bottom = 1.0
+texture = ExtResource( 4 )
 region_rect = Rect2( 0, 0, 3, 3 )
 patch_margin_left = 2
 patch_margin_top = 2
 patch_margin_right = 2
 patch_margin_bottom = 2
 
-[node name="CloseCorner" type="Button" parent="."]
+[node name="CloseCorner" type="TextureRect" parent="."]
 visible = false
-margin_right = 28.0
-margin_bottom = 22.0
+margin_right = 16.0
+margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
-mouse_filter = 1
-icon = ExtResource( 4 )
-flat = true
+mouse_filter = 0
+texture = ExtResource( 5 )
 
 [node name="ResizeCorner" type="TextureRect" parent="."]
 visible = false
@@ -71,22 +128,17 @@ anchor_bottom = 1.0
 margin_left = -16.0
 margin_top = -16.0
 rect_min_size = Vector2( 16, 16 )
+mouse_filter = 0
 mouse_default_cursor_shape = 12
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 expand = true
-
-[node name="Menu" type="Control" parent="."]
-visible = false
-margin_right = 40.0
-margin_bottom = 40.0
-
 [connection signal="gui_input" from="." to="." method="_on_UserButton_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_UserButton_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_UserButton_mouse_exited"]
-[connection signal="gui_input" from="Picture" to="." method="_on_Picture_gui_input"]
+[connection signal="pressed" from="." to="." method="perform_action"]
+[connection signal="gui_input" from="CloseCorner" to="." method="_on_CloseCorner_gui_input"]
 [connection signal="mouse_entered" from="CloseCorner" to="." method="_on_UserButton_mouse_entered"]
 [connection signal="mouse_exited" from="CloseCorner" to="." method="_on_UserButton_mouse_exited"]
-[connection signal="pressed" from="CloseCorner" to="." method="_on_CloseCorner_pressed"]
 [connection signal="gui_input" from="ResizeCorner" to="." method="_on_ResizeCorner_gui_input"]
 [connection signal="mouse_entered" from="ResizeCorner" to="." method="_on_UserButton_mouse_entered"]
 [connection signal="mouse_exited" from="ResizeCorner" to="." method="_on_UserButton_mouse_exited"]

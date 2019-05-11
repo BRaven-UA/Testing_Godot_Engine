@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal selected
 onready var main_node = get_tree().current_scene
+onready var user_layer = main_node.find_node("UserLayer")
 const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
 
 const SPEED = 128	# базовая скорость движения
@@ -35,10 +36,13 @@ func _ready():
 	var k = Global.create_item("Knife", $Inventory)
 	var w = Global.create_item("Glock 17", $Inventory)
 	var a = Global.create_item("9 mm", $Inventory)
-	a.quantity = 100
+	a.quantity = 20
 	w.reload(null, true)
 	self.equiped_weapon = k
 	current_item = k
+	Global.create_item("AK-47", $Inventory)
+	a = Global.create_item("7.62 mm", $Inventory)
+	a.quantity = 100
 #	var d = Global.create_item("Glock 17", main_node.get_node("Surface"))
 #	d.position = Vector2(position.x + 20 - randi() % 40, position.y + 20 - randi() % 40)
 #	d.rotation = PI - randf() * 2 * PI

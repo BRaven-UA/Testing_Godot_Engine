@@ -7,6 +7,8 @@ onready var main_node = get_tree().current_scene
 onready var player = main_node.get_node("Player")
 onready var debug = main_node.find_node("Debug")
 onready var backpack_content = main_node.find_node("Backpack").find_node("Content")
+onready var user_layer = main_node.find_node("UserLayer")
+onready var surface = main_node.get_node("Surface")
 
 func _init():
 	if debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Global init")
@@ -35,6 +37,8 @@ func create_item(data, destination: Node = null) -> bool:	# добавление
 			new_item.set(key, dict[key])
 	#	new_item.get_node("Sprite").texture = new_item.texture
 		randomize()
+		new_item.user_layer = user_layer
+		new_item.surface = surface
 		new_item.uid = OS.get_datetime()	# сохраняем время создания
 		new_item.uid.RND = randf()	# добавляем случайное число чтобы избежать одинаковых UID для предметов, созданных с разницей во времени менее 1 сек.
 		new_item.name = new_item.item_name + " " + String(new_item.uid.hash())	# даем предмету уникальное имя, включающее хэш его UID
@@ -74,6 +78,45 @@ func closest_point(point_a, point_b, center = Vector2(), exclude_center = true):
 	if exclude_center and point_a == center:
 		result = point_b 
 	return result
+
+# Вычисляет оптимальное положение на экране для заданного прямоугольника, позволяющее ему оставаться полностью в пределах экрана
+# Если задан второй параметр, будет также учитываться зона на экране, которую не будет задевать прямоугольник
+# Если на экране нет места чтобы не было пересечения с "мертвой зоной", то она игнорируется
+# Оба параметра задаются в глобальных координатах. Результат - новая позиция для прямоугольника
+func match_screen(initial_rect: Rect2, dead_zone: = Rect2()) -> Vector2:
+	var screen = get_viewport().get_visible_rect()
+	var result = _match_rectangle(initial_rect, screen)
+	
+	if result.intersects(dead_zone):	# если исходный прямоугольник пересекает "мертвую зону"
+		# определение четырех зон, в пределах которых нет пересечения с "мертвой зоной"
+		var zones = [Rect2(0, 0, screen.size.x, dead_zone.position.y) \
+				, Rect2(dead_zone.end.x, 0, screen.end.x - dead_zone.end.x, screen.size.y) \
+				, Rect2(0, dead_zone.end.y, screen.size.x, screen.end.y - dead_zone. end.y) \
+				, Rect2(0, 0, dead_zone.position.x, screen.size.y)]
+		var results = []	# список всех подходящих вариантов расположения
+		var best_result: Rect2	# лучший вариант расположения (ближайший к исходному прямоугольнику)
+		for zone in zones:
+			var res = _match_rectangle(initial_rect, zone)	# находим положение для каждой зоны
+			# если найденное положение находится в пределах экрана и не пересекается с "мертвой зоной"
+			if screen.encloses(res.grow(-1)) and !res.intersects(dead_zone):
+				results.append(res)
+				best_result = res
+		for res in results:
+			# находим наименьшее расстояние до исходного прямоугольника
+			if (res.position - initial_rect.position).length() < (best_result.position - initial_rect.position).length():
+				best_result = res
+		if best_result:
+			result = best_result
+			
+	return result.position
+
+# Вспомогательная функция для match_screen_dimensions. Корректирует позицию первого прямоугольника, вписывая его во второй прямоугольник
+func _match_rectangle(what: Rect2, where: Rect2) -> Rect2:
+	where.size -= what.size
+	var x = clamp(what.position.x, where.position.x, where.end.x)
+	var y = clamp(what.position.y, where.position.y, where.end.y)
+	what.position = Vector2(x, y)
+	return what
 
 func arc_poly(center, radius, angle_from, angle_to):	# базис (1, 0)
 	var nb_points = int(14 * (abs(angle_from) + abs(angle_to)) / 360 * (1 + radius / 1000)) + 2	# подстаиваем для плавности окружности

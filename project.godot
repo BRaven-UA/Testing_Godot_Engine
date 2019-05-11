@@ -23,6 +23,7 @@ config/quit_on_go_back=false
 
 [autoload]
 
+MessageBus="*res://MessageBus.gd"
 Global="*res://Global.gd"
 Preloader="*res://ResourcePreloader.tscn"
 

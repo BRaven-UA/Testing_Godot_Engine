@@ -5,10 +5,11 @@ extends Node2D
 signal item_ready
 
 onready var main_node = get_tree().current_scene
-onready var surface = main_node.get_node("Surface")
+var surface
+var user_layer
 onready var grandparent	# внутриигровой владелец предмета (игрок или другой предмет)
 
-var attached_consumable	# ссылка на загруженные расходники
+var attached_consumable setget _set_attached_consumable	# ссылка на загруженные расходники
 var texture: Texture	# изображение предмета
 var uid: Dictionary	# уникальный номер
 var item_name: String = "Unnamed"
@@ -48,6 +49,12 @@ var nameplate_position	# используется при восстановле�
 var nameplate_label_position	# используется при восстановлении из файла сохранения
 var exclude_targets: Array	# список целей, исключаемый при атаке
 
+func _set_attached_consumable(new_value) -> void:
+	attached_consumable = new_value
+	if grandparent:
+		if grandparent.name == "Player":
+			MessageBus.send(self, "Buttons", ["attached_consumable", attached_consumable])
+
 func _set_damage(new_value) -> void:
 	damage = new_value
 
@@ -58,12 +65,19 @@ func _get_loaded() -> int:	#getter for loaded
 	return attached_consumable.quantity if attached_consumable else loaded
 
 func _set_quantity(new_value):	# setter for quantity
-	var positive_int_value = int(max(0, new_value))	# чтобы отсечь случайные отрицательные и вещественные числа
+#	var positive_int_value = int(max(0, new_value))	# чтобы отсечь случайные отрицательные и вещественные числа
 #	if get_parent().name == "Attachments":
 #	if grandparent is Class_Item:	# предмет прикреплен к другому предмету
 #		grandparent.loaded = positive_int_value
+	quantity = int(max(0, new_value))	# чтобы отсечь случайные отрицательные и вещественные числа
+	if grandparent:
+		if grandparent.name == "Player":
+			MessageBus.send(self, "Buttons", ["quantity", quantity])
+		if grandparent.is_in_group("Items"):
+			if grandparent.grandparent.name == "Player":
+				MessageBus.send(grandparent, "Buttons", ["loaded", quantity])
 	var texture_name: String
-	match positive_int_value:
+	match quantity:#positive_int_value:
 		0:
 			_unbound()
 #			yield(main_node.get_tree(), "idle_frame")	# ждем окончания всех расчетов в текущем фрейме
@@ -81,12 +95,14 @@ func _set_quantity(new_value):	# setter for quantity
 #	if Preloader.has_resource(texture_name):
 #		$Sprite.normal_map = Preloader.get_resource(texture_name)	# некорректно отображается материал для LightOnly
 	if backpack_item: backpack_item.texture = texture
-	quantity = positive_int_value
+
 
 func _set_equiped(new_value):	# setter for equiped
 	if backpack_item:
 		backpack_item.visible = !new_value	# скрываем представление предмета в инвентаре, если предмет экипирован
 	equiped = new_value
+	if grandparent.name == "Player":
+		MessageBus.send(self, "Buttons", ["equiped", equiped])
 
 func _exit_tree() -> void:	# предмет меняет владельца
 	_unbound()
@@ -128,6 +144,8 @@ func _bound() -> void:	# Привязка предмета к владельцу
 			backpack_item.origin = self
 			backpack_item.texture = texture	# ставлю эту строку тут чтобы успел прописаться rect_size
 			Global.backpack_content.add_child(backpack_item, true)
+			if type in ["Weapon", "Tool"]:
+				user_layer.call_deferred("create_button", self, texture, "DefaultActionBar")
 	elif get_parent() == surface:	# предмет находится на игровой локации
 		randomize()	# случайно смещаем позицию и поворот предмета чтобы много предметов не падали в одну точку
 		position += Vector2(20 - randi() % 40, 20 - randi() % 40)
@@ -140,6 +158,8 @@ func _unbound() -> void:	# Отсоединение предмета от вла
 	if grandparent.is_in_group("Items"):	# был прикреплен к предмету
 		if grandparent.consumable_type == item_name:
 			grandparent.attached_consumable = null	# убираем ссылку на этот предмет
+	if grandparent.name == "Player":
+		MessageBus.send(self, "Buttons", ["free"])
 	if nameplate:	# убираем информационную планку
 		nameplate.queue_free()
 		nameplate = null
@@ -201,7 +221,7 @@ func reload(new_consumable = null, silent = false) -> bool:	# перезаряд
 		return true
 	return false
 
-func shoot() -> bool:
+func shoot() -> bool:	# default attack with ranged weapon
 	if busy: return false	# стрельба невозможна в данный момент
 	if !self.loaded and type == "Weapon":	# нет патронов, звук осечки
 		print("Out of ammo")	# TODO: добавить визуализацию
@@ -226,7 +246,7 @@ func shoot() -> bool:
 	busy = true
 	return true
 
-func swing() -> bool:	# basic melee attack
+func swing() -> bool:	# default melee attack
 	if busy: return false
 	exclude_targets = [grandparent]	# сразу убираем себя из возможных целей (т.к. конус атаки начинается внутри колижн-модели персонажа)
 	$Melee_area.monitoring = true
@@ -237,11 +257,14 @@ func swing() -> bool:	# basic melee attack
 	busy = true
 	return true
 
-func attack() -> bool:	# default attack with ranged weapon
+func attack() -> bool:
 	if type == "Weapon":
 		if subtype == "Melee": return swing()
 		else: return shoot()
 	return false
+
+func use():	# использовать предмет
+	pass
 
 func _on_ready(source: String = "Unknown") -> void:	# готовность предмета (источник нужен для отладки)
 	$Melee_area.monitoring = false

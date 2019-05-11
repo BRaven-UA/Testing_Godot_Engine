@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://GUI/Optimal size font.tres" type="DynamicFont" id=1]
+
+[node name="Cursor_hint" type="Label"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+custom_fonts/font = ExtResource( 1 )
+valign = 1
+max_lines_visible = 1

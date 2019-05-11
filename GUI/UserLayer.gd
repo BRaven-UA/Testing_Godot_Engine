@@ -1,28 +1,59 @@
 extends Control
 # модуль обработки настраиваемых кнопок на экране
 
+onready var main_node = get_tree().current_scene
+onready var context_menu = main_node.find_node("ContextMenu")
+onready var cursor_hint = main_node.find_node("CursorHint")
+onready var player = main_node.find_node("Player")
 var edit_mode = false setget _set_edit_mode	# флаг режима редактирования всех кнопок
+var default_size: = 64	# размер пользовательских кнопок по-умолчанию
 
 func _set_edit_mode(new_value):	# setter for edit_mode
-	for child in get_children():
-#		if child.has("edit_mode"):	# удалить когда настрою все внопки по одному шаблону
-		child.set("edit_mode", new_value)
+	for button in get_tree().get_nodes_in_group("Buttons"):
+#		button.set("edit_mode", new_value)
+		button.edit_mode = new_value
+	$TimeScale.visible = false
+	$DAB/MarginContainer/Background.visible = new_value
 	edit_mode = new_value
 
-func create_button(UID, picture, origin, main_action, action_list = [], position = get_viewport_rect().size / 2, size = Vector2(64, 64)):
+func _ready() -> void:
+	$DAB.rect_size.y = default_size
+	$DAB.rect_min_size = Vector2((default_size + 2) * 5, default_size)
+
+#func _process(delta: float) -> void:
+#	update()
+#
+#func _draw() -> void:
+#	draw_rect(cursor_hint.debug_rect, ColorN('Yellow', 0.25))
+#	draw_rect(cursor_hint.debug_mouse, ColorN('Red', 0.5))
+
+# создает кнопку пользовательского интерфейса. Каждая кнопка должна ссылаться на какой-нибудь узел. Если узел удаляется, кнопка будет также удалена
+# если не задана конкретная область на экране, кнопка будет создана в общей массе и может перекрывать кнопки из областей
+# позиция для кнопок из областей игнорируется
+func create_button(linked_object: Object, picture: Texture, area: String = "", position: = Vector2() \
+		, size: = Vector2(default_size, default_size)) -> void:
 	var b = Preloader.get_resource("UserButton").instance()
-#	var b = Global.user_button.instance()
-	b.get_node("Picture").texture = load(picture)
-	b.UID = UID
-	b.origin = origin
-	b.main_action = main_action
-	b.action_list = action_list
+	b.user_layer = self
+	b.context_menu = context_menu
+	b.cursor_hint = cursor_hint
+	b.player = player
+	b.get_node("Picture").texture = picture
+#	b.UID = UID
+	b.linked_object = linked_object
 	b.rect_global_position = position
 	b.rect_size = size
-	b.connect("pressed", self, "button_action", [b.action])
-	add_child(b, true)
+	if linked_object.name == "TimeScale":
+		linked_object.button = b
+	var parent = find_node(area)
+	if !parent: parent = self
+	parent.add_child(b, true)
 
-
-func button_action(action):
-	match action:
-		"backpack": Input.action_press("backpack")
+func _generate_action(action) -> void:	# генерирует событие ввода
+	var event = InputEventAction.new()
+#	event.set_as_action(action, true)
+	event.action = action
+	event.pressed = true
+	Input.parse_input_event(event)	# сначала эмуляция нажатия
+	yield(get_tree().create_timer(0.1), "timeout")
+	event.pressed = false
+	Input.parse_input_event(event)	# после эмуляция отжатия

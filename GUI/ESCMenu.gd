@@ -11,10 +11,11 @@ func _unhandled_input(event):
 
 func _on_ESCMenu_visibility_changed():
 	if visible:
-		$ColorRect.visible = true
+#		$ColorRect.visible = true
+		warp_mouse($VBoxContainer.rect_global_position + Vector2($VBoxContainer.rect_size.x / 2, 20))
 		get_tree().paused = true
 	else:
-		$ColorRect.visible = false
+#		$ColorRect.visible = false
 		get_tree().paused = false
 
 func _on_LockInterface_toggled(button_pressed):
@@ -26,3 +27,6 @@ func _on_LockInterface_toggled(button_pressed):
 		user_layer.edit_mode = true
 	
 	visible = false
+
+func _on_ExitButton_pressed() -> void:
+	get_tree().quit()

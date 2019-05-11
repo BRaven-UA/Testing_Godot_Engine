@@ -105,7 +105,6 @@ area_mask = 1048575
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
-
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_mouse_exited"]
 [connection signal="body_entered" from="Melee_area" to="." method="_on_Melee_area_body_entered"]
