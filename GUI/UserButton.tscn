@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://GUI/UserButton.gd" type="Script" id=1]
-[ext_resource path="res://GUI/Optimal size font.tres" type="DynamicFont" id=2]
-[ext_resource path="res://GUI/simple corner border.png" type="Texture" id=3]
-[ext_resource path="res://GUI/tooltip border.png" type="Texture" id=4]
-[ext_resource path="res://GUI/Close corner.png" type="Texture" id=5]
-[ext_resource path="res://GUI/Resize corner.png" type="Texture" id=6]
+[ext_resource path="res://GUI/radial fade.material" type="Material" id=2]
+[ext_resource path="res://GUI/Optimal size font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://GUI/simple corner border.png" type="Texture" id=4]
+[ext_resource path="res://GUI/tooltip border.png" type="Texture" id=5]
+[ext_resource path="res://GUI/Close corner.png" type="Texture" id=6]
+[ext_resource path="res://GUI/Resize corner.png" type="Texture" id=7]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 1, 0, 0, 1 )
@@ -40,6 +41,14 @@ mouse_filter = 2
 expand = true
 stretch_mode = 6
 
+[node name="Cooldown" type="ColorRect" parent="."]
+material = ExtResource( 2 )
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="Tween" type="Tween" parent="Cooldown"]
+
 [node name="QuantityBar" type="ProgressBar" parent="."]
 anchor_top = 1.0
 anchor_right = 1.0
@@ -63,7 +72,7 @@ margin_left = -12.0
 margin_top = -24.0
 margin_right = -3.0
 margin_bottom = -2.0
-custom_fonts/font = ExtResource( 2 )
+custom_fonts/font = ExtResource( 3 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "
 "
@@ -88,7 +97,7 @@ margin_left = -2.0
 margin_top = -2.0
 margin_right = 2.0
 margin_bottom = 2.0
-texture = ExtResource( 3 )
+texture = ExtResource( 4 )
 patch_margin_left = 9
 patch_margin_top = 9
 patch_margin_right = 9
@@ -103,7 +112,7 @@ margin_left = -1.0
 margin_top = -1.0
 margin_right = 1.0
 margin_bottom = 1.0
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 3, 3 )
 patch_margin_left = 2
 patch_margin_top = 2
@@ -116,7 +125,7 @@ margin_right = 16.0
 margin_bottom = 16.0
 rect_min_size = Vector2( 16, 16 )
 mouse_filter = 0
-texture = ExtResource( 5 )
+texture = ExtResource( 6 )
 
 [node name="ResizeCorner" type="TextureRect" parent="."]
 visible = false
@@ -130,7 +139,7 @@ margin_top = -16.0
 rect_min_size = Vector2( 16, 16 )
 mouse_filter = 0
 mouse_default_cursor_shape = 12
-texture = ExtResource( 6 )
+texture = ExtResource( 7 )
 expand = true
 [connection signal="gui_input" from="." to="." method="_on_UserButton_gui_input"]
 [connection signal="mouse_entered" from="." to="." method="_on_UserButton_mouse_entered"]

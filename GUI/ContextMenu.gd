@@ -22,15 +22,15 @@ func _input(event: InputEvent) -> void:
 func pop_up(object: Object, item_list: = []) -> void:
 	if item_list.size() > 1:
 		linked_object = object
-		cursor_hint.visible = false
+		cursor_hint.text = ""
 		
-		rect_size = Vector2()
 		for item in item_list:
 			var line = Preloader.get_resource("ContextMenuItem").instance()
 			line.data = item
 			container.add_child(line, true)
 		
 		var mouse = get_global_mouse_position()
+		rect_size = Vector2()
 		rect_position = Global.match_screen(Rect2(mouse - Vector2(10, 10), rect_size))
 		visible = true
 

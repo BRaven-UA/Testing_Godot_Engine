@@ -11,6 +11,7 @@ var linked_object	# ссылка на представляемый кнопко�
 var main_action	# действие по нажатию кнопки
 var action_list = []	# список действий для меню кнопки. Представляет собой массив словарей с полями: описание, вызываемый объект, вызываемый метод, аргументы вызова
 var edit_mode = false setget _set_edit_mode	# флаг режима редактирования
+var moving: bool	# флаг режима смены позиции на экране
 
 func _ready() -> void:
 	_update()
@@ -31,17 +32,29 @@ func _notification(what: int) -> void:
 				"quantity", "loaded", "attached_consumable":
 					_update()
 #					$Quantity.text = str(linked_object.loaded if linked_object.capacity else linked_object.quantity)
+				"busy":
+					var duration = message.Content[1]
+					if duration:
+						$Cooldown/Tween.interpolate_property($Cooldown.get_material(), "shader_param/cutoff" \
+								, 1.0, 0.0, duration, Tween.TRANS_LINEAR, Tween.EASE_IN)
+						$Cooldown/Tween.start()
 				"free":	# связанный объект удаляется
 					linked_object = null
 					queue_free()
 
 func _set_edit_mode(new_value):	# setter for edit_mode
-	if get_parent() == user_layer:	# только если кнопка в "свободной зоне", а не в каком-нибудь контейнере
+#	if get_parent() == user_layer:	# только если кнопка в "свободной зоне", а не в каком-нибудь контейнере
 		$ResizeCorner.visible = new_value
 		$CloseCorner.visible = new_value
 		disabled = new_value
 		mouse_default_cursor_shape = Control.CURSOR_MOVE if new_value else Control.CURSOR_ARROW
 		edit_mode = new_value
+
+func _gui_input(event: InputEvent) -> void:
+	if event is InputEventMouse:
+		# мышь находится над кнопкой, меняем текст подсказки
+		cursor_hint.text = main_action["Description"]
+		accept_event()
 
 # создает список действий для кнопки, основываясь на свойствах связанного с ней объекта
 func create_action_list() -> Array:
@@ -93,18 +106,43 @@ func _on_CloseCorner_gui_input(event: InputEvent) -> void:
 func _on_UserButton_mouse_entered():	# курсор мыши над кнопкой
 #	$Background.visible = true
 	$Border.visible = true
-	cursor_hint.pop_up(main_action["Description"])
 
 func _on_UserButton_mouse_exited():	# курсор мыши не над кнопкой
 #	$Background.visible = false
 	$Border.visible = false
-	cursor_hint.hide()
 
 func _on_UserButton_gui_input(ev):	# основной обработчик ввода кнопки
-	# передвижение кнопки в режиме редактирования
+	
+	# перемещение кнопки в режиме редактирования
 	if ev is InputEventMouseMotion and Input.get_mouse_button_mask() == 1 and edit_mode:
+		moving = true
+		# TODO: придумать другой способ показать ее поверх всех без сортировки
 		raise()	# делаем кнопку последней в списке (поверх всех остальных)
 		rect_position += ev.relative
-	# вызов контекстного меню по правой кнопке
-	if ev is InputEventMouseButton and ev.button_index == BUTTON_RIGHT and ev.pressed and !edit_mode:
-		context_menu.pop_up(self, action_list)
+		rect_global_position = Global.match_screen(get_global_rect())
+	
+	if ev is InputEventMouseButton:
+		# окончание перемещения
+		if ev.button_index == BUTTON_LEFT and !ev.pressed and moving:
+			moving = false
+			
+			var parent = get_parent()
+			var new_parent = user_layer	# слой по-умолчанию
+			
+			# проверяем все доступные контейнеры для кнопок
+			for container in get_tree().get_nodes_in_group("ButtonContainer"):
+				var overlap_area = container.get_global_rect().clip(get_global_rect())
+				# большая часть кнопки находится в пределах контейнера
+				if overlap_area.get_area() > get_global_rect().get_area() / 2:
+					new_parent = container.content
+					if new_parent == parent:	# если это текущий контейнер
+#						container.rect_size = Vector2()
+						parent.queue_sort()	# возвращаем кнопку обратно
+			if new_parent != parent:
+				rect_position = rect_global_position
+				parent.remove_child(self)
+				new_parent.add_child(self, true)
+		
+		# вызов контекстного меню по правой кнопке
+		if ev.button_index == BUTTON_RIGHT and ev.pressed and !edit_mode:
+			context_menu.pop_up(self, action_list)

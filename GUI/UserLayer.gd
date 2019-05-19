@@ -9,23 +9,12 @@ var edit_mode = false setget _set_edit_mode	# флаг режима редакт
 var default_size: = 64	# размер пользовательских кнопок по-умолчанию
 
 func _set_edit_mode(new_value):	# setter for edit_mode
-	for button in get_tree().get_nodes_in_group("Buttons"):
-#		button.set("edit_mode", new_value)
-		button.edit_mode = new_value
-	$TimeScale.visible = false
-	$DAB/MarginContainer/Background.visible = new_value
 	edit_mode = new_value
-
-func _ready() -> void:
-	$DAB.rect_size.y = default_size
-	$DAB.rect_min_size = Vector2((default_size + 2) * 5, default_size)
-
-#func _process(delta: float) -> void:
-#	update()
-#
-#func _draw() -> void:
-#	draw_rect(cursor_hint.debug_rect, ColorN('Yellow', 0.25))
-#	draw_rect(cursor_hint.debug_mouse, ColorN('Red', 0.5))
+	for button in get_tree().get_nodes_in_group("Buttons"):
+		button.edit_mode = edit_mode
+	for container in get_tree().get_nodes_in_group("ButtonContainer"):
+		container.edit_mode = edit_mode
+	$TimeScale.visible = false
 
 # создает кнопку пользовательского интерфейса. Каждая кнопка должна ссылаться на какой-нибудь узел. Если узел удаляется, кнопка будет также удалена
 # если не задана конкретная область на экране, кнопка будет создана в общей массе и может перекрывать кнопки из областей
@@ -44,8 +33,8 @@ func create_button(linked_object: Object, picture: Texture, area: String = "", p
 	b.rect_size = size
 	if linked_object.name == "TimeScale":
 		linked_object.button = b
-	var parent = find_node(area)
-	if !parent: parent = self
+	var parent = self
+	if area: parent = find_node(area).content
 	parent.add_child(b, true)
 
 func _generate_action(action) -> void:	# генерирует событие ввода

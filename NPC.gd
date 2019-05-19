@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal selected
 onready var main_node = get_tree().current_scene
+onready var cursor_hint = main_node.find_node("CursorHint")
 const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
 
 const SPEED = 128	# базовая скорость движения
@@ -273,9 +274,12 @@ func _on_Wait_timeout():
 		explored_area = PoolVector2Array()
 		state = "Patrol"
 
-func _on_NPC_input_event(viewport, event, shape_idx):	# объект выделен мышью
-	if Input.is_mouse_button_pressed(BUTTON_LEFT):
-		emit_signal("selected", self)
+func _on_NPC_input_event(viewport, event, shape_idx):
+	if event is InputEventMouse:
+		cursor_hint.text = name
+		get_tree().set_input_as_handled()
+		if event.button_mask == 1:	# объект выделен мышью
+			emit_signal("selected", self)
 
 #func _on_NPC_mouse_entered():	# объект под указателем мыши
 #	$PopupDialog.popup()

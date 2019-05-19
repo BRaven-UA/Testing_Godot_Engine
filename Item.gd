@@ -25,7 +25,7 @@ var capacity: int = 0	# вместимость
 var loaded: int = 0 setget ,_get_loaded	# текущее количество загруженных расходников
 var quantity: int setget _set_quantity	# количество. Значение по-умолчанию не ставлю, чтобы сработал setter при инициализации
 var equiped: bool = false setget _set_equiped	# предмет экипирован
-var busy: bool = false	# признак выполнения какого-либо действия предметом
+var busy: float = false setget _set_busy	# признак выполнения какого-либо действия предметом, хранит время в секундах начальной продолжительности
 #export (Texture) var texture	# изображение предмета
 #export (Dictionary) var uid	# уникальный номер
 #export (String) var item_name = "Unnamed"
@@ -103,6 +103,12 @@ func _set_equiped(new_value):	# setter for equiped
 	equiped = new_value
 	if grandparent.name == "Player":
 		MessageBus.send(self, "Buttons", ["equiped", equiped])
+
+func _set_busy(new_value) -> void:
+	busy = new_value
+	if grandparent:
+		if grandparent.name == "Player":
+			MessageBus.send(self, "Buttons", ["busy", busy])
 
 func _exit_tree() -> void:	# предмет меняет владельца
 	_unbound()
@@ -217,7 +223,7 @@ func reload(new_consumable = null, silent = false) -> bool:	# перезаряд
 		new_consumable.move_to(get_node("Attachments"))	# прикрепляем новые расходники к предмету
 		if !silent:	# если не требуется мгновенная перезарядка
 			$Reload.play()	# звук перезарядки
-			busy = true
+			self.busy = $Reload.stream.get_length()
 		return true
 	return false
 
@@ -226,7 +232,7 @@ func shoot() -> bool:	# default attack with ranged weapon
 	if !self.loaded and type == "Weapon":	# нет патронов, звук осечки
 		print("Out of ammo")	# TODO: добавить визуализацию
 		$Fire_fail.play()
-		busy = true
+		self.busy = $Fire_fail.stream.get_length()
 		return false
 	var pos = grandparent.global_position + position_offset.rotated(grandparent.rotation)
 	var flame = Preloader.get_resource("Flame").instance()	# вспышка от выстрела
@@ -243,7 +249,7 @@ func shoot() -> bool:	# default attack with ranged weapon
 	$Timer.wait_time = delay
 	$Timer.start()
 	attached_consumable.quantity -= 1
-	busy = true
+	self.busy = delay
 	return true
 
 func swing() -> bool:	# default melee attack
@@ -254,7 +260,7 @@ func swing() -> bool:	# default melee attack
 	# добавить звук удара и звук попадания
 	$Timer.wait_time = 1.0	# заменить на скорость атаки игрока
 	$Timer.start()
-	busy = true
+	self.busy = $Timer.wait_time
 	return true
 
 func attack() -> bool:
@@ -268,7 +274,7 @@ func use():	# использовать предмет
 
 func _on_ready(source: String = "Unknown") -> void:	# готовность предмета (источник нужен для отладки)
 	$Melee_area.monitoring = false
-	busy = false
+	self.busy = 0.0
 #	if grandparent.name == "Player" and grandparent.current_item == self: print(source)
 	emit_signal("item_ready")
 
