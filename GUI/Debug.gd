@@ -42,9 +42,10 @@ func selection_changed(object):
 	selection = object
 
 func _on_Time_scale_value_changed(value):
-	Engine.time_scale = value
-	AudioServer.get_bus_effect(0, 0).pitch_scale = value	# заменить хардкод на поиск эффекта
-	$Grid/Time_scale/Label.text = "\nСкорость времени: " + str(floor($Grid/Time_scale.value * 100)) + "%"
+	Global.time_scale = value
+#	AudioServer.get_bus_effect(0, 0).pitch_scale = value	# заменить хардкод на поиск эффекта
+#	$Grid/Time_scale/Label.text = "\nСкорость времени: " + str(floor($Grid/Time_scale.value * 100)) + "%"
+	$Grid/Time_scale/Label.text = "\nСкорость времени: " + str(floor(value * 100)) + "%"
 
 func _on_Save_game_pressed():
 	Global.save_game()
@@ -89,6 +90,9 @@ func _on_Button_Load_pressed():
 
 func _on_Debug_mode_toggled(button_pressed: bool) -> void:
 	Global.debug_mode = button_pressed
+
+func _on_AlwaysOnTop_toggled(button_pressed: bool) -> void:
+	OS.set_window_always_on_top(button_pressed)
 
 func _on_Freeze_NPC_toggled(button_pressed: bool) -> void:
 	for npc in get_tree().get_nodes_in_group("NPC"):

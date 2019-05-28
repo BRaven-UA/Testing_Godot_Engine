@@ -9,6 +9,19 @@ onready var debug = main_node.find_node("Debug")
 onready var backpack_content = main_node.find_node("Backpack").find_node("Content")
 onready var user_layer = main_node.find_node("UserLayer")
 onready var surface = main_node.get_node("Surface")
+var time_scale: float = 1.0	# скорость течения внутриигрового времени
+var time_stopped: bool setget _set_time_stopped	# флаг остановки внутриигрового времени
+
+func _set_time_stopped(new_value: bool) -> void:
+	if time_stopped == new_value: return
+	time_stopped = new_value
+	if time_stopped:
+		Engine.time_scale = 0.0
+		AudioServer.lock()
+	else:
+		Engine.time_scale = time_scale
+		AudioServer.unlock()
+		AudioServer.get_bus_effect(0, 0).pitch_scale = time_scale	# заменить хардкод на поиск эффекта
 
 func _init():
 	if debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Global init")

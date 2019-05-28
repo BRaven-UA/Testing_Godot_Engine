@@ -76,7 +76,6 @@ margin_top = 154.0
 margin_right = 158.0
 margin_bottom = 158.0
 mouse_default_cursor_shape = 12
-
 [connection signal="gui_input" from="Main" to="." method="_on_Main_gui_input"]
 [connection signal="gui_input" from="Main/MarginContainer/GridContainer/VSlider" to="." method="_on_VSlider_gui_input"]
 [connection signal="gui_input" from="Main/MarginContainer/GridContainer/HSlider" to="." method="_on_HSlider_gui_input"]

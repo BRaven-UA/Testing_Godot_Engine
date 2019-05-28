@@ -1,5 +1,6 @@
 extends Node2D
 
+var pressed_count: int	# счетчик одновременно нажатых клавиш
 onready var dl1 = $Debug.find_node("Label")
 onready var dl2 = $Debug.find_node("Label2")
 onready var dl3 = $Debug.find_node("Label3")
@@ -14,6 +15,12 @@ var a_size = 26	# должно быть кратно 2
 onready var back_poly = $Terrain.find_node("Background").polygon	# берем за основу размер текстуры-подложки
 var back_rect = Rect2()
 var last_time = OS.get_time()
+
+func _notification(what: int) -> void:
+	# если мышь ущла за рамки окна приложения или приложение потеряло фокус ввода
+	if what == MainLoop.NOTIFICATION_WM_MOUSE_EXIT or what == MainLoop.NOTIFICATION_WM_FOCUS_OUT or what == MainLoop.NOTIFICATION_WM_UNFOCUS_REQUEST:
+		Global.time_stopped = true
+		pressed_count = 0
 
 func _init():
 	if Global.debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Location init")
@@ -57,7 +64,16 @@ func _process(delta):
 #	result = get_world_2d().get_direct_space_state().collide_shape(query)
 #	if last_time.second != OS.get_time().second:
 #		last_time = OS.get_time()
+	Global.time_stopped = not bool(pressed_count)
 	update()
+
+func _unhandled_input(event: InputEvent) -> void:
+	# отслеживаем любые нажатия в игровом мире для управления течением внутриигрового времени
+	if event is InputEventMouseButton or event is InputEventKey and !event.is_echo():
+		if event.is_pressed():
+			pressed_count += 1
+		else:
+			pressed_count = int(max(0, pressed_count - 1))	# на случай отрицательных значений
 
 func _draw():
 #	if result:

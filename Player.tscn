@@ -99,5 +99,4 @@ range_height = 100.0
 shadow_filter = 3
 shadow_filter_smooth = 5.0
 shadow_item_cull_mask = 3
-
 [connection signal="input_event" from="." to="." method="_on_Player_input_event"]

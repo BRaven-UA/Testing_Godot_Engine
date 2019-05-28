@@ -29,6 +29,7 @@ func create_button(linked_object: Object, picture: Texture, area: String = "", p
 	b.get_node("Picture").texture = picture
 #	b.UID = UID
 	b.linked_object = linked_object
+	b.edit_mode = edit_mode
 	b.rect_global_position = position
 	b.rect_size = size
 	if linked_object.name == "TimeScale":

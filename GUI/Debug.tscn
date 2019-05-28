@@ -54,22 +54,28 @@ text = "PAUSE  "
 align = 2
 
 [node name="Debug_mode" type="CheckBox" parent="Grid"]
-margin_top = 204.0
+margin_top = 200.0
 margin_right = 152.0
-margin_bottom = 234.0
+margin_bottom = 230.0
 text = "Debug mode"
 
-[node name="Freeze_NPC" type="CheckBox" parent="Grid"]
+[node name="AlwaysOnTop" type="CheckBox" parent="Grid"]
 margin_top = 234.0
-margin_right = 160.0
+margin_right = 152.0
 margin_bottom = 264.0
+text = "Always on top"
+
+[node name="Freeze_NPC" type="CheckBox" parent="Grid"]
+margin_top = 264.0
+margin_right = 160.0
+margin_bottom = 294.0
 text = "Freeze NPC"
 
 [node name="Time_scale" type="HSlider" parent="Grid"]
 margin_left = 2.0
-margin_top = 264.0
+margin_top = 294.0
 margin_right = 154.0
-margin_bottom = 280.0
+margin_bottom = 310.0
 max_value = 2.0
 step = 0.1
 value = 1.0
@@ -86,9 +92,9 @@ align = 1
 
 [node name="angle_from" type="HSlider" parent="Grid"]
 margin_left = 2.0
-margin_top = 315.0
+margin_top = 345.0
 margin_right = 156.0
-margin_bottom = 331.0
+margin_bottom = 361.0
 min_value = -180.0
 max_value = 0.0
 ticks_on_borders = true
@@ -103,9 +109,9 @@ valign = 1
 
 [node name="angle_to" type="HSlider" parent="Grid"]
 margin_left = 3.0
-margin_top = 358.0
+margin_top = 388.0
 margin_right = 157.0
-margin_bottom = 374.0
+margin_bottom = 404.0
 max_value = 180.0
 ticks_on_borders = true
 
@@ -118,16 +124,16 @@ align = 1
 valign = 1
 
 [node name="Save_game" type="Button" parent="Grid"]
-margin_top = 400.0
+margin_top = 430.0
 margin_right = 77.0
-margin_bottom = 428.0
+margin_bottom = 458.0
 text = "Save game"
 
 [node name="Load_game" type="Button" parent="Grid"]
 margin_left = 80.0
-margin_top = 400.0
+margin_top = 430.0
 margin_right = 158.0
-margin_bottom = 428.0
+margin_bottom = 458.0
 text = "Load game"
 
 [node name="Load_dialog" type="Container" parent="."]
@@ -203,9 +209,9 @@ margin_right = 990.0
 margin_bottom = 480.0
 rect_min_size = Vector2( 640, 480 )
 stretch_mode = 4
-
 [connection signal="toggled" from="Grid/CheckButton" to="." method="_on_CheckButton_toggled"]
 [connection signal="toggled" from="Grid/Debug_mode" to="." method="_on_Debug_mode_toggled"]
+[connection signal="toggled" from="Grid/AlwaysOnTop" to="." method="_on_AlwaysOnTop_toggled"]
 [connection signal="toggled" from="Grid/Freeze_NPC" to="." method="_on_Freeze_NPC_toggled"]
 [connection signal="value_changed" from="Grid/Time_scale" to="." method="_on_Time_scale_value_changed"]
 [connection signal="pressed" from="Grid/Save_game" to="." method="_on_Save_game_pressed"]
