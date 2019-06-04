@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "AnimationPlayer",
+"class": "TimelessAnimationPlayer",
+"language": "GDScript",
+"path": "res://TimelessAnimationPlayer.gd"
+} ]
 _global_script_class_icons={
-
+"TimelessAnimationPlayer": ""
 }
 
 [application]
@@ -183,10 +188,6 @@ test={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":true,"meta":false,"command":true,"pressed":false,"scancode":84,"unicode":0,"echo":false,"script":null)
  ]
-}
-cursor_hint={
-"deadzone": 0.5,
-"events": [  ]
 }
 
 [input_devices]

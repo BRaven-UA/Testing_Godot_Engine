@@ -20,6 +20,7 @@ func _input(event):
 	if event is InputEventKey:
 		if event.scancode == 96 and event.pressed:
 			$Grid.visible = !$Grid.visible
+			get_tree().set_input_as_handled()
 	if event.is_action_pressed("ui_cancel") and $Load_dialog.visible:
 		$Load_dialog.visible = false
 		get_tree().set_input_as_handled()
@@ -27,6 +28,7 @@ func _input(event):
 		var npc = Preloader.get_resource("NPC").instance()
 		npc.position = main_node.get_global_mouse_position()
 		main_node.add_child_below_node(main_node.get_node("Player"), npc, true)
+		get_tree().set_input_as_handled()
 	
 #	if event.is_action_pressed("test"):
 #		var vs = VisualServer.directional_light_create()

@@ -7,6 +7,7 @@ onready var dl3 = $Debug.find_node("Label3")
 onready var dl4 = $Debug.find_node("Label4")
 onready var dl5 = $Debug.find_node("Label5")
 onready var dl6 = $Debug.find_node("Label6")
+onready var ESC_menu = find_node("ESCMenu")
 var tooltip
 var a_star = AStar.new()
 #var motion_result = Physics2DTestMotionResult.new()
@@ -53,7 +54,6 @@ func _ready():
 	pass
 
 func _process(delta):
-	
 #	var query = Physics2DShapeQueryParameters.new()
 #	query.set_shape($Player/CollisionShape2D.shape)
 #	query.margin = $Player.get_safe_margin()
@@ -74,6 +74,10 @@ func _unhandled_input(event: InputEvent) -> void:
 			pressed_count += 1
 		else:
 			pressed_count = int(max(0, pressed_count - 1))	# на случай отрицательных значений
+
+#	if event.is_action_pressed("ui_cancel"):
+#		ESC_menu.visible = !ESC_menu.visible
+
 
 func _draw():
 #	if result:
@@ -150,7 +154,7 @@ func mouseover(object: Object, over: bool) -> void:
 		object.use_parent_material = !over
 		if over:
 			tooltip = Preloader.get_resource("Item_Tooltip").instance()
-			tooltip.item = object.origin
+			tooltip.item = object.linked_object
 			$GUI.add_child(tooltip, true)
 		return
 	

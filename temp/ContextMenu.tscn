@@ -1,0 +1,78 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GUI/ContextMenu.tscn" type="PackedScene" id=1]
+[ext_resource path="res://GUI/ContextMenuItem.tscn" type="PackedScene" id=2]
+
+[node name="ContextMenu" instance=ExtResource( 1 )]
+visible = true
+margin_right = 82.0
+margin_bottom = 121.0
+
+[node name="ColorRect" parent="." index="0"]
+margin_right = 122.0
+margin_bottom = 121.0
+
+[node name="VBoxContainer" parent="." index="1"]
+margin_right = 122.0
+margin_bottom = 121.0
+
+[node name="ContextMenuItem" parent="VBoxContainer" index="0" instance=ExtResource( 2 )]
+margin_right = 122.0
+
+[node name="Highlight" parent="VBoxContainer/ContextMenuItem" index="0"]
+visible = true
+margin_right = 122.0
+
+[node name="MarginContainer" parent="VBoxContainer/ContextMenuItem" index="1"]
+margin_right = 122.0
+
+[node name="Label" parent="VBoxContainer/ContextMenuItem/MarginContainer" index="0"]
+margin_right = 114.0
+text = "1gdtj3 33d; hjhjhghgkn"
+
+[node name="NinePatchRect" parent="VBoxContainer/ContextMenuItem" index="2"]
+margin_right = 122.0
+
+[node name="ContextMenuItem2" parent="VBoxContainer" index="1" instance=ExtResource( 2 )]
+editor/display_folded = true
+margin_top = 24.0
+margin_right = 122.0
+margin_bottom = 49.0
+
+[node name="Highlight" parent="VBoxContainer/ContextMenuItem2" index="0"]
+margin_right = 122.0
+
+[node name="MarginContainer" parent="VBoxContainer/ContextMenuItem2" index="1"]
+margin_right = 122.0
+
+[node name="Label" parent="VBoxContainer/ContextMenuItem2/MarginContainer" index="0"]
+margin_right = 114.0
+
+[node name="NinePatchRect" parent="VBoxContainer/ContextMenuItem2" index="2"]
+margin_right = 122.0
+
+[node name="ContextMenuItem3" parent="VBoxContainer" index="2" instance=ExtResource( 2 )]
+editor/display_folded = true
+margin_top = 48.0
+margin_right = 122.0
+margin_bottom = 73.0
+
+[node name="ContextMenuItem4" parent="VBoxContainer" index="3" instance=ExtResource( 2 )]
+editor/display_folded = true
+margin_top = 72.0
+margin_right = 122.0
+margin_bottom = 97.0
+
+[node name="ContextMenuItem5" parent="VBoxContainer" index="4" instance=ExtResource( 2 )]
+editor/display_folded = true
+margin_top = 96.0
+margin_right = 122.0
+margin_bottom = 121.0
+
+[node name="NinePatchRect" parent="." index="2"]
+margin_right = 122.0
+margin_bottom = 121.0
+
+[editable path="VBoxContainer/ContextMenuItem"]
+
+[editable path="VBoxContainer/ContextMenuItem2"]

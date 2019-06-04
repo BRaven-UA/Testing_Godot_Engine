@@ -147,7 +147,7 @@ func _bound() -> void:	# Привязка предмета к владельцу
 #		exclude_targets = [grandparent]
 		if grandparent.name == "Player":	# для игрока создаем представление предмета в рюкзаке
 			backpack_item = Preloader.get_resource("BackpackItem").instance()
-			backpack_item.origin = self
+			backpack_item.linked_object = self
 			backpack_item.texture = texture	# ставлю эту строку тут чтобы успел прописаться rect_size
 			Global.backpack_content.add_child(backpack_item, true)
 			if type in ["Weapon", "Tool"]:
@@ -189,8 +189,7 @@ func drop():	# бросание предмета на поверхность
 func split(piece: int) -> Node2D:	# разделение предмета, возвращает клон текущего предмета с указанным количеством
 	if piece in range(1, quantity):
 		var data = Global.get_variables(self)
-		var new_item = Global.create_item(data, get_parent())
-		new_item.quantity = piece
+		var new_item = Global.create_item(data, get_parent(), piece)
 		self.quantity -= piece
 		return new_item
 	return null
@@ -219,7 +218,8 @@ func reload(new_consumable = null, silent = false) -> bool:	# перезаряд
 			item.quantity -= amount
 	if new_consumable:
 #		self.attached_consumable = null	# обнуляем расходники чтобы корректно сработала инициализация
-		if new_consumable.quantity > capacity: new_consumable.split(new_consumable.quantity - capacity)	# если расходников больше чем вместимость, отделяем лишнее
+		if new_consumable.quantity > capacity:
+			new_consumable.split(new_consumable.quantity - capacity)	# если расходников больше чем вместимость, отделяем лишнее
 		new_consumable.move_to(get_node("Attachments"))	# прикрепляем новые расходники к предмету
 		if !silent:	# если не требуется мгновенная перезарядка
 			$Reload.play()	# звук перезарядки
@@ -272,6 +272,26 @@ func attack() -> bool:
 func use():	# использовать предмет
 	pass
 
+func create_action_list() -> Array:	# формирует список возможных действий для данного предмета
+	var result: = []
+	
+	if equiped:
+		match type:
+			"Weapon": result.append({"Description": "Атаковать", "Target": Global.user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
+			"Tool": result.append({"Description": "Использовать", "Target": Global.user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
+		result.append({"Description": "Выбросить", "Target": Global.user_layer, "Method": "_generate_action", "Arguments": ["drop_item"]})
+	else:
+		result.append({"Description": "Экипировать", "Target": Global.player, "Method": "_set_equiped_weapon", "Arguments": [self]})
+		result.append({"Description": "Выбросить", "Target": self, "Method": "drop", "Arguments": []})
+		
+	if quantity > 1:
+		result.append({"Description": "Разделить", "Target": self, "Method": "split", "Arguments": []})
+		
+	if self.loaded < capacity:
+		result.append({"Description": "Перезарядить", "Target": self, "Method": "reload", "Arguments": []})
+	
+	return result
+
 func _on_ready(source: String = "Unknown") -> void:	# готовность предмета (источник нужен для отладки)
 	$Melee_area.monitoring = false
 	self.busy = 0.0
@@ -289,9 +309,11 @@ func _on_screen_exited() -> void:	# предмет за пределами эк�
 		nameplate.visible = false	# скрываем информационную планку
 
 func _on_mouse_entered() -> void:
+	Input.set_default_cursor_shape(Input.CURSOR_POINTING_HAND)
 	main_node.mouseover(self, true)	# отображаем контур предмета и тултип
 
 func _on_mouse_exited() -> void:
+	Input.set_default_cursor_shape()
 	main_node.mouseover(self, false)	# убираем тултип и контур
 
 func _on_Melee_area_body_entered(body):	# объект в поле поражения мили-оружия в момент удара

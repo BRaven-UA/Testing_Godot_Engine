@@ -15,6 +15,7 @@ var moving: bool	# флаг режима смены позиции на экра
 
 func _ready() -> void:
 	_update()
+	connect("pressed", Global, "perform_action", [main_action])
 	if linked_object is Item:
 #		$Picture.rect_size = rect_size * 0.8
 		$Background.visible = true
@@ -53,46 +54,50 @@ func _set_edit_mode(new_value):	# setter for edit_mode
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouse:
 		# мышь находится над кнопкой, меняем текст подсказки
-		cursor_hint.text = main_action["Description"]
-		accept_event()
+		cursor_hint.set_hint(main_action["Description"])
+#		accept_event()
 
 # создает список действий для кнопки, основываясь на свойствах связанного с ней объекта
 func create_action_list() -> Array:
+	if linked_object is Item:
+		return linked_object.create_action_list()
 	var result: = []
 	if linked_object.name == "Backpack":
 		result.append({"Description": "Рюкзак", "Target": linked_object, "Method": "toggle", "Arguments": []})
 	if linked_object.name == "TimeScale":
 		result.append({"Description": "Скорость времени", "Target": linked_object, "Method": "toggle", "Arguments": []})
-	if linked_object is Item:
-		if linked_object.equiped: match linked_object.type:
-			"Weapon": result.append({"Description": "Атаковать", "Target": user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
-			"Tool": result.append({"Description": "Использовать", "Target": user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
-		else: result.append({"Description": "Экипировать", "Target": player, "Method": "_set_equiped_weapon", "Arguments": [linked_object]})
-		if linked_object.quantity > 1:
-			# доделать интерфейс с вводом ползунка разделения и drag-and-drop отделенной части
-			result.append({"Description": "Разделить", "Target": linked_object, "Method": "split", "Arguments": []})
-		if linked_object.loaded < linked_object.capacity: result.append({"Description": "Перезарядить", "Target": linked_object, "Method": "reload", "Arguments": []})
-		result.append({"Description": "Выбросить", "Target": user_layer, "Method": "_generate_action", "Arguments": ["drop_item"]} if linked_object.equiped else \
-				{"Description": "Выбросить", "Target": linked_object, "Method": "drop", "Arguments": []})
+#	if linked_object is Item:
+#		if linked_object.equiped: match linked_object.type:
+#			"Weapon": result.append({"Description": "Атаковать", "Target": user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
+#			"Tool": result.append({"Description": "Использовать", "Target": user_layer, "Method": "_generate_action", "Arguments": ["action_01"]})
+#		else: result.append({"Description": "Экипировать", "Target": player, "Method": "_set_equiped_weapon", "Arguments": [linked_object]})
+#		if linked_object.quantity > 1:
+#			# доделать интерфейс с вводом ползунка разделения и drag-and-drop отделенной части
+#			result.append({"Description": "Разделить", "Target": linked_object, "Method": "split", "Arguments": []})
+#		if linked_object.loaded < linked_object.capacity: result.append({"Description": "Перезарядить", "Target": linked_object, "Method": "reload", "Arguments": []})
+#		result.append({"Description": "Выбросить", "Target": user_layer, "Method": "_generate_action", "Arguments": ["drop_item"]} if linked_object.equiped else \
+#				{"Description": "Выбросить", "Target": linked_object, "Method": "drop", "Arguments": []})
 	return result
-
-func perform_action(action: Dictionary = main_action) -> void:	# вызывает метод у объекта. Ссылка на объект, название метода и его аргументы хранятся в словаре
-	var r = action["Target"].callv(action["Method"], action["Arguments"])
 
 func _update() -> void:
 	if linked_object is Item:
+		if linked_object.quantity > 1:
+			$HBoxContainer/QuantityText.text = str(linked_object.quantity)
 		if linked_object.capacity:	# предмет имеет расходники
 			$QuantityBar.max_value = linked_object.capacity
 			$QuantityBar.value = linked_object.loaded
-			$QuantityText.text = str(linked_object.loaded)
-			$QuantityText/Consumable.texture = Preloader.get_resource(linked_object.attached_consumable.item_name \
+			$HBoxContainer/QuantityText.text = str(linked_object.loaded)
+			$HBoxContainer/Consumable.texture = Preloader.get_resource(linked_object.attached_consumable.item_name \
 					if linked_object.attached_consumable else linked_object.consumable_type)
 #		else:	# предмет не имеет расходников
-#			if linked_object.typr in ["Weapon", "Tool"]:
+#			if linked_object.type in ["Weapon", "Tool"]:
+		$Picture.texture = linked_object.texture
 				
 	action_list = create_action_list()
 	main_action = action_list[0]
-	cursor_hint.text = main_action["Description"]
+	cursor_hint.set_hint(main_action["Description"])
+	if context_menu.linked_object == linked_object:	# скрываем контекстное меню, если оно вызвано для нашего объекта
+		context_menu.hide()
 
 func _on_ResizeCorner_gui_input(ev):	# изменение размеров кнопки
 	if ev is InputEventMouseMotion and Input.get_mouse_button_mask() == 1:
@@ -145,4 +150,4 @@ func _on_UserButton_gui_input(ev):	# основной обработчик вв�
 		
 		# вызов контекстного меню по правой кнопке
 		if ev.button_index == BUTTON_RIGHT and ev.pressed and !edit_mode:
-			context_menu.pop_up(self, action_list)
+			context_menu.pop_up(linked_object, action_list)

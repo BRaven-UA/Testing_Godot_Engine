@@ -14,6 +14,11 @@ func _ready() -> void:
 func toggle() -> void:
 	visible = !visible
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("backpack"):
+		toggle()
+		get_tree().set_input_as_handled()
+
 #func refresh_content():	# обновление содержимого рюкзака
 #	var backpack_items = content.get_children()
 #	var items = inventory.get_children()

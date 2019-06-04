@@ -29,8 +29,7 @@ func _ready():
 	set_process(false)
 	var k = Global.create_item("Knife", $Inventory)
 	var w = Global.create_item("Glock 17", $Inventory)
-	var a = Global.create_item("9 mm", $Inventory)
-	a.quantity = 3
+	var a = Global.create_item("9 mm", $Inventory, 10)
 	w.reload(null, true)
 	self.equiped_weapon = w
 
@@ -276,7 +275,7 @@ func _on_Wait_timeout():
 
 func _on_NPC_input_event(viewport, event, shape_idx):
 	if event is InputEventMouse:
-		cursor_hint.text = name
+		cursor_hint.set_hint(name)
 		get_tree().set_input_as_handled()
 		if event.button_mask == 1:	# объект выделен мышью
 			emit_signal("selected", self)

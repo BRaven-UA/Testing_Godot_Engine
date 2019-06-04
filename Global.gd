@@ -7,7 +7,10 @@ onready var main_node = get_tree().current_scene
 onready var player = main_node.get_node("Player")
 onready var debug = main_node.find_node("Debug")
 onready var backpack_content = main_node.find_node("Backpack").find_node("Content")
+onready var stopped_time_effect = main_node.find_node("StoppedTime")
 onready var user_layer = main_node.find_node("UserLayer")
+onready var context_menu = main_node.find_node("ContextMenu")
+onready var cursor_hint = main_node.find_node("CursorHint")
 onready var surface = main_node.get_node("Surface")
 var time_scale: float = 1.0	# скорость течения внутриигрового времени
 var time_stopped: bool setget _set_time_stopped	# флаг остановки внутриигрового времени
@@ -15,6 +18,7 @@ var time_stopped: bool setget _set_time_stopped	# флаг остановки в
 func _set_time_stopped(new_value: bool) -> void:
 	if time_stopped == new_value: return
 	time_stopped = new_value
+	stopped_time_effect.visible = time_stopped
 	if time_stopped:
 		Engine.time_scale = 0.0
 		AudioServer.lock()
@@ -42,7 +46,7 @@ func get_item_from_DB(name: String) -> Dictionary:	# поиск предмета
 			if item.item_name == name: return item.duplicate()	# защита от случайного изменения в базе
 	return {}
 
-func create_item(data, destination: Node = null) -> bool:	# добавление уникальной копии предмета по имени или по словарю параметров в игровой мир
+func create_item(data, destination: Node = null, quantity: int = 1) -> bool:	# добавление уникальной копии предмета по имени или по словарю параметров в игровой мир
 	if destination:
 		var dict = data if data is Dictionary else get_item_from_DB(data)
 		var new_item = Preloader.get_resource("Item").instance()
@@ -55,10 +59,14 @@ func create_item(data, destination: Node = null) -> bool:	# добавление
 		new_item.uid = OS.get_datetime()	# сохраняем время создания
 		new_item.uid.RND = randf()	# добавляем случайное число чтобы избежать одинаковых UID для предметов, созданных с разницей во времени менее 1 сек.
 		new_item.name = new_item.item_name + " " + String(new_item.uid.hash())	# даем предмету уникальное имя, включающее хэш его UID
-		if !new_item.quantity: new_item.quantity = 1 	# нужно чтобы сработал setter
+		new_item.quantity = quantity
 		destination.add_child(new_item, true)
 		return new_item
 	else: return false
+
+# вызывает метод у объекта. Ключи словаря: Description, Target, Method, Arguments
+func perform_action(action: Dictionary) -> void:
+	var r = action["Target"].callv(action["Method"], action["Arguments"])
 
 func get_variables(object) -> Dictionary:	# возвращает словарь с именами переменных и их значениями
 	var data: Dictionary = {}

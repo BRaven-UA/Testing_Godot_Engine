@@ -8,15 +8,15 @@ func _notification(what: int) -> void:
 	if what == MainLoop.NOTIFICATION_WM_FOCUS_OUT and not OS.is_window_always_on_top():	# ставим на паузу, если окно игры потеряло фокус и не установлен режим поверх всех окон'
 		visible = true
 
-func _unhandled_input(event):
+func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_cancel"):
-		visible = !visible
 		accept_event()
-		if visible:
-			warp_mouse($VBoxContainer.rect_global_position + Vector2($VBoxContainer.rect_size.x / 2, 20))
+		visible = !visible
 
 func _on_ESCMenu_visibility_changed():
 	get_tree().paused = visible
+#	if visible:
+#		warp_mouse($VBoxContainer.rect_global_position + Vector2($VBoxContainer.rect_size.x / 2, 20))
 
 func _on_ResumeGame_pressed() -> void:
 	visible = false

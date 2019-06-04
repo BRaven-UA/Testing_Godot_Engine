@@ -40,7 +40,7 @@ margin_left = 55.0
 margin_top = 85.0
 margin_right = 213.0
 margin_bottom = 243.0
-color = Color( 0, 0, 0, 0.731961 )
+color = Color( 0, 0, 0, 1 )
 
 [node name="GridContainer" type="GridContainer" parent="Main/MarginContainer"]
 margin_left = 55.0

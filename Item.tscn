@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Out of sight.tres" type="Material" id=1]
 [ext_resource path="res://Item.gd" type="Script" id=2]
-[ext_resource path="res://outline2.shader" type="Shader" id=3]
+[ext_resource path="res://2D Smooth Outline.shader" type="Shader" id=3]
 [ext_resource path="res://sound/reload.ogg" type="AudioStream" id=4]
 [ext_resource path="res://sound/Handgun.ogg" type="AudioStream" id=5]
 [ext_resource path="res://sound/fire_fail.ogg" type="AudioStream" id=6]
@@ -12,9 +12,8 @@
 [sub_resource type="ShaderMaterial" id=1]
 resource_local_to_scene = true
 shader = ExtResource( 3 )
-shader_param/intensity = 100
-shader_param/precision = 0.02
-shader_param/outline_color = Color( 1, 1, 1, 1 )
+shader_param/outlineColor = Color( 1, 1, 1, 1 )
+shader_param/width = 5.0
 
 [sub_resource type="CircleShape2D" id=2]
 
@@ -37,10 +36,10 @@ light_mask = 2
 [node name="Sprite" type="Sprite" parent="."]
 light_mask = 2
 material = SubResource( 1 )
-use_parent_material = true
 scale = Vector2( 0.1, 0.1 )
 
 [node name="Area2D" type="Area2D" parent="."]
+editor/display_folded = true
 light_mask = 2
 monitoring = false
 monitorable = false
@@ -52,7 +51,7 @@ light_mask = 2
 shape = SubResource( 2 )
 
 [node name="Melee_area" type="Area2D" parent="."]
-visible = false
+editor/display_folded = true
 light_mask = 2
 input_pickable = false
 monitoring = false

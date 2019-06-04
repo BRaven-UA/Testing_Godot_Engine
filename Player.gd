@@ -35,14 +35,12 @@ func _init():
 func _ready():
 	var k = Global.create_item("Knife", $Inventory)
 	var w = Global.create_item("Glock 17", $Inventory)
-	var a = Global.create_item("9 mm", $Inventory)
-	a.quantity = 20
+	var a = Global.create_item("9 mm", $Inventory, 20)
 	w.reload(null, true)
 	self.equiped_weapon = k
 	current_item = k
 	Global.create_item("AK-47", $Inventory)
-	a = Global.create_item("7.62 mm", $Inventory)
-	a.quantity = 100
+	a = Global.create_item("7.62 mm", $Inventory, 100)
 #	var d = Global.create_item("Glock 17", main_node.get_node("Surface"))
 #	d.position = Vector2(position.x + 20 - randi() % 40, position.y + 20 - randi() % 40)
 #	d.rotation = PI - randf() * 2 * PI
@@ -169,7 +167,8 @@ func _unhandled_input(event):
 			if dest_point:
 				main_node.get_node("Dest_point").position = dest_point
 				main_node.get_node("Dest_point").visible = true
-				main_node.get_node("AnimationPlayer").play("Dest_point")
+				main_node.get_node("TimelessAnimationPlayer").play("Dest_point")
+				get_tree().set_input_as_handled()
 	
 	if event is InputEventMouseMotion and event.button_mask == 1:
 		turn_point = get_global_mouse_position()
@@ -213,7 +212,7 @@ func draw_in_parent():
 
 func astar_clear_path():
 	main_node.get_node("Dest_point").visible = false
-	main_node.get_node("AnimationPlayer").stop(true)
+	main_node.get_node("TimelessAnimationPlayer").stop(true)
 	a_path = PoolVector2Array()
 #	is_rotated = false
 

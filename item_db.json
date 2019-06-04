@@ -30,7 +30,7 @@
 			"id": 4,
 			"item_name": "9 mm",
 			"subtype": "9 mm",
-			"type": "consumable",
+			"type": "Consumable",
 			"weight": 0.008
 		}, {
 			"consumable_type": "9 mm",
@@ -48,7 +48,7 @@
 			"id": 6,
 			"item_name": "7.62 mm",
 			"subtype": "7.62 mm",
-			"type": "consumable",
+			"type": "Consumable",
 			"weight": 0.018
 		}
 	],

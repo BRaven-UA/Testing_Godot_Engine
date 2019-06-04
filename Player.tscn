@@ -1,32 +1,17 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Player.gd" type="Script" id=1]
 [ext_resource path="res://tiles/Anim_feet.res" type="SpriteFrames" id=2]
 [ext_resource path="res://tiles/Anim_top.res" type="SpriteFrames" id=3]
 [ext_resource path="res://camera.gd" type="Script" id=4]
-[ext_resource path="res://Ray.gd" type="Script" id=5]
-[ext_resource path="res://temp/Life_bar.tscn" type="PackedScene" id=6]
-[ext_resource path="res://Large gradient circle.png" type="Texture" id=7]
+[ext_resource path="res://temp/center.tres" type="Animation" id=5]
+[ext_resource path="res://TimelessAnimationPlayer.gd" type="Script" id=6]
+[ext_resource path="res://Ray.gd" type="Script" id=7]
+[ext_resource path="res://temp/Life_bar.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Large gradient circle.png" type="Texture" id=9]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 17.0
-
-[sub_resource type="Animation" id=2]
-resource_name = "Center"
-length = 0.5
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0.5 ),
-"transitions": PoolRealArray( 1 ),
-"update": 3,
-"values": [ Vector2( 0, 0 ) ]
-}
 
 [node name="Player" type="KinematicBody2D"]
 input_pickable = true
@@ -68,9 +53,10 @@ drag_margin_right = 0.0
 drag_margin_bottom = 0.0
 script = ExtResource( 4 )
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
+[node name="TimelessAnimationPlayer" type="AnimationPlayer" parent="Camera2D"]
 autoplay = "Center"
-anims/Center = SubResource( 2 )
+anims/Center = ExtResource( 5 )
+script = ExtResource( 6 )
 
 [node name="Inventory" type="Node2D" parent="."]
 visible = false
@@ -78,13 +64,13 @@ visible = false
 [node name="Ray" type="RayCast2D" parent="."]
 enabled = true
 collision_mask = 5
-script = ExtResource( 5 )
+script = ExtResource( 7 )
 
-[node name="Life_bar" parent="." instance=ExtResource( 6 )]
+[node name="Life_bar" parent="." instance=ExtResource( 8 )]
 visible = false
 
 [node name="SightRange" type="Light2D" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 mode = 2
 range_item_cull_mask = 2
 shadow_filter = 3
@@ -92,7 +78,7 @@ shadow_filter_smooth = 5.0
 shadow_item_cull_mask = 3
 
 [node name="Light2D" type="Light2D" parent="."]
-texture = ExtResource( 7 )
+texture = ExtResource( 9 )
 color = Color( 0.996078, 1, 0.854902, 1 )
 energy = 0.6
 range_height = 100.0
