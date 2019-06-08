@@ -86,7 +86,7 @@ func disconnect_all_signals(object: Object) -> void:
 func is_visible_to_player(object: Object) -> bool:	# объект в пределах видимости игрока
 	if !object: return false
 	var distance_to_player = (object.global_position - player.global_position).length()
-	return distance_to_player < 1024 * player.sight_range
+	return distance_to_player < 1024 * player.sight_range	# расстояние такое же как радиус окружности в текстуре источника света
 
 func closest_point(point_a, point_b, center = Vector2(), exclude_center = true):
 	# возвращает ближайшую к центру точку. Если 'exclude_center' не задан, точки, совпадающие с центром игнорируются

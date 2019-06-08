@@ -17,7 +17,6 @@ resource_local_to_scene = true
 shader = ExtResource( 4 )
 shader_param/outlineColor = Color( 1, 0, 0, 1 )
 shader_param/width = 3.0
-shader_param/scale = 1.0
 
 [sub_resource type="ConvexPolygonShape2D" id=3]
 points = PoolVector2Array( 0, -1, 1, 1, -1, 1 )
@@ -94,6 +93,7 @@ one_shot = true
 autostart = true
 
 [node name="Life_bar" parent="." instance=ExtResource( 7 )]
+visible = false
 light_mask = 2
 use_parent_material = true
 
@@ -126,8 +126,13 @@ material = ExtResource( 1 )
 rotation = 1.5708
 scale = Vector2( 0.2, 0.2 )
 texture = ExtResource( 8 )
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+rect = Rect2( -30, -30, 60, 60 )
 [connection signal="input_event" from="." to="." method="_on_NPC_input_event"]
 [connection signal="body_entered" from="Detect_radius" to="Ray1" method="_detected"]
 [connection signal="body_exited" from="Detect_radius" to="Ray1" method="_exited"]
 [connection signal="timeout" from="Wait" to="." method="_on_Wait_timeout"]
 [connection signal="value_changed" from="Life_bar" to="." method="_on_Life_bar_value_changed"]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]
+[connection signal="screen_exited" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_exited"]

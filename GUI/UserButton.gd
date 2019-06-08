@@ -15,7 +15,6 @@ var moving: bool	# флаг режима смены позиции на экра
 
 func _ready() -> void:
 	_update()
-	connect("pressed", Global, "perform_action", [main_action])
 	if linked_object is Item:
 #		$Picture.rect_size = rect_size * 0.8
 		$Background.visible = true
@@ -148,6 +147,10 @@ func _on_UserButton_gui_input(ev):	# основной обработчик вв�
 				parent.remove_child(self)
 				new_parent.add_child(self, true)
 		
+		# основное нажатие кнопки
+		if ev.button_index == BUTTON_LEFT and ev.pressed and !edit_mode:
+			Global.perform_action(main_action)
+	
 		# вызов контекстного меню по правой кнопке
 		if ev.button_index == BUTTON_RIGHT and ev.pressed and !edit_mode:
 			context_menu.pop_up(linked_object, action_list)

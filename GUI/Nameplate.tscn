@@ -38,4 +38,3 @@ size_flags_vertical = 0
 custom_fonts/font = SubResource( 2 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 valign = 1
-

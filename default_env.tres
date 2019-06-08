@@ -2,6 +2,7 @@
 
 [resource]
 background_mode = 4
+background_canvas_max_layer = 1
 tonemap_mode = 2
 dof_blur_far_quality = 0
 glow_enabled = true

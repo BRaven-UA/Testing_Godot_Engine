@@ -16,7 +16,7 @@ var item_name: String = "Unnamed"
 var type: String = ""
 var subtype: String = ""
 var consumable_type: String = ""	# тип используемых расходников
-var position_offset: Vector2 = Vector2(-11, 33)	# смещение позиции предмета при его экипировке
+var position_offset: Vector2	# смещение позиции предмета при его экипировке
 var weight: float = 0.0
 var delay: float = 0.0	# задержка после применения
 var damage: float = 0.0 setget _set_damage, _get_damage	# урон, который наносит предмет
@@ -117,6 +117,13 @@ func _enter_tree() -> void:	# предмет получил нового вла�
 	_bound()
 #
 func _ready() -> void:
+	match subtype:
+		"Handgun":
+			position_offset = Vector2(-11.4, 32.8)
+		"Rifle":
+			position_offset = Vector2(-9.6, 37.5)
+		_:
+			position_offset = Vector2()
 	if subtype == "Melee":
 		$Melee_area/CollisionShape2D.shape.points = Global.arc_poly(Vector2(), distance, 90 - 60, 90 + 60)
 
@@ -240,7 +247,8 @@ func shoot() -> bool:	# default attack with ranged weapon
 	flame.frame = 0
 	flame.global_position = position_offset#.rotated(grandparent.rotation); flame.rotation = grandparent.rotation
 	grandparent.add_child(flame, true)
-	flame.play(subtype)
+#	flame.play(subtype)
+	flame.play()
 	$Bang.play()	# звук выстрела
 	var bullet = Preloader.get_resource("Bullet").instance()	# пуля
 #	var bullet = Global.bullet.instance()	# пуля
@@ -320,6 +328,11 @@ func _on_Melee_area_body_entered(body):	# объект в поле пораже�
 	if !body in exclude_targets:
 		$Melee_swing.stop()	# прерываем звук замаха
 		$Melee_hit.play()	# звук попадания по цели
+		if body.collision_layer & 6:	# игрок или NPC
+			var blood = Preloader.get_resource("BloodSpot").instance()
+			blood.position = body.position
+			blood.rotation = grandparent.rotation
+			main_node.find_node("Floor").add_child(blood, true)
 		exclude_targets.append(body)	# чтобы не попасть многократно в одну цень в течении одной атаки
 		if body.has_method("taking_damage"):
 			body.taking_damage(self.damage, body.position - grandparent.position)

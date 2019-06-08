@@ -1,6 +1,8 @@
 tool
 extends EditorScript
 
+const AAA = 10
+var aaa = 55
+
 func _run():
-	var s = 1.0
-	print(wrapf(s - 1.0, 0.0, 1.0))
+	prints(aaa, AAA)

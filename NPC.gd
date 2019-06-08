@@ -3,10 +3,12 @@ extends KinematicBody2D
 signal selected
 onready var main_node = get_tree().current_scene
 onready var cursor_hint = main_node.find_node("CursorHint")
+var lifebar: Control	# панель здаровья, находится в GUI/HUD
 const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
 
 const SPEED = 128	# базовая скорость движения
 const ANG_SPEED = PI	# базовая скорость поворота
+const MAX_HEALTH: int = 100	# базовое значение для текущего вида существа
 var dest_point = Vector2()	# место назначения движения
 var turn_point = Vector2()	# точка, к которой нужно повернуться
 var a_path = PoolVector2Array()	# маршрут, созданный алгоритмом AStar
@@ -16,6 +18,8 @@ var states = ["Patrol", "Hunt", "Cover", "Escape", "Follow"]
 var state = "Patrol"
 var actions = ["Idle", "Turn", "Walk", "Attack", "Reload"]
 var action = "Idle"
+var max_health: int setget _set_max_health	# может изменяться под действием различных эффектов
+var health: int setget _set_health
 var detect_radius = 499
 var busy = false	# признак выполнения какого-либо действия
 #var target
@@ -25,7 +29,23 @@ func _set_equiped_weapon(new_value) -> void:	# setter for equiped_weapon
 	if new_value: new_value.equiped = true	# устанавливаем отметку у нового оружия
 	equiped_weapon = new_value
 
+func  _set_max_health(new_value: int) -> void:
+	max_health = int(max(1, new_value))	# значение должнобыть положительным
+	lifebar.set_max_value(max_health)
+
+func  _set_health(new_value: int) -> void:
+	if new_value > 0:
+		health = new_value
+		lifebar.set_value(health)
+	else:
+		death()
+
 func _ready():
+	lifebar = Preloader.get_resource("LifeBar").instance()
+	lifebar.linked_object = self
+	main_node.find_node("HUD").add_child(lifebar, true)
+	self.max_health = MAX_HEALTH	# чтобы сработал setter
+	self.health = max_health	# чтобы сработал setter
 	set_process(false)
 	var k = Global.create_item("Knife", $Inventory)
 	var w = Global.create_item("Glock 17", $Inventory)
@@ -244,12 +264,14 @@ func change_weapon(new_weapon: Node2D = null):	# смена оружия на у
 	self.equiped_weapon = new_weapon
 
 func taking_damage(value, direction):
-	$Life_bar.value -= value
+	self.health -= value
 	state = "Hunt"
 	$Ray1.last_seen = position - direction.normalized() * 500
 
 func death():
 	emit_signal("selected", null)
+	lifebar.queue_free()
+	lifebar = null
 	var surface = main_node.find_node("Surface")
 	var s = $Remains	# переподчиняем изображение останков
 	remove_child(s)
@@ -262,10 +284,6 @@ func death():
 		item.drop()
 	
 	queue_free()
-
-func _on_Life_bar_value_changed(value):
-	if value <= 0:	# смерть
-		death()
 
 func _on_Wait_timeout():
 	if state == "Escape" or state == "Hunt":	# время на поиск или бегство вышло, возвращаемся к патрулированию
@@ -351,3 +369,9 @@ func _on_NPC_input_event(viewport, event, shape_idx):
 
 func _on_equiped_item_ready():
 	busy = false
+
+func _on_VisibilityNotifier2D_screen_entered() -> void:
+	if lifebar: lifebar.set_process(true)
+
+func _on_VisibilityNotifier2D_screen_exited() -> void:
+	if lifebar: lifebar.set_process(false)

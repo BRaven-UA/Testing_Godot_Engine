@@ -30,7 +30,7 @@ func _ready():
 	if Global.debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Location is ready")
 	back_rect = Rect2(back_poly[0], back_poly[0].abs() + back_poly[2])
 	randomize()
-	get_node("NPC").taking_damage(100, Vector2())
+#	get_node("NPC").taking_damage(100, Vector2())
 #	Astar_create()
 	
 #	for i in range(10):

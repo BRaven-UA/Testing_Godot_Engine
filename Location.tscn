@@ -39,87 +39,87 @@
 [ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_6.png" type="Texture" id=37]
 [ext_resource path="res://tiles/Top_Down_Survivor/feet/run/survivor-run_16.png" type="Texture" id=38]
 [ext_resource path="res://tiles/Top_Down_Survivor/Dead_soldier.png" type="Texture" id=39]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_0.png" type="Texture" id=40]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_1.png" type="Texture" id=41]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_2.png" type="Texture" id=42]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_0.png" type="Texture" id=43]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_2.png" type="Texture" id=44]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_4.png" type="Texture" id=45]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_8.png" type="Texture" id=46]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_10.png" type="Texture" id=47]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_14.png" type="Texture" id=48]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_16.png" type="Texture" id=49]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/idle/survivor-idle_knife_0.png" type="Texture" id=50]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/0.png" type="Texture" id=51]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/1.png" type="Texture" id=52]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/2.png" type="Texture" id=53]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/3.png" type="Texture" id=54]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/4.png" type="Texture" id=55]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/5.png" type="Texture" id=56]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/6.png" type="Texture" id=57]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/7.png" type="Texture" id=58]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/8.png" type="Texture" id=59]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/9.png" type="Texture" id=60]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/10.png" type="Texture" id=61]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/11.png" type="Texture" id=62]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/12.png" type="Texture" id=63]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/13.png" type="Texture" id=64]
-[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/14.png" type="Texture" id=65]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_0.png" type="Texture" id=66]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_1.png" type="Texture" id=67]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_2.png" type="Texture" id=68]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_3.png" type="Texture" id=69]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_4.png" type="Texture" id=70]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_5.png" type="Texture" id=71]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_6.png" type="Texture" id=72]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_7.png" type="Texture" id=73]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_8.png" type="Texture" id=74]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_9.png" type="Texture" id=75]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_10.png" type="Texture" id=76]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_11.png" type="Texture" id=77]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_12.png" type="Texture" id=78]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_13.png" type="Texture" id=79]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_14.png" type="Texture" id=80]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_15.png" type="Texture" id=81]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_16.png" type="Texture" id=82]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_17.png" type="Texture" id=83]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_18.png" type="Texture" id=84]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_19.png" type="Texture" id=85]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png" type="Texture" id=86]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png" type="Texture" id=87]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png" type="Texture" id=88]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png" type="Texture" id=89]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png" type="Texture" id=90]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png" type="Texture" id=91]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png" type="Texture" id=92]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_0.png" type="Texture" id=93]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_0.png" type="Texture" id=94]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_1.png" type="Texture" id=95]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_2.png" type="Texture" id=96]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png" type="Texture" id=97]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_0.png" type="Texture" id=98]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_1.png" type="Texture" id=99]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_2.png" type="Texture" id=100]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_3.png" type="Texture" id=101]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_4.png" type="Texture" id=102]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_5.png" type="Texture" id=103]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_6.png" type="Texture" id=104]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_7.png" type="Texture" id=105]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_8.png" type="Texture" id=106]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_9.png" type="Texture" id=107]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_10.png" type="Texture" id=108]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_11.png" type="Texture" id=109]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_12.png" type="Texture" id=110]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_13.png" type="Texture" id=111]
-[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_14.png" type="Texture" id=112]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_18.png" type="Texture" id=113]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_0.png" type="Texture" id=114]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_4.png" type="Texture" id=115]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_6.png" type="Texture" id=116]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_10.png" type="Texture" id=117]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_12.png" type="Texture" id=118]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_14.png" type="Texture" id=119]
-[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_18.png" type="Texture" id=120]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/idle/survivor-idle_handgun_19.png" type="Texture" id=40]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/idle/survivor-idle_knife_0.png" type="Texture" id=41]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_18.png" type="Texture" id=42]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_0.png" type="Texture" id=43]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_1.png" type="Texture" id=44]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/shoot/survivor-shoot_handgun_2.png" type="Texture" id=45]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_0.png" type="Texture" id=46]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_2.png" type="Texture" id=47]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_4.png" type="Texture" id=48]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_8.png" type="Texture" id=49]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_10.png" type="Texture" id=50]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_14.png" type="Texture" id=51]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/move/survivor-move_knife_16.png" type="Texture" id=52]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_0.png" type="Texture" id=53]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_3.png" type="Texture" id=54]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_6.png" type="Texture" id=55]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_9.png" type="Texture" id=56]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_12.png" type="Texture" id=57]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_15.png" type="Texture" id=58]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/move/survivor-move_handgun_19.png" type="Texture" id=59]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_0.png" type="Texture" id=60]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_1.png" type="Texture" id=61]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/shoot/survivor-shoot_shotgun_2.png" type="Texture" id=62]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/0.png" type="Texture" id=63]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/1.png" type="Texture" id=64]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/2.png" type="Texture" id=65]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/3.png" type="Texture" id=66]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/4.png" type="Texture" id=67]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/5.png" type="Texture" id=68]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/6.png" type="Texture" id=69]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/7.png" type="Texture" id=70]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/8.png" type="Texture" id=71]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/9.png" type="Texture" id=72]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/10.png" type="Texture" id=73]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/11.png" type="Texture" id=74]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/12.png" type="Texture" id=75]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/13.png" type="Texture" id=76]
+[ext_resource path="res://tiles/Top_Down_Survivor/knife/meleeattack/14.png" type="Texture" id=77]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/idle/survivor-idle_shotgun_0.png" type="Texture" id=78]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_0.png" type="Texture" id=79]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_4.png" type="Texture" id=80]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_6.png" type="Texture" id=81]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_10.png" type="Texture" id=82]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_12.png" type="Texture" id=83]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_14.png" type="Texture" id=84]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/move/survivor-move_shotgun_18.png" type="Texture" id=85]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_0.png" type="Texture" id=86]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_1.png" type="Texture" id=87]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_2.png" type="Texture" id=88]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_3.png" type="Texture" id=89]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_4.png" type="Texture" id=90]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_5.png" type="Texture" id=91]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_6.png" type="Texture" id=92]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_7.png" type="Texture" id=93]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_8.png" type="Texture" id=94]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_9.png" type="Texture" id=95]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_10.png" type="Texture" id=96]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_11.png" type="Texture" id=97]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_12.png" type="Texture" id=98]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_13.png" type="Texture" id=99]
+[ext_resource path="res://tiles/Top_Down_Survivor/handgun/reload/survivor-reload_handgun_14.png" type="Texture" id=100]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_0.png" type="Texture" id=101]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_1.png" type="Texture" id=102]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_2.png" type="Texture" id=103]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_3.png" type="Texture" id=104]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_4.png" type="Texture" id=105]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_5.png" type="Texture" id=106]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_6.png" type="Texture" id=107]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_7.png" type="Texture" id=108]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_8.png" type="Texture" id=109]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_9.png" type="Texture" id=110]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_10.png" type="Texture" id=111]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_11.png" type="Texture" id=112]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_12.png" type="Texture" id=113]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_13.png" type="Texture" id=114]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_14.png" type="Texture" id=115]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_15.png" type="Texture" id=116]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_16.png" type="Texture" id=117]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_17.png" type="Texture" id=118]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_18.png" type="Texture" id=119]
+[ext_resource path="res://tiles/Top_Down_Survivor/shotgun/reload/survivor-reload_shotgun_19.png" type="Texture" id=120]
 [ext_resource path="res://NPC.tscn" type="PackedScene" id=121]
 [ext_resource path="res://outline2.shader" type="Shader" id=122]
 [ext_resource path="res://temp/Fordebug.gd" type="Script" id=123]
@@ -127,6 +127,8 @@
 [sub_resource type="DynamicFont" id=1]
 resource_local_to_scene = true
 size = 20
+outline_size = 1
+outline_color = Color( 1, 0, 0, 0.2 )
 use_filter = true
 font_data = ExtResource( 11 )
 
@@ -148,15 +150,15 @@ animations = [ {
 "name": "Walk",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 27 ) ],
-"loop": false,
-"name": "Attack",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 0.0
 } ]
 
 [sub_resource type="SpriteFrames" id=3]
@@ -167,80 +169,80 @@ animations = [ {
 "name": "Dead",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeReload",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": false,
-"name": "MeleeAttack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
-"loop": false,
-"name": "RifleReload",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ) ],
-"loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 93 ) ],
-"loop": false,
-"name": "RifleTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
-"loop": false,
-"name": "RifleAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 40 ) ],
 "loop": false,
 "name": "HandgunTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 113 ) ],
-"loop": false,
-"name": "RifleIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 41 ) ],
 "loop": false,
 "name": "MeleeTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"frames": [ ExtResource( 42 ) ],
+"loop": false,
+"name": "RifleIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "RifleAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
+"loop": false,
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 78 ) ],
+"loop": false,
+"name": "RifleTurn",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
 "loop": true,
 "name": "RifleWalk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ) ],
 "loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
+"name": "HandgunReload",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"loop": false,
+"name": "RifleReload",
+"speed": 20.0
 } ]
 
 [sub_resource type="SpriteFrames" id=4]
@@ -261,15 +263,15 @@ animations = [ {
 "name": "Walk",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 27 ) ],
-"loop": false,
-"name": "Attack",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 0.0
 } ]
 
 [sub_resource type="ShaderMaterial" id=5]
@@ -287,80 +289,80 @@ animations = [ {
 "name": "Dead",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeReload",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": false,
-"name": "MeleeAttack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
-"loop": false,
-"name": "RifleReload",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ) ],
-"loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 93 ) ],
-"loop": false,
-"name": "RifleTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
-"loop": false,
-"name": "RifleAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 40 ) ],
 "loop": false,
 "name": "HandgunTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 113 ) ],
-"loop": false,
-"name": "RifleIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 41 ) ],
 "loop": false,
 "name": "MeleeTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"frames": [ ExtResource( 42 ) ],
+"loop": false,
+"name": "RifleIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "RifleAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
+"loop": false,
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 78 ) ],
+"loop": false,
+"name": "RifleTurn",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
 "loop": true,
 "name": "RifleWalk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ) ],
 "loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
+"name": "HandgunReload",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"loop": false,
+"name": "RifleReload",
+"speed": 20.0
 } ]
 
 [sub_resource type="CanvasItemMaterial" id=7]
@@ -384,15 +386,15 @@ animations = [ {
 "name": "Walk",
 "speed": 15.0
 }, {
-"frames": [ ExtResource( 27 ) ],
-"loop": false,
-"name": "Attack",
-"speed": 0.0
-}, {
 "frames": [ ExtResource( 36 ), ExtResource( 37 ), ExtResource( 36 ), ExtResource( 38 ) ],
 "loop": true,
 "name": "Turn",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 27 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 0.0
 } ]
 
 [sub_resource type="ShaderMaterial" id=9]
@@ -410,80 +412,80 @@ animations = [ {
 "name": "Dead",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 40 ), ExtResource( 41 ), ExtResource( 42 ) ],
-"loop": false,
-"name": "HandgunAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ), ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ) ],
-"loop": true,
-"name": "MeleeWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeReload",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 51 ), ExtResource( 52 ), ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ), ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ), ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ) ],
-"loop": false,
-"name": "MeleeAttack",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ), ExtResource( 78 ), ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
-"loop": false,
-"name": "RifleReload",
-"speed": 20.0
-}, {
-"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ) ],
-"loop": true,
-"name": "HandgunWalk",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 93 ) ],
-"loop": false,
-"name": "RifleTurn",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
-"loop": false,
-"name": "MeleeIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ) ],
-"loop": false,
-"name": "RifleAttack",
-"speed": 10.0
-}, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 40 ) ],
 "loop": false,
 "name": "HandgunTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ), ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ) ],
-"loop": false,
-"name": "HandgunReload",
-"speed": 15.0
-}, {
-"frames": [ ExtResource( 113 ) ],
-"loop": false,
-"name": "RifleIdle",
-"speed": 0.0
-}, {
-"frames": [ ExtResource( 50 ) ],
+"frames": [ ExtResource( 41 ) ],
 "loop": false,
 "name": "MeleeTurn",
 "speed": 0.0
 }, {
-"frames": [ ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"frames": [ ExtResource( 42 ) ],
+"loop": false,
+"name": "RifleIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 43 ), ExtResource( 44 ), ExtResource( 45 ) ],
+"loop": false,
+"name": "HandgunAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 46 ), ExtResource( 47 ), ExtResource( 48 ), ExtResource( 49 ), ExtResource( 50 ), ExtResource( 51 ), ExtResource( 52 ) ],
+"loop": true,
+"name": "MeleeWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 53 ), ExtResource( 54 ), ExtResource( 55 ), ExtResource( 56 ), ExtResource( 57 ), ExtResource( 58 ), ExtResource( 59 ) ],
+"loop": true,
+"name": "HandgunWalk",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 60 ), ExtResource( 61 ), ExtResource( 62 ) ],
+"loop": false,
+"name": "RifleAttack",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 63 ), ExtResource( 64 ), ExtResource( 65 ), ExtResource( 66 ), ExtResource( 67 ), ExtResource( 68 ), ExtResource( 69 ), ExtResource( 70 ), ExtResource( 71 ), ExtResource( 72 ), ExtResource( 73 ), ExtResource( 74 ), ExtResource( 75 ), ExtResource( 76 ), ExtResource( 77 ) ],
+"loop": false,
+"name": "MeleeAttack",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeReload",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 78 ) ],
+"loop": false,
+"name": "RifleTurn",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 41 ) ],
+"loop": false,
+"name": "MeleeIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 40 ) ],
+"loop": false,
+"name": "HandgunIdle",
+"speed": 0.0
+}, {
+"frames": [ ExtResource( 79 ), ExtResource( 80 ), ExtResource( 81 ), ExtResource( 82 ), ExtResource( 83 ), ExtResource( 84 ), ExtResource( 85 ) ],
 "loop": true,
 "name": "RifleWalk",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 97 ) ],
+"frames": [ ExtResource( 86 ), ExtResource( 87 ), ExtResource( 88 ), ExtResource( 89 ), ExtResource( 90 ), ExtResource( 91 ), ExtResource( 92 ), ExtResource( 93 ), ExtResource( 94 ), ExtResource( 95 ), ExtResource( 96 ), ExtResource( 97 ), ExtResource( 98 ), ExtResource( 99 ), ExtResource( 100 ) ],
 "loop": false,
-"name": "HandgunIdle",
-"speed": 0.0
+"name": "HandgunReload",
+"speed": 15.0
+}, {
+"frames": [ ExtResource( 101 ), ExtResource( 102 ), ExtResource( 103 ), ExtResource( 104 ), ExtResource( 105 ), ExtResource( 106 ), ExtResource( 107 ), ExtResource( 108 ), ExtResource( 109 ), ExtResource( 110 ), ExtResource( 111 ), ExtResource( 112 ), ExtResource( 113 ), ExtResource( 114 ), ExtResource( 115 ), ExtResource( 116 ), ExtResource( 117 ), ExtResource( 118 ), ExtResource( 119 ), ExtResource( 120 ) ],
+"loop": false,
+"name": "RifleReload",
+"speed": 20.0
 } ]
 
 [node name="Location" type="Node2D"]
@@ -495,16 +497,13 @@ __meta__ = {
 }
 
 [node name="GUI" type="CanvasLayer" parent="."]
-editor/display_folded = true
 
 [node name="HUD" type="Control" parent="GUI"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="StoppedTime" type="TextureRect" parent="GUI/HUD"]
-visible = false
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -512,12 +511,12 @@ texture = ExtResource( 2 )
 expand = true
 
 [node name="Interface" type="Control" parent="GUI"]
+editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
 
 [node name="UserLayer" type="Control" parent="GUI/Interface"]
-editor/display_folded = true
 anchor_right = 1.0
 anchor_bottom = 1.0
 mouse_filter = 2
@@ -650,7 +649,11 @@ visible = false
 margin_top = -11.0
 margin_bottom = 11.0
 custom_fonts/font = SubResource( 1 )
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+custom_colors/font_color_shadow = Color( 1, 0, 0, 0.121569 )
+custom_constants/shadow_offset_x = -1
+custom_constants/shadow_offset_y = -1
+custom_constants/shadow_as_outline = 1
 align = 1
 valign = 1
 max_lines_visible = 1
@@ -760,7 +763,7 @@ tile_set = ExtResource( 22 )
 cell_y_sort = true
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -131076, 2271, 7, -131075, 2271, 1, -131074, 2271, 1, -131073, 2271, 1, -196608, 2271, 1, -196607, 2271, 1, -196606, 2271, 1, -196605, 2271, 1, -196604, 2271, 1, -196603, 2271, 8, -65540, 2271, 4, -65539, 2271, 0, -65538, 2271, 0, -65537, 2271, 0, -131072, 2271, 0, -131071, 2271, 0, -131070, 2271, 0, -131069, 2271, 0, -131068, 2271, 0, -131067, 2271, 2, -4, 2271, 6, -3, 2271, 3, -2, 2271, 3, -1, 2271, 3, -65536, 2271, 3, -65535, 2271, 3, -65534, 2271, 3, -65533, 2271, 3, -65532, 2271, 3, -65531, 2271, 5 )
+tile_data = PoolIntArray( -131076, 2271, 0, -131074, 2271, 7, -131073, 2271, 1, -196608, 2271, 1, -196607, 2271, 1, -196606, 2271, 1, -196605, 2271, 1, -196604, 2271, 1, -196603, 2271, 8, -65540, 2271, 0, -65538, 2271, 4, -65537, 2271, 0, -131072, 2271, 0, -131071, 2271, 0, -131070, 2271, 0, -131069, 2271, 0, -131068, 2271, 0, -131067, 2271, 2, -4, 2271, 0, -2, 2271, 4, -1, 2271, 0, -65536, 2271, 0, -65535, 2271, 0, -65534, 2271, 0, -65533, 2271, 0, -65532, 2271, 0, -65531, 2271, 2, 65534, 2271, 4, 65535, 2271, 0, 0, 2271, 0, 1, 2271, 0, 2, 2271, 0, 3, 2271, 0, 4, 2271, 0, 5, 2271, 2, 131070, 2271, 4, 131071, 2271, 0, 65536, 2271, 0, 65537, 2271, 0, 65538, 2271, 0, 65539, 2271, 0, 65540, 2271, 0, 65541, 2271, 2, 196606, 2271, 4, 196607, 2271, 0, 131072, 2271, 0, 131073, 2271, 0, 131074, 2271, 0, 131075, 2271, 0, 131076, 2271, 0, 131077, 2271, 2, 262142, 2271, 4, 262143, 2271, 0, 196608, 2271, 0, 196609, 2271, 0, 196610, 2271, 0, 196611, 2271, 0, 196612, 2271, 0, 196613, 2271, 2, 327678, 2271, 4, 327679, 2271, 0, 262144, 2271, 0, 262145, 2271, 0, 262146, 2271, 0, 262147, 2271, 0, 262148, 2271, 0, 262149, 2271, 2, 393214, 2271, 4, 393215, 2271, 0, 327680, 2271, 0, 327681, 2271, 0, 327682, 2271, 0, 327683, 2271, 0, 327684, 2271, 0, 327685, 2271, 2, 458750, 2271, 4, 458751, 2271, 0, 393216, 2271, 0, 393217, 2271, 0, 393218, 2271, 0, 393219, 2271, 0, 393220, 2271, 0, 393221, 2271, 2, 524286, 2271, 4, 524287, 2271, 0, 458752, 2271, 0, 458753, 2271, 0, 458754, 2271, 0, 458755, 2271, 0, 458756, 2271, 0, 458757, 2271, 2, 589822, 2271, 4, 589823, 2271, 0, 524288, 2271, 0, 524289, 2271, 0, 524290, 2271, 0, 524291, 2271, 0, 524292, 2271, 0, 524293, 2271, 2, 655358, 2271, 4, 655359, 2271, 0, 589824, 2271, 0, 589825, 2271, 0, 589826, 2271, 0, 589827, 2271, 0, 589828, 2271, 0, 589829, 2271, 2, 720894, 2271, 6, 720895, 2271, 3, 655360, 2271, 3, 655361, 2271, 3, 655362, 2271, 3, 655363, 2271, 3, 655364, 2271, 3, 655365, 2271, 5 )
 
 [node name="Roads2" type="TileMap" parent="Terrain" groups=[
 "tilemaps",
@@ -771,6 +774,17 @@ collision_mask = 0
 format = 1
 tile_data = PoolIntArray( -524315, 2191, 4, -524314, 2191, 13, -524313, 2191, 12, -524312, 2191, 12, -524311, 2191, 13, -524310, 2191, 13, -524309, 2191, 12, -524308, 2191, 13, -524307, 2191, 13, -524306, 2191, 12, -524305, 2191, 13, -524304, 2191, 12, -524303, 2191, 13, -524302, 2191, 12, -524301, 2191, 12, -524300, 2191, 12, -524299, 2191, 13, -524298, 2191, 12, -524297, 2191, 13, -524296, 2191, 13, -524295, 2191, 13, -524294, 2191, 12, -524293, 2191, 12, -524292, 2191, 13, -524291, 2191, 12, -524290, 2191, 13, -524289, 2191, 13, -589824, 2191, 13, -589823, 2191, 13, -589822, 2191, 13, -589821, 2191, 12, -589820, 2191, 5, -458779, 2191, 8, -458778, 2191, 1, -458777, 2191, 3, -458776, 2191, 3, -458775, 2191, 2, -458774, 2191, 1, -458773, 2191, 1, -458772, 2191, 0, -458771, 2191, 3, -458770, 2191, 3, -458769, 2191, 0, -458768, 2191, 3, -458767, 2191, 3, -458766, 2191, 3, -458765, 2191, 2, -458764, 2191, 2, -458763, 2191, 3, -458762, 2191, 1, -458761, 2191, 3, -458760, 2191, 1, -458759, 2191, 3, -458758, 2191, 2, -458757, 2191, 3, -458756, 2191, 2, -458755, 2191, 0, -458754, 2191, 2, -458753, 2191, 2, -524288, 2191, 0, -524287, 2191, 2, -524286, 2191, 1, -524285, 2191, 2, -524284, 2191, 19, -524283, 2191, 5, -393243, 2191, 9, -393242, 2191, 2, -393241, 2191, 0, -393240, 2191, 2, -393239, 2191, 0, -393238, 2191, 2, -393237, 2191, 1, -393236, 2191, 3, -393235, 2191, 2, -393234, 2191, 1, -393233, 2191, 2, -393232, 2191, 2, -393231, 2191, 0, -393230, 2191, 2, -393229, 2191, 0, -393228, 2191, 2, -393227, 2191, 3, -393226, 2191, 2, -393225, 2191, 0, -393224, 2191, 1, -393223, 2191, 2, -393222, 2191, 0, -393221, 2191, 3, -393220, 2191, 0, -393219, 2191, 0, -393218, 2191, 3, -393217, 2191, 1, -458752, 2191, 0, -458751, 2191, 0, -458750, 2191, 0, -458749, 2191, 1, -458748, 2191, 3, -458747, 2191, 10, -327707, 2191, 8, -327706, 2191, 0, -327705, 2191, 3, -327704, 2191, 3, -327703, 2191, 2, -327702, 2191, 2, -327701, 2191, 1, -327700, 2191, 1, -327699, 2191, 2, -327698, 2191, 3, -327697, 2191, 2, -327696, 2191, 1, -327695, 2191, 0, -327694, 2191, 2, -327693, 2191, 1, -327692, 2191, 1, -327691, 2191, 1, -327690, 2191, 0, -327689, 2191, 3, -327688, 2191, 2, -327687, 2191, 2, -327686, 2191, 1, -327685, 2191, 1, -327684, 2191, 3, -327683, 2191, 2, -327682, 2191, 1, -327681, 2191, 1, -393216, 2191, 3, -393215, 2191, 2, -393214, 2191, 2, -393213, 2191, 2, -393212, 2191, 16, -393211, 2191, 6, -262171, 2191, 7, -262170, 2191, 15, -262169, 2191, 14, -262168, 2191, 14, -262167, 2191, 14, -262166, 2191, 15, -262165, 2191, 14, -262164, 2191, 15, -262163, 2191, 15, -262162, 2191, 15, -262161, 2191, 14, -262160, 2191, 14, -262159, 2191, 14, -262158, 2191, 15, -262157, 2191, 15, -262156, 2191, 14, -262155, 2191, 15, -262154, 2191, 14, -262153, 2191, 14, -262152, 2191, 14, -262151, 2191, 15, -262150, 2191, 21, -262149, 2191, 1, -262148, 2191, 3, -262147, 2191, 20, -262146, 2191, 15, -262145, 2191, 14, -327680, 2191, 15, -327679, 2191, 15, -327678, 2191, 15, -327677, 2191, 14, -327676, 2191, 6, -196614, 2191, 8, -196613, 2191, 2, -196612, 2191, 2, -196611, 2191, 10, -131078, 2191, 9, -131077, 2191, 0, -131076, 2191, 1, -131075, 2191, 10, -65542, 2191, 9, -65541, 2191, 1, -65540, 2191, 1, -65539, 2191, 10, -6, 2191, 8, -5, 2191, 3, -4, 2191, 1, -3, 2191, 10, 65530, 2191, 7, 65531, 2191, 14, 65532, 2191, 15, 65533, 2191, 6 )
 
+[node name="Road_my" type="TileMap" parent="Terrain" groups=[
+"tilemaps",
+]]
+visible = false
+tile_set = ExtResource( 23 )
+cell_size = Vector2( 32, 32 )
+cell_y_sort = true
+collision_mask = 0
+format = 1
+tile_data = PoolIntArray( 65531, 536870912, 8, 65532, 536870912, 10, 65533, 536870912, 10, 65534, 536870912, 10, 65535, 536870912, 10, 0, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 10, 4, 536870912, 10, 5, 536870912, 10, 6, 0, 10, 7, 0, 10, 8, 0, 10, 9, 0, 10, 10, 0, 10, 11, 0, 10, 12, 0, 10, 13, 0, 10, 14, 0, 10, 15, 0, 10, 16, 0, 10, 17, 0, 10, 18, 0, 11, 131067, 536870912, 65544, 131068, 536870912, 131081, 131069, 536870912, 131081, 131070, 536870912, 131081, 131071, 536870912, 131081, 65536, 536870912, 131081, 65537, 536870912, 131081, 65538, 536870912, 131081, 65539, 536870912, 131081, 65540, 536870912, 131081, 65541, 536870912, 131081, 65542, 0, 131081, 65543, 0, 131081, 65544, 0, 131081, 65545, 0, 131081, 65546, 0, 131081, 65547, 0, 131081, 65548, 0, 131081, 65549, 0, 131081, 65550, 0, 131081, 65551, 0, 131081, 65552, 0, 131081, 65553, 0, 131081, 65554, 0, 131083, 196603, 536870912, 65544, 196604, 536870912, 131081, 196605, 536870912, 131081, 196606, 536870912, 131081, 196607, 0, 131081, 131072, 0, 131081, 131073, 0, 131081, 131074, 0, 131078, 131075, 0, 196617, 131076, 0, 196617, 131077, 536870912, 196617, 131078, 0, 196617, 131079, 0, 196617, 131080, 0, 196617, 131081, 0, 196617, 131082, 0, 196617, 131083, 0, 196617, 131084, 0, 196617, 131085, 0, 196617, 131086, 0, 131077, 131087, 0, 131081, 131088, 0, 131081, 131089, 0, 131081, 131090, 0, 131083, 262139, 536870912, 65544, 262140, 536870912, 131081, 262141, 536870912, 131081, 262142, 536870912, 131081, 262143, 536870912, 131081, 196608, 0, 131081, 196609, 0, 131081, 196610, 0, 131083, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 0, 65544, 196623, 0, 131081, 196624, 0, 131081, 196625, 0, 131081, 196626, 0, 131083, 327675, 536870912, 65544, 327676, 536870912, 131081, 327677, 536870912, 131081, 327678, 536870912, 131081, 327679, 536870912, 131081, 262144, 0, 131081, 262145, 0, 131081, 262146, 0, 131083, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 3, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 0, 65544, 262159, 0, 131081, 262160, 0, 131081, 262161, 0, 131081, 262162, 0, 131083, 393211, 536870912, 65544, 393212, 536870912, 131081, 393213, 536870912, 131081, 393214, 536870912, 131081, 393215, 0, 131081, 327680, 536870912, 131081, 327681, 536870912, 131081, 327682, 536870912, 131083, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 3, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 0, 65544, 327695, 0, 131081, 327696, 0, 131081, 327697, 0, 131081, 327698, 0, 131083, 458747, 536870912, 65544, 458748, 536870912, 131081, 458749, 536870912, 131081, 458750, 536870912, 131081, 458751, 536870912, 131081, 393216, 536870912, 131081, 393217, 536870912, 131081, 393218, 536870912, 131083, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 3, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 0, 65544, 393231, 0, 131081, 393232, 0, 131081, 393233, 0, 131081, 393234, 0, 131083, 524283, 536870912, 65544, 524284, 536870912, 131081, 524285, 536870912, 131081, 524286, 536870912, 131081, 524287, 536870912, 131081, 458752, 536870912, 131081, 458753, 0, 131081, 458754, 536870912, 131083, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 3, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 0, 65544, 458767, 0, 131081, 458768, 0, 131081, 458769, 0, 131081, 458770, 0, 131083, 589819, 536870912, 65544, 589820, 536870912, 131081, 589821, 536870912, 131081, 589822, 536870912, 131081, 589823, 536870912, 131081, 524288, 536870912, 131081, 524289, 0, 131081, 524290, 536870912, 131083, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 3, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 0, 65544, 524303, 0, 131081, 524304, 0, 131081, 524305, 0, 131081, 524306, 0, 131083, 655355, 536870912, 65544, 655356, 536870912, 131081, 655357, 536870912, 131081, 655358, 536870912, 131081, 655359, 536870912, 131081, 589824, 536870912, 131081, 589825, 0, 131081, 589826, 536870912, 131083, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 3, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 0, 65544, 589839, 0, 131081, 589840, 0, 131081, 589841, 0, 131081, 589842, 0, 131083, 720891, 536870912, 65544, 720892, 536870912, 131081, 720893, 536870912, 131081, 720894, 536870912, 131081, 720895, 536870912, 131081, 655360, 536870912, 131081, 655361, 0, 131081, 655362, 536870912, 131083, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 3, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 0, 65544, 655375, 0, 131081, 655376, 0, 131081, 655377, 0, 131081, 655378, 0, 131083, 786427, 536870912, 65544, 786428, 536870912, 131081, 786429, 536870912, 131081, 786430, 536870912, 131081, 786431, 536870912, 131081, 720896, 536870912, 131081, 720897, 0, 131081, 720898, 536870912, 131083, 720906, 3, 0, 720910, 0, 65544, 720911, 0, 131081, 720912, 0, 131081, 720913, 0, 131081, 720914, 0, 131083, 851963, 536870912, 65544, 851964, 536870912, 131081, 851965, 536870912, 131081, 851966, 536870912, 131081, 851967, 536870912, 131081, 786432, 0, 131081, 786433, 0, 131081, 786434, 536870912, 131083, 786446, 0, 65544, 786447, 0, 131081, 786448, 0, 131081, 786449, 0, 131081, 786450, 0, 131083, 917499, 536870912, 65544, 917500, 536870912, 131081, 917501, 536870912, 131081, 917502, 536870912, 131081, 917503, 536870912, 131081, 851968, 0, 131081, 851969, 0, 131081, 851970, 536870912, 131083, 851982, 0, 65544, 851983, 0, 131081, 851984, 0, 131081, 851985, 0, 131081, 851986, 0, 131083, 983035, 536870912, 65544, 983036, 536870912, 131081, 983037, 536870912, 131081, 983038, 536870912, 131081, 983039, 536870912, 131081, 917504, 536870912, 131081, 917505, 536870912, 131081, 917506, 536870912, 131083, 917518, 0, 196616, 917519, 0, 196617, 917520, 0, 196617, 917521, 0, 196617, 917522, 0, 196619, 1048571, 536870912, 65544, 1048572, 536870912, 131081, 1048573, 536870912, 131081, 1048574, 536870912, 131081, 1048575, 536870912, 131081, 983040, 536870912, 131081, 983041, 536870912, 131081, 983042, 536870912, 131083, 1114107, 536870912, 65544, 1114108, 536870912, 131081, 1114109, 536870912, 131081, 1114110, 536870912, 131081, 1114111, 536870912, 131081, 1048576, 536870912, 131081, 1048577, 536870912, 131081, 1048578, 536870912, 131083, 1179643, 536870912, 65544, 1179644, 536870912, 131081, 1179645, 536870912, 131081, 1179646, 536870912, 131081, 1179647, 536870912, 131081, 1114112, 536870912, 131081, 1114113, 536870912, 131081, 1114114, 536870912, 131083, 1245179, 536870912, 65544, 1245180, 536870912, 131081, 1245181, 536870912, 131081, 1245182, 536870912, 131081, 1245183, 536870912, 131081, 1179648, 536870912, 131081, 1179649, 536870912, 131081, 1179650, 536870912, 131083, 1310715, 536870912, 65544, 1310716, 536870912, 131081, 1310717, 536870912, 131081, 1310718, 536870912, 131081, 1310719, 536870912, 131081, 1245184, 536870912, 131081, 1245185, 536870912, 131081, 1245186, 536870912, 131083, 1376251, 536870912, 65544, 1376252, 536870912, 131081, 1376253, 536870912, 131081, 1376254, 536870912, 131081, 1376255, 536870912, 131081, 1310720, 536870912, 131081, 1310721, 536870912, 131081, 1310722, 536870912, 131083, 1441787, 536870912, 196616, 1441788, 536870912, 196617, 1441789, 536870912, 196617, 1441790, 536870912, 196617, 1441791, 536870912, 196617, 1376256, 536870912, 196617, 1376257, 536870912, 196617, 1376258, 536870912, 196619 )
+
 [node name="Floor" type="TileMap" parent="Terrain" groups=[
 "tilemaps",
 ]]
@@ -778,17 +792,7 @@ tile_set = ExtResource( 22 )
 cell_y_sort = true
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( -262167, 2271, 7, -262166, 2271, 8, -196631, 2271, 4, -196630, 2271, 2, -131095, 2271, 4, -131094, 2271, 2, -65559, 2271, 4, -65558, 2271, 2, -23, 2271, 4, -22, 2271, 2, -6, 2195, 0, -5, 2203, 0, -4, 2203, 0, -3, 2196, 0, 65513, 2271, 4, 65514, 2271, 2, 65520, 2264, 0, 65521, 2264, 0, 65522, 2264, 0, 65523, 2264, 0, 65524, 2264, 0, 65525, 2264, 0, 65526, 45, 0, 65527, 45, 0, 65528, 45, 0, 65529, 45, 0, 65530, 2284, 0, 65531, 2284, 0, 65532, 2284, 0, 65533, 2284, 0, 131044, 2298, 1, 131045, 2298, 2, 131046, 2298, 2, 131047, 2298, 2, 131048, 2298, 3, 131049, 2271, 4, 131050, 2271, 2, 131056, 2264, 0, 131057, 2264, 0, 131058, 2264, 0, 131059, 2264, 0, 131060, 2264, 0, 131061, 2264, 0, 131062, 45, 0, 131063, 45, 0, 131064, 45, 0, 131065, 45, 0, 131066, 2284, 0, 131067, 2284, 0, 131068, 2284, 0, 131069, 2284, 0, 196580, 2298, 8, 196581, 2298, 0, 196582, 2298, 0, 196583, 2298, 0, 196584, 2298, 4, 196585, 2271, 4, 196586, 2271, 2, 196592, 2264, 0, 196593, 2264, 0, 196594, 2264, 0, 196595, 2264, 0, 196596, 2264, 0, 196597, 2264, 0, 196598, 45, 0, 196599, 45, 0, 196600, 45, 0, 196601, 45, 0, 196602, 2284, 0, 196603, 2284, 0, 196604, 2284, 0, 196605, 2284, 0, 262116, 2298, 8, 262117, 2298, 0, 262118, 2298, 0, 262119, 2298, 0, 262120, 2298, 4, 262121, 2271, 4, 262122, 2271, 2, 262128, 2264, 0, 262129, 2264, 0, 262130, 2264, 0, 262131, 2264, 0, 262132, 2264, 0, 262133, 2264, 0, 262134, 45, 0, 262135, 45, 0, 262136, 45, 0, 262137, 45, 0, 262138, 2284, 0, 262139, 2284, 0, 262140, 2284, 0, 262141, 2284, 0, 327652, 2298, 8, 327653, 2298, 0, 327654, 2298, 0, 327655, 2298, 0, 327656, 2298, 4, 327657, 2271, 6, 327658, 2271, 0, 327659, 2271, 8, 327664, 2264, 0, 327665, 2264, 0, 327666, 2264, 0, 327667, 2264, 0, 327668, 2264, 0, 327669, 2264, 0, 327670, 45, 0, 327671, 45, 0, 327672, 45, 0, 327673, 45, 0, 327674, 2284, 0, 327675, 2284, 0, 327676, 2284, 0, 327677, 2284, 0, 393188, 2298, 7, 393189, 2298, 6, 393190, 2298, 6, 393191, 2298, 6, 393192, 2298, 5, 393194, 2271, 4, 393195, 2271, 2, 393200, 2264, 0, 393201, 2264, 0, 393202, 2264, 0, 393203, 2264, 0, 393204, 2264, 0, 393205, 2264, 0, 393206, 2234, 0, 393207, 2234, 0, 393208, 2234, 0, 393209, 2234, 0, 393210, 2284, 0, 393211, 2284, 0, 393212, 2284, 0, 393213, 2284, 0, 327683, 2298, 1, 327684, 2298, 2, 327685, 2298, 2, 327686, 2298, 3, 458730, 2271, 4, 458731, 2271, 2, 458736, 2264, 0, 458737, 2264, 0, 458738, 2264, 0, 458739, 2264, 0, 458740, 2264, 0, 458741, 2264, 0, 458742, 2234, 0, 458743, 2234, 0, 458744, 2234, 0, 458745, 2234, 0, 458746, 2284, 0, 458747, 2284, 0, 458748, 2284, 0, 458749, 2284, 0, 393219, 2298, 8, 393220, 2298, 0, 393221, 2298, 0, 393222, 2298, 4, 524264, 2271, 7, 524265, 2271, 1, 524266, 2271, 0, 524267, 2271, 5, 524272, 2264, 0, 524273, 2264, 0, 524274, 2264, 0, 524275, 2264, 0, 524276, 2264, 0, 524277, 2264, 0, 524278, 2234, 0, 524279, 2234, 0, 524280, 2234, 0, 524281, 2234, 0, 524282, 2284, 0, 524283, 2284, 0, 524284, 2284, 0, 524285, 2284, 0, 458755, 2298, 8, 458756, 2298, 0, 458757, 2298, 0, 458758, 2298, 4, 589800, 2271, 6, 589801, 2271, 3, 589802, 2271, 5, 589808, 2264, 0, 589809, 2264, 0, 589810, 2264, 0, 589811, 2264, 0, 589812, 2264, 0, 589813, 2264, 0, 589814, 2284, 0, 589815, 2284, 0, 589816, 2284, 0, 589817, 2284, 0, 589818, 2284, 0, 589819, 2284, 0, 589820, 2284, 0, 589821, 2284, 0, 524291, 2298, 8, 524292, 2298, 0, 524293, 2298, 0, 524294, 2298, 4, 655344, 2264, 0, 655345, 2264, 0, 655346, 2264, 0, 655347, 2264, 0, 655348, 2264, 0, 655349, 2264, 0, 655350, 2284, 0, 655351, 2284, 0, 655352, 2284, 0, 655353, 2284, 0, 655354, 2284, 0, 655355, 2284, 0, 655356, 2284, 0, 655357, 2284, 0, 589827, 2298, 8, 589828, 2298, 0, 589829, 2298, 0, 589830, 2298, 4, 720880, 2264, 0, 720881, 2264, 0, 720882, 2264, 0, 720883, 2264, 0, 720884, 2264, 0, 720885, 2264, 0, 720886, 2284, 0, 720887, 2284, 0, 720888, 2284, 0, 720889, 2284, 0, 720890, 2284, 0, 720891, 2284, 0, 720892, 2284, 0, 720893, 2284, 0, 655363, 2298, 8, 655364, 2298, 0, 655365, 2298, 0, 655366, 2298, 4, 720899, 2298, 8, 720900, 2298, 0, 720901, 2298, 0, 720902, 2298, 4, 786435, 2298, 7, 786436, 2298, 6, 786437, 2298, 6, 786438, 2298, 5 )
-
-[node name="Road_my" type="TileMap" parent="Terrain" groups=[
-"tilemaps",
-]]
-tile_set = ExtResource( 23 )
-cell_size = Vector2( 32, 32 )
-cell_y_sort = true
-collision_mask = 0
-format = 1
-tile_data = PoolIntArray( 65535, 0, 8, 0, 0, 10, 1, 0, 10, 2, 0, 10, 3, 0, 10, 4, 0, 10, 5, 0, 10, 6, 0, 11, 14, 0, 8, 15, 0, 10, 16, 0, 10, 17, 0, 10, 18, 0, 11, 131071, 0, 65544, 65536, 0, 131081, 65537, 0, 131081, 65538, 0, 131081, 65539, 0, 131081, 65540, 0, 131081, 65541, 0, 131081, 65542, 0, 131083, 65550, 0, 65544, 65551, 0, 131081, 65552, 0, 131081, 65553, 0, 131081, 65554, 0, 131083, 196607, 0, 65544, 131072, 0, 131081, 131073, 0, 131081, 131074, 0, 131081, 131075, 0, 131081, 131076, 0, 131081, 131077, 0, 131081, 131078, 0, 131083, 131086, 0, 65544, 131087, 0, 131081, 131088, 0, 131081, 131089, 0, 131081, 131090, 0, 131083, 262143, 0, 65544, 196608, 0, 131081, 196609, 0, 131081, 196610, 0, 131081, 196611, 0, 131081, 196612, 0, 131081, 196613, 0, 131081, 196614, 0, 131083, 196615, 1, 0, 196616, 1, 0, 196617, 1, 0, 196618, 1, 0, 196619, 1, 0, 196620, 1, 0, 196621, 1, 0, 196622, 0, 65544, 196623, 0, 131081, 196624, 0, 131081, 196625, 0, 131081, 196626, 0, 131083, 327679, 0, 65544, 262144, 0, 131081, 262145, 0, 131081, 262146, 0, 131081, 262147, 0, 131081, 262148, 0, 131081, 262149, 0, 131081, 262150, 0, 131083, 262151, 1, 0, 262152, 1, 0, 262153, 1, 0, 262154, 3, 0, 262155, 1, 0, 262156, 1, 0, 262157, 1, 0, 262158, 0, 65544, 262159, 0, 131081, 262160, 0, 131081, 262161, 0, 131081, 262162, 0, 131083, 393215, 0, 65544, 327680, 0, 131081, 327681, 0, 131081, 327682, 0, 131081, 327683, 0, 131081, 327684, 0, 131081, 327685, 0, 131081, 327686, 0, 131083, 327687, 1, 0, 327688, 1, 0, 327689, 1, 0, 327690, 3, 0, 327691, 1, 0, 327692, 1, 0, 327693, 1, 0, 327694, 0, 65544, 327695, 0, 131081, 327696, 0, 131081, 327697, 0, 131081, 327698, 0, 131083, 458751, 0, 65544, 393216, 0, 131081, 393217, 0, 131081, 393218, 0, 131081, 393219, 0, 131081, 393220, 0, 131081, 393221, 0, 131081, 393222, 0, 131083, 393223, 1, 0, 393224, 1, 0, 393225, 1, 0, 393226, 3, 0, 393227, 1, 0, 393228, 1, 0, 393229, 1, 0, 393230, 0, 65544, 393231, 0, 131081, 393232, 0, 131081, 393233, 0, 131081, 393234, 0, 131083, 524287, 0, 65544, 458752, 0, 131081, 458753, 0, 131081, 458754, 0, 131081, 458755, 0, 131081, 458756, 0, 131081, 458757, 0, 131081, 458758, 0, 131083, 458759, 1, 0, 458760, 1, 0, 458761, 1, 0, 458762, 3, 0, 458763, 1, 0, 458764, 1, 0, 458765, 1, 0, 458766, 0, 65544, 458767, 0, 131081, 458768, 0, 131081, 458769, 0, 131081, 458770, 0, 131083, 589823, 0, 65544, 524288, 0, 131081, 524289, 0, 131081, 524290, 0, 131081, 524291, 0, 131081, 524292, 0, 131081, 524293, 0, 131081, 524294, 0, 131083, 524295, 1, 0, 524296, 1, 0, 524297, 1, 0, 524298, 3, 0, 524299, 1, 0, 524300, 1, 0, 524301, 1, 0, 524302, 0, 65544, 524303, 0, 131081, 524304, 0, 131081, 524305, 0, 131081, 524306, 0, 131083, 655359, 0, 65544, 589824, 0, 131081, 589825, 0, 131081, 589826, 0, 131081, 589827, 0, 131081, 589828, 0, 131081, 589829, 0, 131081, 589830, 0, 131083, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 3, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 0, 65544, 589839, 0, 131081, 589840, 0, 131081, 589841, 0, 131081, 589842, 0, 131083, 720895, 0, 65544, 655360, 0, 131081, 655361, 0, 131081, 655362, 0, 131081, 655363, 0, 131081, 655364, 0, 131081, 655365, 0, 131081, 655366, 0, 131083, 655367, 1, 0, 655368, 1, 0, 655369, 1, 0, 655370, 3, 0, 655371, 1, 0, 655372, 1, 0, 655373, 1, 0, 655374, 0, 65544, 655375, 0, 131081, 655376, 0, 131081, 655377, 0, 131081, 655378, 0, 131083, 786431, 0, 65544, 720896, 0, 131081, 720897, 0, 131081, 720898, 0, 131081, 720899, 0, 131081, 720900, 0, 131081, 720901, 0, 131081, 720902, 0, 131083, 720906, 3, 0, 720910, 0, 65544, 720911, 0, 131081, 720912, 0, 131081, 720913, 0, 131081, 720914, 0, 131083, 851967, 0, 65544, 786432, 0, 131081, 786433, 0, 131081, 786434, 0, 131081, 786435, 0, 131081, 786436, 0, 131081, 786437, 0, 131081, 786438, 0, 131083, 786446, 0, 65544, 786447, 0, 131081, 786448, 0, 131081, 786449, 0, 131081, 786450, 0, 131083, 917503, 0, 65544, 851968, 0, 131081, 851969, 0, 131081, 851970, 0, 131081, 851971, 0, 131081, 851972, 0, 131081, 851973, 0, 131081, 851974, 0, 131083, 851982, 0, 65544, 851983, 0, 131081, 851984, 0, 131081, 851985, 0, 131081, 851986, 0, 131083, 983039, 0, 196616, 917504, 0, 196617, 917505, 0, 196617, 917506, 0, 196617, 917507, 0, 196617, 917508, 0, 196617, 917509, 0, 196617, 917510, 0, 196619, 917518, 0, 196616, 917519, 0, 196617, 917520, 0, 196617, 917521, 0, 196617, 917522, 0, 196619 )
+tile_data = PoolIntArray( -262167, 2271, 7, -262166, 2271, 8, -196631, 2271, 4, -196630, 2271, 2, -131095, 2271, 4, -131094, 2271, 2, -65559, 2271, 4, -65558, 2271, 2, -23, 2271, 4, -22, 2271, 2, -6, 2195, 0, -5, 2203, 0, -4, 2203, 0, -3, 2196, 0, 65513, 2271, 4, 65514, 2271, 2, 65520, 2264, 0, 65521, 2264, 0, 65522, 2264, 0, 65523, 2264, 0, 65524, 2264, 0, 65525, 2264, 0, 65526, 45, 0, 65527, 45, 0, 65528, 45, 0, 65529, 45, 0, 65530, 2284, 0, 65531, 2284, 0, 65532, 2284, 0, 65533, 2284, 0, 131044, 2298, 1, 131045, 2298, 2, 131046, 2298, 2, 131047, 2298, 2, 131048, 2298, 3, 131049, 2271, 4, 131050, 2271, 2, 131056, 2264, 0, 131057, 2264, 0, 131058, 2264, 0, 131059, 2264, 0, 131060, 2264, 0, 131061, 2264, 0, 131062, 45, 0, 131063, 45, 0, 131064, 45, 0, 131065, 45, 0, 131066, 2284, 0, 131067, 2284, 0, 131068, 2284, 0, 131069, 2284, 0, 196580, 2298, 8, 196581, 2298, 0, 196582, 2298, 0, 196583, 2298, 0, 196584, 2298, 4, 196585, 2271, 4, 196586, 2271, 2, 196592, 2264, 0, 196593, 2264, 0, 196594, 2264, 0, 196595, 2264, 0, 196596, 2264, 0, 196597, 2264, 0, 196598, 45, 0, 196599, 45, 0, 196600, 45, 0, 196601, 45, 0, 196602, 2284, 0, 196603, 2284, 0, 196604, 2284, 0, 196605, 2284, 0, 262116, 2298, 8, 262117, 2298, 0, 262118, 2298, 0, 262119, 2298, 0, 262120, 2298, 4, 262121, 2271, 4, 262122, 2271, 2, 262128, 2264, 0, 262129, 2264, 0, 262130, 2264, 0, 262131, 2264, 0, 262132, 2264, 0, 262133, 2264, 0, 262134, 45, 0, 262135, 45, 0, 262136, 45, 0, 262137, 45, 0, 262138, 2284, 0, 262139, 2284, 0, 262140, 2284, 0, 262141, 2284, 0, 327652, 2298, 8, 327653, 2298, 0, 327654, 2298, 0, 327655, 2298, 0, 327656, 2298, 4, 327657, 2271, 6, 327658, 2271, 0, 327659, 2271, 8, 327664, 2264, 0, 327665, 2264, 0, 327666, 2264, 0, 327667, 2264, 0, 327668, 2264, 0, 327669, 2264, 0, 327670, 45, 0, 327671, 45, 0, 327672, 45, 0, 327673, 45, 0, 327674, 2284, 0, 327675, 2284, 0, 327676, 2284, 0, 327677, 2284, 0, 393188, 2298, 7, 393189, 2298, 6, 393190, 2298, 6, 393191, 2298, 6, 393192, 2298, 5, 393194, 2271, 4, 393195, 2271, 2, 393200, 2264, 0, 393201, 2264, 0, 393202, 2264, 0, 393203, 2264, 0, 393204, 2264, 0, 393205, 2264, 0, 393206, 2234, 0, 393207, 2234, 0, 393208, 2234, 0, 393209, 2234, 0, 393210, 2284, 0, 393211, 2284, 0, 393212, 2284, 0, 393213, 2284, 0, 458730, 2271, 4, 458731, 2271, 2, 458736, 2264, 0, 458737, 2264, 0, 458738, 2264, 0, 458739, 2264, 0, 458740, 2264, 0, 458741, 2264, 0, 458742, 2234, 0, 458743, 2234, 0, 458744, 2234, 0, 458745, 2234, 0, 458746, 2284, 0, 458747, 2284, 0, 458748, 2284, 0, 458749, 2284, 0, 524264, 2271, 7, 524265, 2271, 1, 524266, 2271, 0, 524267, 2271, 5, 524272, 2264, 0, 524273, 2264, 0, 524274, 2264, 0, 524275, 2264, 0, 524276, 2264, 0, 524277, 2264, 0, 524278, 2234, 0, 524279, 2234, 0, 524280, 2234, 0, 524281, 2234, 0, 524282, 2284, 0, 524283, 2284, 0, 524284, 2284, 0, 524285, 2284, 0, 589800, 2271, 6, 589801, 2271, 3, 589802, 2271, 5, 589808, 2264, 0, 589809, 2264, 0, 589810, 2264, 0, 589811, 2264, 0, 589812, 2264, 0, 589813, 2264, 0, 589814, 2284, 0, 589815, 2284, 0, 589816, 2284, 0, 589817, 2284, 0, 589818, 2284, 0, 589819, 2284, 0, 589820, 2284, 0, 589821, 2284, 0, 655344, 2264, 0, 655345, 2264, 0, 655346, 2264, 0, 655347, 2264, 0, 655348, 2264, 0, 655349, 2264, 0, 655350, 2284, 0, 655351, 2284, 0, 655352, 2284, 0, 655353, 2284, 0, 655354, 2284, 0, 655355, 2284, 0, 655356, 2284, 0, 655357, 2284, 0, 720880, 2264, 0, 720881, 2264, 0, 720882, 2264, 0, 720883, 2264, 0, 720884, 2264, 0, 720885, 2264, 0, 720886, 2284, 0, 720887, 2284, 0, 720888, 2284, 0, 720889, 2284, 0, 720890, 2284, 0, 720891, 2284, 0, 720892, 2284, 0, 720893, 2284, 0 )
 
 [node name="Static_objects" type="TileMap" parent="Terrain" groups=[
 "tilemaps",
@@ -804,7 +808,7 @@ tile_data = PoolIntArray( 65520, 2248, 0, 65521, 2261, 0, 65522, 2262, 0, 65529,
 tile_set = ExtResource( 22 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( -196627, 2241, 0, -196626, 2239, 0, -196625, 2239, 0, -196624, 2239, 0, -196623, 2239, 0, -196622, 2239, 0, -196621, 2239, 0, -196620, 2239, 0, -196619, 2239, 0, -196618, 2239, 0, -196617, 2239, 0, -196616, 2239, 0, -196615, 2239, 0, -196610, 2239, 0, -196609, 2239, 0, -262144, 2239, 0, -262143, 2239, 0, -262142, 2239, 0, -131091, 2240, 0, -65555, 2240, 0, -19, 2240, 0, 65517, 2240, 0, 65520, 2148, 0, 65521, 2140, 0, 65522, 2140, 0, 65523, 2177, 0, 65524, 2178, 0, 65525, 2140, 0, 65526, 2148, 0, 65527, 2176, 0, 65528, 2176, 0, 65529, 2140, 0, 65530, 2148, 0, 65531, 1073744093, 0, 65532, 1610615005, 0, 65533, 2149, 0, 131053, 2240, 0, 131056, 2144, 0, 131066, 2144, 0, 131069, 2146, 0, 196584, 1610614881, 0, 196589, 2240, 0, 196592, 2183, 0, 196598, 2157, 0, 196602, 2144, 0, 196605, 2146, 0, 262120, 1610614881, 0, 262125, 2240, 0, 262128, 2184, 0, 262134, 2144, 0, 262138, 2144, 0, 262141, 2146, 0, 327656, 1610614881, 0, 327661, 2240, 0, 327664, 2144, 0, 327670, 2150, 0, 327671, 2142, 0, 327672, 2142, 0, 327673, 2142, 0, 327674, 2144, 0, 327677, 2180, 0, 393197, 2240, 0, 393200, 2144, 0, 393206, 2144, 0, 393210, 2144, 0, 393213, 2181, 0, 458733, 2240, 0, 458736, 2144, 0, 458742, 2144, 0, 458746, 2144, 0, 458749, 2146, 0, 524269, 2240, 0, 524272, 2183, 0, 524278, 2150, 0, 524279, 2269, 0, 524280, 2142, 0, 524281, 2142, 0, 524282, 2144, 0, 524285, 2146, 0, 589805, 2240, 0, 589808, 2184, 0, 589814, -1610610467, 0, 589818, -1610610468, 0, 589821, 2146, 0, 655341, 2240, 0, 655344, 2144, 0, 655350, -536868644, 0, 655354, -536868643, 0, 655357, 2146, 0, 720873, 2239, 0, 720874, 2239, 0, 720875, 2239, 0, 720876, 2239, 0, 720877, 2244, 0, 720880, 2150, 0, 720881, 2142, 0, 720882, 2186, 0, 720883, 2187, 0, 720884, 2142, 0, 720885, 2142, 0, 720886, 2150, 0, 720887, 2142, 0, 720888, 2142, 0, 720889, 2142, 0, 720890, 2150, 0, 720891, 2142, 0, 720892, 2142, 0, 720893, 2151, 0 )
+tile_data = PoolIntArray( -196627, 2241, 0, -196626, 2239, 0, -196625, 2239, 0, -196624, 2239, 0, -196623, 2239, 0, -196622, 2239, 0, -196621, 2239, 0, -196620, 2239, 0, -196619, 2239, 0, -196618, 2239, 0, -196617, 2239, 0, -196616, 2239, 0, -196615, 2239, 0, -196610, 2241, 0, -196609, 2239, 0, -262144, 2239, 0, -262143, 2239, 0, -262142, 2239, 0, -262141, 2239, 0, -262140, 2239, 0, -262139, 2239, 0, -131091, 2240, 0, -131074, 2240, 0, -65555, 2240, 0, -19, 2240, 0, -2, 2240, 0, 65517, 2240, 0, 65520, 2148, 0, 65521, 2140, 0, 65522, 2140, 0, 65523, 2177, 0, 65524, 2178, 0, 65525, 2140, 0, 65526, 2148, 0, 65527, 2176, 0, 65528, 2176, 0, 65529, 2140, 0, 65530, 2148, 0, 65531, 1073744093, 0, 65532, 1610615005, 0, 65533, 2149, 0, 65534, 2244, 0, 131053, 2240, 0, 131056, 2144, 0, 131066, 2144, 0, 131069, 2146, 0, 196584, 1610614881, 0, 196589, 2240, 0, 196592, 2183, 0, 196598, 2157, 0, 196602, 2144, 0, 196605, 2146, 0, 262120, 1610614881, 0, 262125, 2240, 0, 262128, 2184, 0, 262134, 2144, 0, 262138, 2144, 0, 262141, 2146, 0, 327656, 1610614881, 0, 327661, 2240, 0, 327664, 2144, 0, 327670, 2150, 0, 327671, 2142, 0, 327672, 2142, 0, 327673, 2142, 0, 327674, 2144, 0, 327677, 2180, 0, 393197, 2240, 0, 393200, 2144, 0, 393206, 2144, 0, 393210, 2144, 0, 393213, 2181, 0, 458733, 2240, 0, 458736, 2144, 0, 458742, 2144, 0, 458746, 2144, 0, 458749, 2146, 0, 524269, 2240, 0, 524272, 2183, 0, 524278, 2150, 0, 524279, 2269, 0, 524280, 2142, 0, 524281, 2142, 0, 524282, 2144, 0, 524285, 2146, 0, 589805, 2240, 0, 589808, 2184, 0, 589814, -1610610467, 0, 589818, -1610610468, 0, 589821, 2146, 0, 655341, 2240, 0, 655344, 2144, 0, 655350, -536868644, 0, 655354, -536868643, 0, 655357, 2146, 0, 720873, 2239, 0, 720874, 2239, 0, 720875, 2239, 0, 720876, 2239, 0, 720877, 2244, 0, 720880, 2150, 0, 720881, 2142, 0, 720882, 2186, 0, 720883, 2187, 0, 720884, 2142, 0, 720885, 2142, 0, 720886, 2150, 0, 720887, 2142, 0, 720888, 2142, 0, 720889, 2142, 0, 720890, 2150, 0, 720891, 2142, 0, 720892, 2142, 0, 720893, 2151, 0 )
 
 [node name="Walls_my" type="TileMap" parent="Terrain" groups=[
 "tilemaps",
@@ -828,13 +832,12 @@ tile_data = PoolIntArray( -196635, 505, 0, -196634, 505, 0, -196633, 505, 0, -19
 tile_set = ExtResource( 25 )
 cell_y_sort = true
 format = 1
-tile_data = PoolIntArray( -589844, 1610613189, 0, -589843, 1610613188, 0, -589834, 1610613189, 0, -589833, 1610613188, 0, -589827, 1610613189, 0, -589826, 1610613188, 0, -524311, 425, 0, -524303, 425, 0, -524295, 425, 0, -589823, 425, 0, -327706, -1073741770, 0, -262174, -1610612690, 0, -262173, 46, 0, -262159, 425, 0, -262151, 425, 0, -327679, 425, 0, -196639, -1073741777, 0, -196638, 49, 0, -196637, 50, 0, -196636, 51, 0, -196627, 287, 0, -196626, 288, 0, -131102, 416, 0, -131101, 410, 0, -131100, 415, 0, -131091, 289, 0, -131090, 290, 0, -196602, 257, 0, -196601, 257, 0, -196600, 257, 0, -196599, 257, 0, -196598, 257, 0, -65566, 411, 0, -65564, -1610612303, 0, -131069, -1610612369, 0, -131066, 257, 0, -131065, 257, 0, -131064, 257, 0, -131063, 257, 0, -131062, 257, 0, -30, 411, 0, -28, -1610612302, 0, -65530, 257, 0, -65529, 257, 0, -65528, 257, 0, -65527, 257, 0, -65526, 257, 0, 65506, 411, 0, 131042, 422, 0, 131043, 410, 0, 131044, 415, 0, 131058, 120, 0, 131065, -1610612244, 0, 196578, 411, 0, 196580, 440, 0, 196581, 442, 0, 196582, 442, 0, 196583, 444, 0, 131076, -1610612369, 0, 262114, 411, 0, 262116, 441, 0, 262117, 443, 0, 262118, 443, 0, 262119, 445, 0, 262134, 1610612887, 0, 196608, -1073741768, 0, 327650, 411, 0, 327652, 435, 0, 327653, 436, 0, 327654, 436, 0, 327655, 437, 0, 262150, -1073741767, 0, 393186, 411, 0, 393201, 1610613229, 0, 393202, 147, 0, 393208, 150, 0, 393209, 149, 0, 458722, 411, 0, 458724, -1610612305, 0, 458741, -1610612582, 0, 458745, 153, 0, 393220, -1610612369, 0, 524258, 411, 0, 524260, -1610612304, 0, 589794, 411, 0, 655330, 419, 0, 655331, 410, 0, 655332, 415, 0, 655341, 291, 0, 655342, 292, 0, 720867, -1610612308, 0, 720868, -1610612309, 0, 720877, 293, 0, 720878, 294, 0, 720886, -1610612370, 0 )
+tile_data = PoolIntArray( -589844, 1610613189, 0, -589843, 1610613188, 0, -589834, 1610613189, 0, -589833, 1610613188, 0, -589827, 1610613189, 0, -589826, 1610613188, 0, -524311, 425, 0, -524303, 425, 0, -524295, 425, 0, -589823, 425, 0, -327706, -1073741770, 0, -262174, -1610612690, 0, -262173, 46, 0, -262159, 425, 0, -262151, 425, 0, -327679, 425, 0, -196639, -1073741777, 0, -196638, 49, 0, -196637, 50, 0, -196636, 51, 0, -196627, 287, 0, -196626, 288, 0, -131102, 416, 0, -131101, 410, 0, -131100, 415, 0, -131091, 289, 0, -131090, 290, 0, -65566, 411, 0, -65564, -1610612303, 0, -131069, -1610612369, 0, -30, 411, 0, -28, -1610612302, 0, 65506, 411, 0, 131042, 422, 0, 131043, 410, 0, 131044, 415, 0, 131058, 120, 0, 131065, -1610612244, 0, 196578, 411, 0, 196580, 440, 0, 196581, 442, 0, 196582, 442, 0, 196583, 444, 0, 131076, -1610612369, 0, 262114, 411, 0, 262116, 441, 0, 262117, 443, 0, 262118, 443, 0, 262119, 445, 0, 262134, 1610612887, 0, 196608, -1073741768, 0, 327650, 411, 0, 327652, 435, 0, 327653, 436, 0, 327654, 436, 0, 327655, 437, 0, 262150, -1073741767, 0, 393186, 411, 0, 393201, 1610613229, 0, 393202, 147, 0, 393208, 150, 0, 393209, 149, 0, 458722, 411, 0, 458724, -1610612305, 0, 458741, -1610612582, 0, 458745, 153, 0, 393220, -1610612369, 0, 524258, 411, 0, 524260, -1610612304, 0, 589794, 411, 0, 655330, 419, 0, 655331, 410, 0, 655332, 415, 0, 655341, 291, 0, 655342, 292, 0, 720867, -1610612308, 0, 720868, -1610612309, 0, 720877, 293, 0, 720878, 294, 0, 720886, -1610612370, 0 )
 
 [node name="Surface" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource( 26 )]
-editor/display_folded = true
-position = Vector2( 110, -30 )
+position = Vector2( -250, -180 )
 
 [node name="Anim_feet" parent="Player" index="1"]
 frames = SubResource( 2 )
@@ -851,7 +854,8 @@ shadow_item_cull_mask = 2
 
 [node name="NPC2" parent="." instance=ExtResource( 121 )]
 editor/display_folded = true
-position = Vector2( 390, 122 )
+position = Vector2( -110, -380 )
+rotation = -1.57079
 
 [node name="Anim_feet" parent="NPC2" index="1"]
 frames = SubResource( 4 )
@@ -863,10 +867,15 @@ frames = SubResource( 6 )
 [node name="Detect_radius" parent="NPC2" index="3"]
 editor/display_folded = true
 
+[node name="NPC3" parent="." instance=ExtResource( 121 )]
+editor/display_folded = true
+position = Vector2( -460, 590 )
+rotation = -4.71238
+
 [node name="NPC" parent="." instance=ExtResource( 121 )]
 editor/display_folded = true
 material = SubResource( 7 )
-position = Vector2( 65, 8 )
+position = Vector2( -250, -120 )
 
 [node name="Anim_feet" parent="NPC" index="1"]
 frames = SubResource( 8 )
@@ -880,7 +889,7 @@ frames = SubResource( 10 )
 ]]
 tile_set = ExtResource( 22 )
 format = 1
-tile_data = PoolIntArray( -262167, 2329, 0, -131087, 2246, 0, -131085, 2247, 0, -131083, 2245, 0, -131081, 2247, 0, -65563, 1073743581, 0, -65562, 1073743581, 0, -65561, 1073743581, 0, -65560, 1073743581, 0, -65540, 0, 0, -27, 1757, 0, -26, 1757, 0, -25, 1757, 0, -24, 1757, 0, -18, 2247, 0, 65510, 2313, 0, 262133, 2247, 0, 393193, 2245, 0, 458729, 2247, 0, 524261, 1073743581, 0, 524262, 1073743581, 0, 524263, 1073743581, 0, 524264, 1073743581, 0, 524270, 2245, 0, 589797, 1757, 0, 589798, 1757, 0, 589799, 1757, 0, 589800, 1757, 0, 655335, 2313, 0, 655345, 2246, 0, 655346, 1610615072, 0, 655347, 2312, 0 )
+tile_data = PoolIntArray( -262167, 2329, 0, -131087, 2246, 0, -131085, 2247, 0, -131083, 2245, 0, -131081, 2247, 0, -131073, 2246, 0, -196608, 2246, 0, -196607, 2246, 0, -196604, 2247, 0, -65563, 1073743581, 0, -65562, 1073743581, 0, -65561, 1073743581, 0, -65560, 1073743581, 0, -65540, 0, 0, -27, 1757, 0, -26, 1757, 0, -25, 1757, 0, -24, 1757, 0, -18, 2247, 0, 65510, 2313, 0, 262133, 2247, 0, 393193, 2245, 0, 458729, 2247, 0, 524261, 1073743581, 0, 524262, 1073743581, 0, 524263, 1073743581, 0, 524264, 1073743581, 0, 524270, 2245, 0, 589797, 1757, 0, 589798, 1757, 0, 589799, 1757, 0, 589800, 1757, 0, 655335, 2313, 0, 655345, 2246, 0, 655346, 1610615072, 0, 655347, 2312, 0 )
 
 [node name="For_Debug" type="Node2D" parent="."]
 script = ExtResource( 123 )
