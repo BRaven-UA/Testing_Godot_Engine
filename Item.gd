@@ -1,6 +1,6 @@
-# надстройка над классом, оперирующая сценой
+# базовый класс для внутриигровых предметов
 extends Node2D
-#class_name Class_Item, "res://item_icon.png"
+class_name Item, "res://item_icon.png"
 
 signal item_ready
 
@@ -20,34 +20,24 @@ var position_offset: Vector2	# смещение позиции предмета 
 var weight: float = 0.0
 var delay: float = 0.0	# задержка после применения
 var damage: float = 0.0 setget _set_damage, _get_damage	# урон, который наносит предмет
+var busy: float = false setget _set_busy	# признак выполнения какого-либо действия предметом, хранит время в секундах начальной продолжительности
 var distance: int = 0	# дальность действия предмета
 var capacity: int = 0	# вместимость
 var loaded: int = 0 setget ,_get_loaded	# текущее количество загруженных расходников
 var quantity: int setget _set_quantity	# количество. Значение по-умолчанию не ставлю, чтобы сработал setter при инициализации
+var stack_size: int	# максимальное количество
 var equiped: bool = false setget _set_equiped	# предмет экипирован
-var busy: float = false setget _set_busy	# признак выполнения какого-либо действия предметом, хранит время в секундах начальной продолжительности
-#export (Texture) var texture	# изображение предмета
-#export (Dictionary) var uid	# уникальный номер
-#export (String) var item_name = "Unnamed"
-#export (String) var type = ""
-#export (String) var subtype = ""
-#export (String) var consumable_type = ""	# тип используемых расходников
-#export (Vector2) var position_offset = Vector2(-11, 33)	# смещение позиции предмета при его экипировке
-#export (float) var weight = 0.0
-#export (float) var delay = 0.0	# задержка после применения
-#export (int) var distance = 0	# дальность действия предмета
-#export (int) var capacity = 0	# вместимость
-#export (bool) var equiped = false #setget _set_equiped	# предмет экипирован
-#export (bool) var busy = false	# признак выполнения какого-либо действия предметом
-#export (float) var damage = 0.0 setget ,_get_damage	# урон, который наносит предмет
-#export (int) var loaded = 0 setget ,_get_loaded	# текущее количество загруженных расходников
-#export (int) var quantity setget _set_quantity	# количество. Значение по-умолчанию не ставлю, чтобы сработал setter при инициализации
 
 var backpack_item	# ссылка на представление предмета в рюкзаке игрока
 var nameplate	# ссылка на информационнцю планку предмета на поверхности
 var nameplate_position	# используется при восстановлении из файла сохранения
 var nameplate_label_position	# используется при восстановлении из файла сохранения
 var exclude_targets: Array	# список целей, исключаемый при атаке
+
+func _set_tempale(new_value) -> void:
+	var data = Global.get_item_from_DB(new_value)
+	for key in data:
+		set(key, data[key])
 
 func _set_attached_consumable(new_value) -> void:
 	attached_consumable = new_value
@@ -70,6 +60,9 @@ func _set_quantity(new_value):	# setter for quantity
 #	if grandparent is Class_Item:	# предмет прикреплен к другому предмету
 #		grandparent.loaded = positive_int_value
 	quantity = int(max(0, new_value))	# чтобы отсечь случайные отрицательные и вещественные числа
+	if stack_size and quantity > stack_size:
+		split(quantity - stack_size)
+		return	# выходим из функции так как реальное количество уже изменено методом split
 	if grandparent:
 		if grandparent.name == "Player":
 			MessageBus.send(self, "Buttons", ["quantity", quantity])
@@ -201,6 +194,21 @@ func split(piece: int) -> Node2D:	# разделение предмета, во�
 		return new_item
 	return null
 
+func merge(target: Node2D = null) -> bool:	# объединение количества с предметом-донором или со всеми возможными в инвентаре
+	var amount: = 0
+	if stack_size:	# только если предмет может менять количество
+		if target:	# донор указан
+			if target.item_name == item_name:
+				amount = target.quantity
+				target.quantity = 0
+		else:	# донор не указан, объединяем со свсеми возможными предметами
+			for item in get_parent().get_children():
+				if item != self and item.item_name == item_name:	# исключаем себя
+					amount += item.quantity
+					item.quantity = 0
+		self.quantity += amount	# лишнее будет отделено в _set_quantity
+	return bool(amount)	# если ничего не добавилось, то возвращаем неудачу
+
 func find_consumables(consumable: String = "") -> Array:	# возвращает массив расходников для текущего предмета по имени или первый попавшийся
 	var list: Array = []
 	for item in get_parent().get_children():
@@ -233,6 +241,10 @@ func reload(new_consumable = null, silent = false) -> bool:	# перезаряд
 			self.busy = $Reload.stream.get_length()
 		return true
 	return false
+
+func unload() -> void:	# выгрузка текущих расходников
+	if attached_consumable:
+		attached_consumable.move_to(get_parent())
 
 func shoot() -> bool:	# default attack with ranged weapon
 	if busy: return false	# стрельба невозможна в данный момент
@@ -291,12 +303,14 @@ func create_action_list() -> Array:	# формирует список возмо
 	else:
 		result.append({"Description": "Экипировать", "Target": Global.player, "Method": "_set_equiped_weapon", "Arguments": [self]})
 		result.append({"Description": "Выбросить", "Target": self, "Method": "drop", "Arguments": []})
-		
 	if quantity > 1:
 		result.append({"Description": "Разделить", "Target": self, "Method": "split", "Arguments": []})
-		
+	if stack_size:
+		result.append({"Description": "Объединить все", "Target": self, "Method": "merge", "Arguments": []})
 	if self.loaded < capacity:
 		result.append({"Description": "Перезарядить", "Target": self, "Method": "reload", "Arguments": []})
+	if self.loaded:
+		result.append({"Description": "Разрядить", "Target": self, "Method": "unload", "Arguments": []})
 	
 	return result
 

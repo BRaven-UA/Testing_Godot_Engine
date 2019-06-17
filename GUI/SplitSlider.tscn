@@ -37,7 +37,7 @@ border_color = Color( 0, 1, 0.705882, 1 )
 
 [sub_resource type="ShaderMaterial" id=6]
 shader = ExtResource( 6 )
-shader_param/Brightness = 2.0
+shader_param/Brightness = 1.85
 
 [node name="SplitSlider" type="MarginContainer"]
 margin_right = 97.0
@@ -183,6 +183,7 @@ patch_margin_left = 1
 patch_margin_top = 1
 patch_margin_right = 1
 patch_margin_bottom = 1
+[connection signal="focus_entered" from="HBoxContainer/MarginContainer/HBoxContainer/Current" to="." method="_on_Current_focus_entered"]
 [connection signal="text_changed" from="HBoxContainer/MarginContainer/HBoxContainer/Current" to="." method="_on_Current_text_changed"]
 [connection signal="text_entered" from="HBoxContainer/MarginContainer/HBoxContainer/Current" to="." method="_accepted"]
 [connection signal="value_changed" from="HBoxContainer/MarginContainer/Slider" to="." method="_on_Slider_value_changed"]

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-b1f2a734176d90b12cd2d21247d66de3.stex"
+path="res://.import/Character icon.png-6cbc253023fb36874c7e0280fc2841ad.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://addons/launchy/icon.png"
-dest_files=[ "res://.import/icon.png-b1f2a734176d90b12cd2d21247d66de3.stex" ]
+source_file="res://Character icon.png"
+dest_files=[ "res://.import/Character icon.png-6cbc253023fb36874c7e0280fc2841ad.stex" ]
 
 [params]
 
@@ -20,15 +20,15 @@ compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
 flags/repeat=0
-flags/filter=true
-flags/mipmaps=false
+flags/filter=false
+flags/mipmaps=true
 flags/anisotropic=false
 flags/srgb=2
-process/fix_alpha_border=true
+process/fix_alpha_border=false
 process/premult_alpha=false
 process/HDR_as_SRGB=false
 process/invert_color=false
 stream=false
 size_limit=0
-detect_3d=true
+detect_3d=false
 svg/scale=1.0

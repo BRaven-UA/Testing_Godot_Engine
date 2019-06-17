@@ -1,62 +1,18 @@
-extends KinematicBody2D
+# персонаж, управляемый игрой
+extends Character
 
-signal selected
-onready var main_node = get_tree().current_scene
-onready var cursor_hint = main_node.find_node("CursorHint")
-var lifebar: Control	# панель здаровья, находится в GUI/HUD
-const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
-
-const SPEED = 128	# базовая скорость движения
-const ANG_SPEED = PI	# базовая скорость поворота
-const MAX_HEALTH: int = 100	# базовое значение для текущего вида существа
-var dest_point = Vector2()	# место назначения движения
-var turn_point = Vector2()	# точка, к которой нужно повернуться
-var a_path = PoolVector2Array()	# маршрут, созданный алгоритмом AStar
 var explored_area = PoolVector2Array()	# область, которую уже видел персонаж (используется для поиска цели)
-var equiped_weapon: Item setget _set_equiped_weapon	# текущее экипированное оружие
 var states = ["Patrol", "Hunt", "Cover", "Escape", "Follow"]
 var state = "Patrol"
-var actions = ["Idle", "Turn", "Walk", "Attack", "Reload"]
-var action = "Idle"
-var max_health: int setget _set_max_health	# может изменяться под действием различных эффектов
-var health: int setget _set_health
 var detect_radius = 499
-var busy = false	# признак выполнения какого-либо действия
 #var target
 
-func _set_equiped_weapon(new_value) -> void:	# setter for equiped_weapon
-	if equiped_weapon: equiped_weapon.equiped = false	# снимаем отметку у предыдущего оружия
-	if new_value: new_value.equiped = true	# устанавливаем отметку у нового оружия
-	equiped_weapon = new_value
-
-func  _set_max_health(new_value: int) -> void:
-	max_health = int(max(1, new_value))	# значение должнобыть положительным
-	lifebar.set_max_value(max_health)
-
-func  _set_health(new_value: int) -> void:
-	if new_value > 0:
-		health = new_value
-		lifebar.set_value(health)
-	else:
-		death()
 
 func _ready():
-	lifebar = Preloader.get_resource("LifeBar").instance()
-	lifebar.linked_object = self
-	main_node.find_node("HUD").add_child(lifebar, true)
-	self.max_health = MAX_HEALTH	# чтобы сработал setter
-	self.health = max_health	# чтобы сработал setter
 	set_process(false)
-	var k = Global.create_item("Knife", $Inventory)
-	var w = Global.create_item("Glock 17", $Inventory)
-	var a = Global.create_item("9 mm", $Inventory, 10)
-	w.reload(null, true)
-	self.equiped_weapon = w
 
-	connect("selected", main_node.find_node("Debug"), "selection_changed")
 	connect("mouse_entered", main_node, "mouseover", [self, true])
 	connect("mouse_exited", main_node, "mouseover", [self, false])
-	main_node.connect("draw", self, "draw_in_parent")
 	randomize()
 
 func _process(delta):
@@ -81,7 +37,7 @@ func _process(delta):
 					action = "Idle"
 				else:
 					randomize()
-					action = actions[randi() % 3]	# выбираем следующее действие
+					action = ACTIONS[randi() % 3]	# выбираем следующее действие
 ##				prints("current action is", action)
 				match action:
 					"Idle":

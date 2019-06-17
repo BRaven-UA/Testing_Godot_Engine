@@ -5,4 +5,4 @@ const AAA = 10
 var aaa = 55
 
 func _run():
-	prints(aaa, AAA)
+	print(get_scene().get_tree().set_auto_accept_quit(true))

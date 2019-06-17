@@ -69,6 +69,7 @@ text = "Always on top"
 margin_top = 264.0
 margin_right = 160.0
 margin_bottom = 294.0
+pressed = true
 text = "Freeze NPC"
 
 [node name="Time_scale" type="HSlider" parent="Grid"]

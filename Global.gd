@@ -46,7 +46,7 @@ func get_item_from_DB(name: String) -> Dictionary:	# поиск предмета
 			if item.item_name == name: return item.duplicate()	# защита от случайного изменения в базе
 	return {}
 
-func create_item(data, destination: Node = null, quantity: int = 1) -> bool:	# добавление уникальной копии предмета по имени или по словарю параметров в игровой мир
+func create_item(data, destination: Node = null, quantity: int = 1) -> Item:	# добавление уникальной копии предмета по имени или по словарю параметров в игровой мир
 	if destination:
 		var dict = data if data is Dictionary else get_item_from_DB(data)
 		var new_item = Preloader.get_resource("Item").instance()
@@ -59,10 +59,13 @@ func create_item(data, destination: Node = null, quantity: int = 1) -> bool:	# �
 		new_item.uid = OS.get_datetime()	# сохраняем время создания
 		new_item.uid.RND = randf()	# добавляем случайное число чтобы избежать одинаковых UID для предметов, созданных с разницей во времени менее 1 сек.
 		new_item.name = new_item.item_name + " " + String(new_item.uid.hash())	# даем предмету уникальное имя, включающее хэш его UID
+		if new_item.stack_size and quantity > new_item.stack_size:	# разбиваем на части если количество больше максимального
+			var piece = create_item(data, destination, quantity - new_item.stack_size)
+			quantity -= piece.quantity
 		new_item.quantity = quantity
 		destination.add_child(new_item, true)
 		return new_item
-	else: return false
+	else: return null
 
 # вызывает метод у объекта. Ключи словаря: Description, Target, Method, Arguments
 func perform_action(action: Dictionary) -> void:

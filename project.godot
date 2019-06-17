@@ -9,12 +9,24 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "KinematicBody2D",
+"class": "Character",
+"language": "GDScript",
+"path": "res://Character.gd"
+}, {
+"base": "Node2D",
+"class": "Item",
+"language": "GDScript",
+"path": "res://Item.gd"
+}, {
 "base": "AnimationPlayer",
 "class": "TimelessAnimationPlayer",
 "language": "GDScript",
 "path": "res://TimelessAnimationPlayer.gd"
 } ]
 _global_script_class_icons={
+"Character": "res://Character icon.png",
+"Item": "res://item_icon.png",
 "TimelessAnimationPlayer": ""
 }
 

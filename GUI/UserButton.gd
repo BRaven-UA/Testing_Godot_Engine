@@ -5,7 +5,7 @@ var user_layer
 var context_menu
 var cursor_hint
 var player
-const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
+#const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
 #var UID	# уникальный код для кнопки
 var linked_object	# ссылка на представляемый кнопкой объект
 var main_action	# действие по нажатию кнопки

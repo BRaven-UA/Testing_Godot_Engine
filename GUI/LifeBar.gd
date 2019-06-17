@@ -14,7 +14,8 @@ var linked_object: Node2D
 func _process(delta):
 	# корректируем положение на экране в реальном времени
 	# запуском/остановкой процесса управляют события VisibilityNotifier2D у связанного объекта
-	rect_global_position = linked_object.get_global_transform_with_canvas().origin - Vector2(20, 40)
+	if linked_object:
+		rect_global_position = linked_object.get_global_transform_with_canvas().origin - Vector2(20, 40)
 
 func set_max_value(value) -> void:
 	progress_bar.max_value = value

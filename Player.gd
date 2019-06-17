@@ -1,58 +1,27 @@
-extends KinematicBody2D
+# персонаж игрока
+extends Character
 
-signal selected
-onready var main_node = get_tree().current_scene
 onready var user_layer = main_node.find_node("UserLayer")
-const Item = preload("res://Item.gd")	# чтобы иметь возможность указать класс предмета (сделано только ради облегчения работы в редакторе)
 
-const SPEED = 128	# базовая скорость движения
-const ANG_SPEED = PI	# базовая скорость поворота
-var sight_range: float = 1.0 setget _set_sight_range	# дальность зрения в процентах от стандартного
-var dest_point = Vector2()	# место назначения движения
-var turn_point = Vector2()	# точка, к которой нужно повернуться
-var a_path = PoolVector2Array()	# маршрут, созданный алгоритмом AStar
-var equiped_weapon: Item setget _set_equiped_weapon	# текущее экипированное оружие
-var actions = ["Idle", "Turn", "Walk", "Attack", "Reload"]
-var action = "Idle"
-var busy = false	# признак выполнения какого-либо действия игроком
 var test_motion = []	# массив данных о возможности двигаться из текущего местоположения
 var l	# для отладки
 var rays	# для отладки
 var current_item	# для отладки
 
-func _set_sight_range(new_value) -> void:	# setter for sight_range
-	$SightRange.texture_scale = new_value
+func _set_sight_range(new_value) -> void:	# перезапись классового метода
 	sight_range = new_value
-
-func _set_equiped_weapon(new_value) -> void:	# setter for equiped_weapon
-	if equiped_weapon: equiped_weapon.equiped = false	# снимаем отметку у предыдущего оружия
-	if new_value: new_value.equiped = true	# устанавливаем отметку у нового оружия
-	equiped_weapon = new_value
+	$SightRange.texture_scale = new_value
 
 func _init():
 	if Global.debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Player init")
 
 func _ready():
-	var k = Global.create_item("Knife", $Inventory)
-	var w = Global.create_item("Glock 17", $Inventory)
-	var a = Global.create_item("9 mm", $Inventory, 20)
-	w.reload(null, true)
-	self.equiped_weapon = k
-	current_item = k
-	Global.create_item("AK-47", $Inventory)
-	a = Global.create_item("7.62 mm", $Inventory, 100)
-#	var d = Global.create_item("Glock 17", main_node.get_node("Surface"))
-#	d.position = Vector2(position.x + 20 - randi() % 40, position.y + 20 - randi() % 40)
-#	d.rotation = PI - randf() * 2 * PI
-#	a = Global.find_item("9 mm")
-#	a["quantity"] = 25
-#	d = Global.create_item(a, main_node.get_node("Surface"))
-#	d.position = Vector2(position.x + 20 - randi() % 40, position.y + 20 - randi() % 40)
-#	d.rotation = PI - randf() * 2 * PI
+	Global.create_item("7.62 mm", $Inventory, 100)
+	var a = Global.create_item("AK-47", $Inventory)
+	a.reload(null, true)
+	current_item = a
 	
-	connect("selected", main_node.find_node("Debug"), "selection_changed")
-	main_node.connect("draw", self, "draw_in_parent")
-#	printt(OS.get_ticks_msec() / 1000.0, "Player is ready")
+	if Global.debug_mode: printt(OS.get_ticks_msec() / 1000.0, "Player is ready")
 
 func _process(delta):
 	var direction = Vector2()	# направление движения
@@ -60,11 +29,12 @@ func _process(delta):
 #	torque = 0.0
 	if !busy: action = "Idle"
 	
-	var angle_from = main_node.find_node("angle_from")
-	var angle_to = main_node.find_node("angle_to")
-	angle_from.get_node("Label").text = str(angle_from.value) + "  (" + str(global_rotation_degrees)
-	angle_to.get_node("Label").text = str(angle_to.value)
-	rays = Global.raycast_around(Vector2(), 1000, angle_from.value, angle_to.value, get_global_transform(), 5)
+	if Global.debug_mode:
+		var angle_from = main_node.find_node("angle_from")
+		var angle_to = main_node.find_node("angle_to")
+		angle_from.get_node("Label").text = str(angle_from.value) + "  (" + str(global_rotation_degrees)
+		angle_to.get_node("Label").text = str(angle_to.value)
+		rays = Global.raycast_around(Vector2(), 1000, angle_from.value, angle_to.value, get_global_transform(), 5)
 
 #	if a_path.size() > 2:	# оптимизируем маршрут в реальном времени
 #		var i = a_path.size()
